@@ -14,7 +14,7 @@
           <li><a href="{{ '/' | relative_url }}">{{ site.title }}</a> &raquo;</li>
           {% assign dir_segments = page.dir | slice: 1, page.dir.size | split: '/' %}
           {% for segment in dir_segments %}
-          <li>{{ segment }} &raquo;</li>
+          <li>{{ segment | capitalize }} &raquo;</li>
           {% endfor %}
           {% if page.title %}
           <li>{{ page.title }}</li>
