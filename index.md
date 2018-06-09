@@ -1,5 +1,5 @@
 ---
-title: My wiki
+title: Home
 ---
 
 <ul>
