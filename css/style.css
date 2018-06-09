@@ -1,0 +1,45 @@
+body {
+    font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
+    color: #212529;
+}
+
+a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    font-family: "Roboto Slab","ff-tisa-web-pro","Georgia",Arial,sans-serif;
+}
+
+hr {
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #e1e4e5;
+    margin: 24px 0;
+}
+
+pre {
+    padding: 16px;
+    overflow: auto;
+    line-height: 1.45;
+    background-color: #f6f8fa;
+    border-radius: 3px;
+}
+
+.breadcrumbs {
+    padding: 0;
+}
+
+.breadcrumbs li {
+    display: inline-block;
+}
+
+.breadcrumbs li.breadcrumbs-aside {
+    float: right;
+}
+
+.nav-content {
+    padding: 1.618em 3.236em;
+    max-width: 800px;
+}
