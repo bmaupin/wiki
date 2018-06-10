@@ -1,11 +1,15 @@
 body {
-    font-family: "Lato","proxima-nova","Helvetica Neue",Arial,sans-serif;
+    font-family: "Lato",Roboto,"Helvetica Neue",Arial,sans-serif;
     color: #212529;
 }
 
 a {
     color: #0366d6;
     text-decoration: none;
+}
+
+code {
+    font-family: "DejaVu Sans Mono","Consolas",monospace;
 }
 
 h1, h2, h3 {
@@ -20,6 +24,7 @@ hr {
 }
 
 pre {
+    font-size: 85%;
     padding: 16px;
     overflow: auto;
     line-height: 1.45;

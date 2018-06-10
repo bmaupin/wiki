@@ -17,6 +17,7 @@ The best way to delete a resource cleanly is to delete the resource group associ
 1. *Create a resource*
 
 2. *Web* > *Web App*
+
     - Don't choose *Web App for Containers*. This will only allow you to deploy your app by creating and updating a container for the app itself
 
 
@@ -43,6 +44,7 @@ Go to *Deployment* > *Deployment options*
 2. SSH into the container instance (see above)
 
 3. Logs will be located in /home/LogFiles
+
     - The log naming is inconsistent, but the log you want will be one of the more recent ones and should grow in size
 
 
