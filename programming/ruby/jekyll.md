@@ -15,4 +15,4 @@ title: Jekyll
 
 #### Running Jekyll
 
-    bundle exec jekyll serve
+    bundle exec jekyll serve --livereload
