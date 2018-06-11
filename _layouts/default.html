@@ -24,7 +24,8 @@
         <hr>
       </div>
       <div role="main">
-        <h1>{{ page.title | default: page.dir | split: '/' | last | capitalize }}</h1>
+        {% assign directory_title = page.dir | split: '/' | last | capitalize %}
+        <h1>{{ page.title | default: directory_title }}</h1>
         {{ content }}
       </div>
     </div>
