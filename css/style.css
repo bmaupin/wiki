@@ -44,6 +44,10 @@ pre {
     float: right;
 }
 
+.content li {
+    margin: 0 0 1em;
+}
+
 .nav-content {
     padding: 1.618em 3.236em;
     max-width: 800px;
