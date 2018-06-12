@@ -10,6 +10,7 @@ a {
 
 code {
     font-family: "DejaVu Sans Mono","Consolas",monospace;
+    font-size: 90%;
 }
 
 h1, h2, h3 {
@@ -24,7 +25,6 @@ hr {
 }
 
 pre {
-    font-size: 85%;
     padding: 16px;
     overflow: auto;
     line-height: 1.45;
