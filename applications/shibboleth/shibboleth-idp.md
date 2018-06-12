@@ -26,12 +26,10 @@ Default behaviour:
     [https://wiki.shibboleth.net/confluence/display/IDP30/SessionConfiguration#SessionConfiguration-SecurityPolicyImplicationsofSessionTimeouts](https://wiki.shibboleth.net/confluence/display/IDP30/SessionConfiguration#SessionConfiguration-SecurityPolicyImplicationsofSessionTimeouts)
     - Default: 60 minutes
     - This is the maximum amount of time that can pass before a user has to log in again to the IdP. If this value is changed, idp.session.timeout will need to be changed as well.
-    <br><br>
 
 - `idp.authn.defaultTimeout`
     - Default: 30 minutes
     - A user that logs into the IdP within this time from their last login will not have to log in again, provided the time since their first login isn't greater than idp.authn.defaultLifetime.
-    <br><br>
 
 - `idp.session.timeout`
     - Default: 60 minutes
