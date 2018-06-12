@@ -14,7 +14,7 @@
     {% for site_page in site.pages %}
       {% if site_page.url == breadcrumb_path and site_page.url != '/' and site_page.url != page.url %}
       {% assign directory_title = site_page.dir | split: '/' | last | capitalize %}
-      <li><a href="{{ site_page.url }}">{{ site_page.title | default: directory_title }}</a> &raquo; </li>
+      <li><a href="{{ site_page.url | relative_url }}">{{ site_page.title | default: directory_title }}</a> &raquo; </li>
       {% endif %}
     {% endfor %}
   {% endfor %}
