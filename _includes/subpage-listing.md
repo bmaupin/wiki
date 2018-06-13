@@ -1,13 +1,22 @@
 {%- assign sorted_pages = site.pages | sort: 'url' -%}
 {%- for site_page in sorted_pages -%}
-  {% comment %} This is a workaround for site_page.url.beginswith(page.dir) {% endcomment %}
+  {% comment %} The next 3 lines are a workaround for site_page.url.beginswith(page.dir) {% endcomment %}
   {%- assign relative_subpage_url = site_page.url | remove_first: page.dir -%}
   {%- assign reconstructed_url = page.dir | append: relative_subpage_url -%}
   {%- if site_page.url == reconstructed_url and site_page.url != page.url -%}
     {%- if site_page.path != '404.md' and site_page.path != 'assets/css/style.scss' and site_page.path != 'index.md' -%}
-      {%- assign url_segments = relative_subpage_url | split: '/' -%}
-      {%- assign directory_title = site_page.dir | split: '/' | last | capitalize -%}
-      {%- for i in (2..url_segments.size ) -%}{{-"    "-}}{%- endfor -%} - [{{ site_page.title | default: directory_title }}]({{ relative_subpage_url }})
+      {% comment %} Don't show pages beginning with '/archive/' on the home page {% endcomment %}
+      {%- assign first_url_segment = site_page.url | slice: 1, site_page.url.size | split: '/' | first -%}
+      {%- unless page.url == '/' and first_url_segment == 'archive' -%}
+        {%- assign url_segments = relative_subpage_url | split: '/' -%}
+        {% comment %} The capitalized directory name will be used if the page doesn't have a title {% endcomment %}
+        {%- assign directory_title = site_page.dir | split: '/' | last | capitalize -%}
+        {% comment %} Indent links starting at the second level for a hierarchical page tree link list {% endcomment %}
+        {%- for i in (2..url_segments.size ) -%}{{-"    "-}}{%- endfor -%}- [{{ site_page.title | default: directory_title }}]({{ relative_subpage_url }})
+      {%- endunless %}
     {%- endif %}
   {%- endif %}
 {% endfor %}
+{% if page.url == '/' %}
+- [Archive]({{ '/archive/' | relative_url }})
+{% endif %}
