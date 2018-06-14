@@ -14,10 +14,17 @@ On the local server:
 
 #### Signing and encryption
 
-Default behaviour:
-[https://wiki.shibboleth.net/confluence/display/IDP30/SAML2SSOConfiguration#SAML2SSOConfiguration-Notes](https://wiki.shibboleth.net/confluence/display/IDP30/SAML2SSOConfiguration#SAML2SSOConfiguration-Notes)
-- The assertion inside of the response message is encrypted (`encryptAssertions="true"`) but not signed (`signAssertions="false"`)
-- The entire response message itself is then encrypted (`signResponses="true"`)
+- Requests (sent from the SP to the IdP)
+    - By default (Shibboleth SP), the request is neither signed nor encrypted
+    - The request may be encrypted using the IdP's public encryption key (from the IdP's metadata), **but this is not common**
+
+- Responses (sent from the IdP to the SP)
+    - Note that this describes the [default Shibboleth IdP behaviour for SAML 2](https://wiki.shibboleth.net/confluence/display/IDP30/SAML2SSOConfiguration#SAML2SSOConfiguration-Notes), but [it can be modified](https://wiki.shibboleth.net/confluence/display/IDP30/SecurityConfiguration)
+    - The assertion inside of the response message is encrypted (`encryptAssertions="true"`) but not signed (`signAssertions="false"`)
+        - The encryption is done using the SP's public key (from the SP's metadata)
+    - The entire response message itself is then signed (`signResponses="true"`)
+        - This signing is done with the IdP's private signing key
+        - The SP can then use the IdP's public signing key (from the IdP's metadata) to verify the signature
 
 
 #### Shibboleth IdP 3.x properties
