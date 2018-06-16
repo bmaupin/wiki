@@ -30,8 +30,7 @@
           {{ content }}
         </div>
         {%- else -%}
-          {% capture subpage_listing %}{% include subpage-listing.md %}{% endcapture %}
-          {{ subpage_listing | markdownify }}
+          {% include subpage-listing.html %}
         {% endif %}
       </div>
     </div>
