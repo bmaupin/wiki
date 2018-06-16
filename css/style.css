@@ -52,3 +52,22 @@ pre {
     padding: 1.618em 3.236em;
     max-width: 800px;
 }
+
+#subpage-listing li {
+    position: relative;
+    /* Make up for the extra space added by .list-collapser */
+    left: -17px;
+}
+
+#subpage-listing ul {
+    list-style: none;
+}
+
+#subpage-listing .list-collapser {
+    cursor: pointer;
+    /* Force even empty elements to take up space */
+    display: inline-block;
+    font-size: 80%;
+    /* Force even spacing even if the icon changes or there is no icon */
+    width: 17px;
+}
