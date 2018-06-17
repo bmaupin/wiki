@@ -24,11 +24,11 @@ for (let i = 0; i < subpageLinks.length; i++) {
     if (ul.className !== 'collapsed') {
       ul.className = 'collapsed';
       ul.style.height = 0;
-      this.className = 'fas fa-chevron-right list-collapser';
+      this.className = 'fas fa-chevron-down list-collapser collapsed';
     } else {
       ul.className = 'expanded';
       ul.style.height = ul.scrollHeight + "px";
-      this.className = 'fas fa-chevron-down list-collapser';
+      this.className = 'fas fa-chevron-down list-collapser expanded';
     }
   }
 }
