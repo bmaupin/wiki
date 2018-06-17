@@ -81,3 +81,15 @@ pre {
     /* Force even spacing even if the icon changes or there is no icon */
     width: 17px;
 }
+
+#subpage-listing .list-collapser.collapsed {
+    transform: rotate(-90deg);
+    transform-origin: 6px 7px;
+    transition: transform 0.15s ease-out;
+}
+
+#subpage-listing .list-collapser.expanded {
+    transform: rotate(0deg);
+    transform-origin: 6px 7px;
+    transition: transform 0.25s ease-in;
+}
