@@ -1,4 +1,7 @@
 github:
   source:
     branch: master
+plugins:
+  - jekyll-seo-tag
+theme:
 title: My wiki
