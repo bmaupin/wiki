@@ -63,16 +63,6 @@ pre {
     list-style: none;
 }
 
-#subpage-listing ul .collapsed {
-    overflow: hidden;
-    transition: height 0.15s ease-out;
-}
-
-#subpage-listing ul .expanded {
-    overflow: hidden;
-    transition: height 0.25s ease-in;
-}
-
 #subpage-listing .list-collapser {
     cursor: pointer;
     /* Force even empty elements to take up space */
