@@ -1,3 +1,3 @@
 import {configurePageListing} from './page-tree.js';
 
-configurePageListing('subpage-listing');
+configurePageListing('sidebar-menu');

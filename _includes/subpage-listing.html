@@ -1,5 +1,5 @@
-<div id="subpage-listing">
+<div id="subpage-listing" class="page-tree">
 {% capture subpage_listing %}{% include subpage-listing.md %}{% endcapture %}
 {{ subpage_listing | markdownify }}
 </div>
-<script src="{{ '/assets/js/subpage-listing.js' || relative_url }}"
+<script type="module" src="{{ '/assets/js/subpage-listing.js' || relative_url }}"></script>
