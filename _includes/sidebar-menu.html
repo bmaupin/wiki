@@ -1,0 +1,5 @@
+<div id="sidebar-menu" class="page-tree">
+{% capture sidebar_menu %}{% include sidebar-menu.md %}{% endcapture %}
+{{ sidebar_menu | markdownify }}
+</div>
+<script type="module" src="{{ '/assets/js/sidebar-menu.js' || relative_url }}"></script>

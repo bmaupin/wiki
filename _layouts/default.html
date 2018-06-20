@@ -17,6 +17,14 @@
     </script>
   </head>
   <body>
+    <div class="sidebar">
+      <div class="sidebar-heading">
+        <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+      </div>
+      <div class="sidebar-menu">
+        {% include sidebar-menu.html %}
+      </div>
+    </div>
     <div class="nav-content">
       <div role="navigation">
         {% include breadcrumbs.html %}
