@@ -52,6 +52,7 @@ pre {
 
 .nav-content {
     flex: auto;
+    margin-left: 300px;
     padding: 1.618em 3.236em;
     max-width: 800px;
 }
@@ -88,8 +89,10 @@ pre {
 
 .sidebar {
     background-color: #343131;
-    display: block;
-    min-height: 100vh;
+    height: 100%;
+    /* Only show scrollbar when necessary */
+    overflow: auto;
+    position: fixed;
     width: 300px;
 }
 
