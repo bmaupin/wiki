@@ -1,5 +1,5 @@
-<ul class="breadcrumbs">
-  <li><a href="{{ '/' | relative_url }}">{{ site.title }}</a> &raquo; </li>
+<div class="breadcrumbs">
+  <span><a href="{{ '/' | relative_url }}">{{ site.title }}</a>&nbsp;&raquo;&nbsp;</span>
   {% comment %} Create an empty array {% endcomment %}
   {% assign breadcrumb_paths = '' | split: ',' %}
   {% assign dir_segments = page.dir | split: '/' %}
@@ -14,9 +14,9 @@
     {% for site_page in site.pages %}
       {% if site_page.url == breadcrumb_path and site_page.url != '/' and site_page.url != page.url %}
       {% assign directory_title = site_page.dir | split: '/' | last | capitalize %}
-      <li><a href="{{ site_page.url | relative_url }}">{{ site_page.title | default: directory_title }}</a> &raquo; </li>
+      <span><a href="{{ site_page.url | relative_url }}">{{ site_page.title | default: directory_title }}</a>&nbsp;&raquo;&nbsp;</span>
       {% endif %}
     {% endfor %}
   {% endfor %}
-  <li class="breadcrumbs-aside"><a href="{% github_edit_link %}"><span class="fab fa-github"></span> Edit on GitHub</a></li>
-</ul>
+  <span class="breadcrumbs-aside"><a href="{% github_edit_link %}"><span class="fab fa-github"></span> Edit on GitHub</a></span>
+</div>
