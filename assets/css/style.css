@@ -122,3 +122,18 @@ pre {
 .sidebar-menu .page-tree ul ul {
     display: none;
 }
+
+@media (max-width: 480px) {
+    .breadcrumbs-aside {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-content {
+        margin-left: 0;
+    }
+    .sidebar {
+        display: none;
+    }
+}
