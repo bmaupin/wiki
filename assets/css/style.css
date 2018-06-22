@@ -35,15 +35,12 @@ pre {
 }
 
 .breadcrumbs {
+    display: flex;
     padding: 0;
 }
 
-.breadcrumbs li {
-    display: inline-block;
-}
-
-.breadcrumbs li.breadcrumbs-aside {
-    float: right;
+.breadcrumbs .breadcrumbs-aside {
+    margin-left: auto;
 }
 
 .content li {
@@ -53,7 +50,7 @@ pre {
 .nav-content {
     flex: auto;
     margin-left: 300px;
-    padding: 1.618em 3.236em;
+    padding: 2.158em 3.236em;
     max-width: 800px;
 }
 
