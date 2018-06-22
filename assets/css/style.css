@@ -47,6 +47,11 @@ pre {
     margin: 0 0 1em;
 }
 
+.highlight {
+    /* This allows the pre elements to shrink */
+    display: grid;
+}
+
 .nav-content {
     flex: auto;
     margin-left: 300px;
