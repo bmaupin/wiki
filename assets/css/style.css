@@ -137,6 +137,7 @@ pre {
 @media (max-width: 768px) {
     .nav-content {
         margin-left: 0;
+        padding: 1.618em;
     }
     .sidebar {
         display: none;
