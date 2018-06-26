@@ -42,35 +42,8 @@ Use the last two lines here:
 See [Ansible Best Practices](http://docs.ansible.com/ansible/playbooks_best_practices.html)
 
 
-#### Configuration management
-1. Put tasks that related to configuration management in main.yml in the tasks subfolder of the role, e.g.: roles/webservers/tasks/main.yml
-
-2. Create a playbook that includes the role, e.g. webservers.yml:
-
-        ---
-        - hosts: webservers
-          roles:
-          - webservers
-
-3. The playbook can be run at any time to ensure the configuration of the server, e.g.:
-
-        ansible-playbook webservers.yml
-
-
-#### Orchestration
-1. Put tasks related to orchestration (installation, upgrades, etc) in separate playbooks in the tasks subfolder of the role, e.g.: roles/webservers/tasks/install.yml
-    - See also: [https://github.com/ansible/ansible-examples/tree/master/lamp_simple/roles/web/tasks](https://github.com/ansible/ansible-examples/tree/master/lamp_simple/roles/web/tasks)
-
-2. Create a playbook that includes the tasks, e.g. webservers_install.yml:
-
-        ---
-        - hosts: webservers
-          tasks:
-          - include: roles/webservers/tasks/install.yml
-
-3. Run the playbook only when you want to apply the specific tasks, e.g.:
-
-        ansible-playbook webservers_install.yml
+#### Operational tasks
+For operational tasks (restart a service, install a patch, etc), don't put them in roles. Instead put the tasks directly into the playbooks.
 
 
 
