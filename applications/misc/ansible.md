@@ -25,10 +25,10 @@ title: Ansible
 Use the last two lines here:
 
     - name: Copy some file
-    copy:
+      copy:
         src: /path/to/some/file
         dest: /path/to/some/file
-    register: result
+      register: result
 
     - debug: var=result.stdout_lines
 
@@ -49,8 +49,8 @@ See [Ansible Best Practices](http://docs.ansible.com/ansible/playbooks_best_prac
 
         ---
         - hosts: webservers
-        roles:
-            - webservers
+          roles:
+          - webservers
 
 3. The playbook can be run at any time to ensure the configuration of the server, e.g.:
 
@@ -65,8 +65,8 @@ See [Ansible Best Practices](http://docs.ansible.com/ansible/playbooks_best_prac
 
         ---
         - hosts: webservers
-        tasks:
-            - include: roles/webservers/tasks/install.yml
+          tasks:
+          - include: roles/webservers/tasks/install.yml
 
 3. Run the playbook only when you want to apply the specific tasks, e.g.:
 
@@ -92,9 +92,9 @@ Used to run a task on a specific server. Pair with run_once to make sure the tas
 For example, to limit a task to the first server in a group:
 
     - name: Some task
-    ...
-    delegate_to: "{{ groups['my_group'][0] }}"
-    run_once: yes
+      ...
+      delegate_to: "{{ groups['my_group'][0] }}"
+      run_once: yes
 
 
 #### [failed_when](http://docs.ansible.com/ansible/playbooks_error_handling.html#controlling-what-defines-failure)
@@ -184,9 +184,9 @@ All of the hosts included in the current play
 
     - stat:
         path: /etc/pki/tls/certs/ThawteSSLCAG2.crt
-    register: thawtesslcag2
+      register: thawtesslcag2
 
     - file:
         path: ~/ThawteSSLCAG2.crt
         state: absent
-    when: thawtesslcag2.stat.exists
+      when: thawtesslcag2.stat.exists
