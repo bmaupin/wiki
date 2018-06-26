@@ -24,13 +24,15 @@ title: Ansible
 
 Use the last two lines here:
 
-    - name: Copy some file
-      copy:
-        src: /path/to/some/file
-        dest: /path/to/some/file
-      register: result
+```yaml
+- name: Copy some file
+  copy:
+    src: /path/to/some/file
+    dest: /path/to/some/file
+  register: result
 
-    - debug: var=result.stdout_lines
+- debug: var=result.stdout_lines
+```
 
 **Note:** when using debug in a handler, you must provide it a name and call the handler directly since handlers aren't run automatically
 
@@ -55,8 +57,10 @@ Override the conditions determining whether a task was changed or not
 
 This can also be used to never (or always) report a task as changed:
 
-    # Don't report this as changed
-    changed_when: no
+```yaml
+# Don't report this as changed
+changed_when: no
+```
 
 
 #### [delegate_to](http://docs.ansible.com/ansible/playbooks_delegation.html#delegation)
@@ -64,10 +68,12 @@ Used to run a task on a specific server. Pair with run_once to make sure the tas
 
 For example, to limit a task to the first server in a group:
 
-    - name: Some task
-      ...
-      delegate_to: "{{ groups['my_group'][0] }}"
-      run_once: yes
+```yaml
+- name: Some task
+  ...
+  delegate_to: "{{ groups['my_group'][0] }}"
+  run_once: yes
+```
 
 
 #### [failed_when](http://docs.ansible.com/ansible/playbooks_error_handling.html#controlling-what-defines-failure)
@@ -85,15 +91,17 @@ Run a handler if the task was changed
 #### [register](http://docs.ansible.com/ansible/playbooks_conditionals.html#register-variables)
 Register the result of a command to a variable. The variable is a dict that has a lot of useful values, such as:
 
-    "changed": true,
-    "cmd": "if ! sudo /sbin/service tomcat6 status; then sudo /sbin/service tomcat6 start; fi",
-    "rc": 0,
-    "stderr": "",
-    "stdout": "tomcat6 is stopped\u001b[60G[\u001b[0;32m  OK  \u001b[0;39m]\r\nStarting tomcat6: \u001b[60G[\u001b[0;32m  OK  \u001b[0;39m]",
-    "stdout_lines": [
-        "tomcat6 is stopped\u001b[60G[\u001b[0;32m  OK  \u001b[0;39m]",
-        "Starting tomcat6: \u001b[60G[\u001b[0;32m  OK  \u001b[0;39m]"
-    ],
+```python
+"changed": true,
+"cmd": "if ! sudo /sbin/service tomcat6 status; then sudo /sbin/service tomcat6 start; fi",
+"rc": 0,
+"stderr": "",
+"stdout": "tomcat6 is stopped\u001b[60G[\u001b[0;32m  OK  \u001b[0;39m]\r\nStarting tomcat6: \u001b[60G[\u001b[0;32m  OK  \u001b[0;39m]",
+"stdout_lines": [
+    "tomcat6 is stopped\u001b[60G[\u001b[0;32m  OK  \u001b[0;39m]",
+    "Starting tomcat6: \u001b[60G[\u001b[0;32m  OK  \u001b[0;39m]"
+],
+```
 
 
 #### [run_once](http://docs.ansible.com/ansible/playbooks_delegation.html#run-once)
@@ -116,15 +124,16 @@ Pass a list of items to be iterated over in a task
 #### Adding sections to a file conditionally
 **Note:** Make sure all blank lines and template lines `({% raw %}{% %}{% endraw %}`) have no trailing whitespace!
 
-    {% raw %}{% if inventory_hostname in ['idp1.example.org', 'idp2.example.org'] %}{% endraw %}
-    <!-- Metadata for sp1.example.org -->
-    <metadata:MetadataProvider id="sp1.example.org" xsi:type="metadata:FileBackedHTTPMetadataProvider"
-        metadataURL="https://sp1.example.org/Shibboleth.sso/Metadata"
-        backingFile="/opt/shibboleth-idp/metadata/sp1.example.org-metadata.xml" />
+```jinja
+{% raw %}{% if inventory_hostname in ['idp1.example.org', 'idp2.example.org'] %}{% endraw %}
+<!-- Metadata for sp1.example.org -->
+<metadata:MetadataProvider id="sp1.example.org" xsi:type="metadata:FileBackedHTTPMetadataProvider"
+    metadataURL="https://sp1.example.org/Shibboleth.sso/Metadata"
+    backingFile="/opt/shibboleth-idp/metadata/sp1.example.org-metadata.xml" />
 
-    {% raw %}{% endif %}{% endraw %}
-    <!-- Metadata for sp2.example.org -->
-
+{% raw %}{% endif %}{% endraw %}
+<!-- Metadata for sp2.example.org -->
+```
 
 
 ## Variables
@@ -138,8 +147,10 @@ The relative path to the inventory file used by the current play
 
 Ex:
 
-    ansible-playbook -i inventory/development...
-    "inventory_file": "inventory/development"
+```yaml
+ansible-playbook -i inventory/development...
+"inventory_file": "inventory/development"
+```
 
 
 #### inventory_hostname
@@ -155,11 +166,13 @@ All of the hosts included in the current play
 
 #### Remove a file if another file exists
 
-    - stat:
-        path: /etc/pki/tls/certs/ThawteSSLCAG2.crt
-      register: thawtesslcag2
+```yaml
+- stat:
+    path: /etc/pki/tls/certs/ThawteSSLCAG2.crt
+  register: thawtesslcag2
 
-    - file:
-        path: ~/ThawteSSLCAG2.crt
-        state: absent
-      when: thawtesslcag2.stat.exists
+- file:
+    path: ~/ThawteSSLCAG2.crt
+    state: absent
+  when: thawtesslcag2.stat.exists
+```
