@@ -8,7 +8,7 @@
         {% comment %} The capitalized directory name will be used if the page doesn't have a title {% endcomment %}
         {%- assign directory_title = site_page.dir | split: '/' | last | capitalize -%}
         {% comment %} Indent links starting at the second level for a hierarchical page tree link list {% endcomment %}
-        {%- for i in (2..url_segments.size ) -%}{{-"    "-}}{%- endfor -%}- [{{ site_page.title | default: directory_title }}]({{ site_page.url }})
+        {%- for i in (2..url_segments.size ) -%}{{-"    "-}}{%- endfor -%}- [{{ site_page.title | default: directory_title }}]({{ site_page.url | relative_url }})
     {%- endunless %}
   {%- endif %}
 {% endfor -%}
