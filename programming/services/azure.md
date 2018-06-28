@@ -18,15 +18,21 @@ The best way to delete a resource cleanly is to delete the resource group associ
 
 2. *Web* > *Web App*
 
-    - Don't choose *Web App for Containers*. This will only allow you to deploy your app by creating and updating a container for the app itself
+    - **Note:** Don't choose *Web App for Containers*. This will only allow you to deploy your app by creating and updating a container for the app itself
+
+3. Once the app resource has been created, go to *Deployment* > *Deployment options* to set up a repository for automated deployments
+
+4. Define any environment variables as desired (see below)
+
+
+#### Set environment variables
+1. *Settings* > *Application settings* > *Application settings*
+
+2. Make sure to click *Save* when you're done
 
 
 #### Monitoring web app deployments from Github
 Go to *Deployment* > *Deployment options*
-
-
-#### Set environment variables
-*Settings* > *Application settings* > *Application settings*
 
 
 #### SSH into web app container instance
