@@ -49,11 +49,6 @@ pre {
     margin: 0 0 1em;
 }
 
-.highlight {
-    /* This allows the pre elements to shrink */
-    display: grid;
-}
-
 .nav-content {
     flex: auto;
     margin-left: 300px;
@@ -128,6 +123,16 @@ pre {
 
 .sidebar-menu .page-tree ul ul {
     display: none;
+}
+
+div.highlight {
+    /* This allows the pre elements to shrink */
+    display: grid;
+}
+
+pre.highlight {
+    /* This removes the extra padding added by setting display: grid on div.highlight */
+    margin: 0;
 }
 
 @media (max-width: 480px) {
