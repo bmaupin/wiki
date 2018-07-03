@@ -3,7 +3,7 @@ title: OpenLDAP notes
 ---
 
 #### Change ownership of database files
-```shell
+```
 sudo chown ldap:ldap /path/to/var/openldap-data/ -R
 sudo chown ldap:ldap /path/to/var/log/bdb/ -R
 ```
@@ -11,13 +11,13 @@ sudo chown ldap:ldap /path/to/var/log/bdb/ -R
 
 #### Importing via slapadd
 This is the recommended way as it is much faster than importing via ldapadd
-```shell
+```
 slapadd -b "dc=example,dc=com" -q -w -l /path/to/directory.ldif
 ```
 
 
 #### Importing via ldapadd
-```shell
+```
 sudo /sbin/service ldap start
 
 cat >slapcat_ldapadd.ldif <<EOF
@@ -38,13 +38,13 @@ ldapadd -D "cn=root,dc=example,dc=com" -x -W -f directory-ldapadd.ldif
 
 
 #### Exporting via slapcat
-```shell
+```
 sudo /sbin/service ldap stop
 /path/to/slapcat -b 'dc=example,dc=com' [-f /path/to/slapd.conf] -l /path/to/dump.ldif
 ```
 
 You can also do a partial dump using the -a flag.  for example to only get entries from a specific ou/branch:
-```shell
+```
 slapcat -a '(entryDN:dnSubtreeMatch:=ou=People,dc=example,dc=com)'
 ```
 
@@ -70,7 +70,7 @@ access to *
 If the password is to be stored in LDAP, the most secure algorithm is currently salted SHA (SSHA) ([http://www.openldap.org/doc/admin24/security.html#Password%20Storage](http://www.openldap.org/doc/admin24/security.html#Password%20Storage))
 
 To generate an SSHA-encrypted password:
-```shell
+```
 slappasswd -h {SSHA} -s password
 ```
 
@@ -109,7 +109,7 @@ TLS_REQCERT never
 #### Decoding base64-encoded attributes (userPassword, etc)
 Many strings in OpenLDAP are encoded in base64. To decode them in bash:
 
-```shell
+```
 echo -n dGVzdA== | base64 -d && echo
 ```
 
