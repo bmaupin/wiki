@@ -8,12 +8,12 @@ title: Compiling OpenLDAP
 1. Download the latest stable version of OpenLDAP from [http://www.openldap.org/software/download/](http://www.openldap.org/software/download/)
 
 2. Extract it
-```shell
+```
 tar xvf openldap-stable-YYYYMMDD.tgz
 ```
 
 3. View the README file
-```shell
+```
 less openldap-X.X.X/README
 ```
 
@@ -33,7 +33,7 @@ less openldap-X.X.X/README
     1. First figure out whether you need to build Berkeley DB or can use the version provided by your distro
         - Was the build provided by your distro built using the following flags?:
 
-            ```shell
+            ```
             --enable-posixmutexes --with-mutex=POSIX/pthreads
             ```
 
@@ -41,7 +41,7 @@ less openldap-X.X.X/README
 
     2. If you need to build Berkeley DB, make sure at a minimum you build it with the following flags:
 
-        ```shell
+        ```
         --enable-posixmutexes --with-mutex=POSIX/pthreads
         ```
 
@@ -55,13 +55,13 @@ less openldap-X.X.X/README
 
         2. Extract it
 
-            ```shell
+            ```
             tar xvf db-x.x.x.tar.gz
             ```
 
         3. Compile it.  These are the steps I'm using:
 
-            ```shell
+            ```
             cd db-x.x.x/build_unix
             patch -p0 < db-x.x.x.patch0 (and so on...)
             CFLAGS="-O2" ../dist/configure --prefix=/usr/local --enable-shared --disable-static --enable-posixmutexes --with-mutex=POSIX/pthreads
@@ -70,7 +70,7 @@ less openldap-X.X.X/README
 
         4. Install it
 
-            ```shell
+            ```
             make install
             ```
 
@@ -88,13 +88,13 @@ less openldap-X.X.X/README
 
         2. Extract it
 
-            ```shell
+            ```
             tar xvf openssl-x.x.x.tar.gz
             ```
 
         3. Compile it.  These are the steps I'm using:
 
-            ```shell
+            ```
             cd openssl-x.x.x
             CFLAGS="-O2" ./config --prefix=/usr/local shared
             make
@@ -102,7 +102,7 @@ less openldap-X.X.X/README
 
         4. Install it
 
-            ```shell
+            ```
             make install
             ```
 
@@ -129,13 +129,13 @@ less openldap-X.X.X/README
 
         3. Extract it
 
-            ```shell
+            ```
             tar xvf heimdal-x.x.x.tar.gz
             ```
 
         4. Compile it.  These are the steps I'm using:
 
-            ```shell
+            ```
             cd heimdal-x.x.x
             CFLAGS="-O2" CPPFLAGS="-I/usr/local/include/" LDFLAGS="-L/usr/local/lib" ./configure --prefix=/usr/local --sysconfdir=/usr/local/etc --enable-shared --disable-static --enable-pthread-support --with-openssl=/usr/local
             make
@@ -146,7 +146,7 @@ less openldap-X.X.X/README
 
         5. Install it
 
-            ```shell
+            ```
             make install
             ```
 
@@ -176,13 +176,13 @@ less openldap-X.X.X/README
 
     4. Extract it
 
-        ```shell
+        ```
         tar xvf cyrus-sasl-x.x.x.tar.gz
         ```
 
     5. Compile it.  These are the steps I'm using:
 
-        ```shell
+        ```
         cd cyrus-sasl-x.x.x
         CFLAGS="-O2" CPPFLAGS="-I/usr/local/include" LDFLAGS="-L/usr/local/lib" ./configure --prefix=/usr/local --enable-shared --disable-static  --with-openssl=/usr/local --enable-gssapi=/usr/local --with-plugindir=/usr/local/lib/sasl2
         make
@@ -190,7 +190,7 @@ less openldap-X.X.X/README
 
     6. Install it
 
-        ```shell
+        ```
         make install
         ```
 
@@ -234,7 +234,7 @@ less openldap-X.X.X/README
 
         3. You've already downloaded and extracted it (see near the beginning of this document), so compile it.  These are the steps I'm using:
 
-            ```shell
+            ```
             CFLAGS="-O2" CPPFLAGS="-I/usr/local/include" LDFLAGS="-L/usr/local/lib" ./configure --prefix=/usr/local --enable-shared --disable-static --with-cyrus-sasl --with-kerberos --with-tls --enable-dynamic --enable-slapd --enable-modules --enable-spasswd --enable-rlookups --enable-wrappers --enable-rewrite --enable-backends=mod --disable-shell --disable-sql --enable-overlays=mod --disable-ndb
             make
             ```
@@ -250,13 +250,13 @@ less openldap-X.X.X/README
 
         4. Test it
 
-            ```shell
+            ```
             make test
             ```
 
         5. Install it
 
-            ```shell
+            ```
             make install
             ```
 
@@ -272,13 +272,13 @@ less openldap-X.X.X/README
 
     2. Extract it
 
-        ```shell
+        ```
         tar xvf google-perftools-x.x.x.tar.gz
         ```
 
     3. Compile it.  These are the steps I'm using:
 
-        ```shell
+        ```
         cd google-perftools-x.x.x
         CFLAGS="-O2" CXXFLAGS="-O2" ./configure --enable-minimal --prefix=/usr/local
         make
@@ -289,7 +289,7 @@ less openldap-X.X.X/README
 
     4. Install it
 
-        ```shell
+        ```
         make install
         ```
 
@@ -297,13 +297,13 @@ less openldap-X.X.X/README
 
         Call slapd like this:
 
-        ```shell
+        ```
         LD_PRELOAD=/usr/local/lib/libtcmalloc_minimal.so && /usr/local/libexec/slapd
         ```
 
         Or put it in your openldap init script:
 
-        ```shell
+        ```
         if [ -e /usr/local/lib/libtcmalloc_minimal.so ] ; then
             export LD_PRELOAD=/usr/local/lib/libtcmalloc_minimal.so
         fi
