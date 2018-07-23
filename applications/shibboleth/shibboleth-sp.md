@@ -17,6 +17,13 @@ title: Shibboleth SP
 
 ## Common errors
 
+[https://wiki.shibboleth.net/confluence/display/SP3/CommonErrors](https://wiki.shibboleth.net/confluence/display/SP3/CommonErrors)
+
+#### No attributes received
+
+Check the SP logs. Often this is caused by invalid XML in attribute-map.xml.
+
+
 #### `Unknown or Unusable Identity Provider`
 
 Typically the root cause will be listed in the error message itself, for example:
