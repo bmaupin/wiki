@@ -19,24 +19,6 @@ title: Ansible
 - [service](http://docs.ansible.com/ansible/service_module.html)
 
 
-#### Show the output of a command
-[http://stackoverflow.com/a/20981211/399105](http://stackoverflow.com/a/20981211/399105)
-
-Use the last two lines here:
-
-```yaml
-- name: Copy some file
-  copy:
-    src: /path/to/some/file
-    dest: /path/to/some/file
-  register: result
-
-- debug: var=result.stdout_lines
-```
-
-**Note:** when using debug in a handler, you must provide it a name and call the handler directly since handlers aren't run automatically
-
-
 
 ## Organization
 
@@ -163,6 +145,38 @@ All of the hosts included in the current play
 
 
 ## Examples
+
+#### Specify hosts on the command line
+[https://stackoverflow.com/a/18255256/399105](https://stackoverflow.com/a/18255256/399105)
+
+One server (the comma at the end is important so that the inventory appropriately gets converted to a list):
+```
+ansible all -i server1.example.org,
+```
+
+Multiple servers:
+```
+ansible all -i server1.example.org,server2.example.org
+```
+
+
+#### Show the output of a command
+[http://stackoverflow.com/a/20981211/399105](http://stackoverflow.com/a/20981211/399105)
+
+Use the last two lines here:
+
+```yaml
+- name: Copy some file
+  copy:
+    src: /path/to/some/file
+    dest: /path/to/some/file
+  register: result
+
+- debug: var=result.stdout_lines
+```
+
+**Note:** when using debug in a handler, you must provide it a name and call the handler directly since handlers aren't run automatically
+
 
 #### Remove a file if another file exists
 
