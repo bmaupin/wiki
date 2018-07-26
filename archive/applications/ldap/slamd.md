@@ -9,7 +9,7 @@ title: SLAMD
     - (Prefer Sun Java cause it's supposedly faster and possibly more compatible)
     - RHEL:
         1. Add RHEL Supplementary channel to system in RHN
-        2. ```sudo yum install ```-1.6.0-sun```
+        2. ```sudo yum install java-1.6.0-sun```
 
     - Ubuntu:
         1. Enable "partner" repository
