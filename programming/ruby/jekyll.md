@@ -2,11 +2,13 @@
 title: Jekyll
 ---
 
-#### Install the latest stable Ruby (includes the gem command)
+#### Install Ruby
 
-    sudo apt-add-repository -y ppa:brightbox/ruby-ng
-    sudo apt-get update
-    sudo apt-get -y install ruby2.3
+(Includes the gem command and header files for installing native modules)
+
+```
+sudo apt install ruby ruby-dev
+```
 
 
 #### Install and configure Jekyll
@@ -15,4 +17,6 @@ title: Jekyll
 
 #### Running Jekyll
 
-    bundle exec jekyll serve --livereload
+```
+bundle exec jekyll serve --livereload
+```
