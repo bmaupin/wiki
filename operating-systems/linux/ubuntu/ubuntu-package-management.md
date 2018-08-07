@@ -2,87 +2,75 @@
 title: Ubuntu/Debian package management
 ---
 
-#### To remove a package and all of its dependencies:
+#### Remove a package and all of its dependencies
 ```
-sudo apt-get autoremove PACKAGENAME
+sudo apt autoremove PACKAGENAME
 ```
 
 
-#### To download a package without installing it:
+#### Download a package without installing it
 ```
-sudo apt-get --download-only install PACKAGENAME
+sudo apt --download-only install PACKAGENAME
 ```
 
 The package will be stored under /var/cache/apt/archives
 
 
-#### To search for which package provides a specific file:
+#### Search for which package provides a specific file
 ```
-sudo apt-get -y install apt-file
+sudo apt -y install apt-file
 sudo apt-file update
 apt-file search FILENAME
 ```
 
 
-#### To list the files a given package provides:
+#### List the files a given package provides
 ```
-sudo apt-get -y install apt-file
+sudo apt -y install apt-file
 sudo apt-file update
 apt-file list PACKAGENAME
 ```
 
 Or for a downloaded package:
 ```
-dpkg -c package.deb
+dpkg -c PACKAGE.deb
 ```
 
 
-#### To upgrade a single package:
+#### Upgrade a single package
 ```
-sudo apt-get install PACKAGENAME
+sudo apt install PACKAGENAME
 ```
 
 
 #### Reinstall a package
 ```
-sudo apt-get install --reinstall PACKAGENAME
+sudo apt install --reinstall PACKAGENAME
 ```
 
 
 #### Install available updates
 ```
-apt-get update
-apt-get upgrade
-```
-
-Or:
-```
-sudo aptitude update
-sudo aptitude safe-upgrade
+sudo apt update
+sudo apt dist-upgrade
 ```
 
 
-#### To install a specific program:
+#### Install a specific program
 ```
-sudo apt-get install PACKAGENAME
-```
-
-
-#### To search for a specific installable program:
-```
-sudo apt-get -y install aptitude
-aptitude search PACKAGENAME
-```
-
-Or:
-```
-apt-cache search PACKAGENAME
+sudo apt install PACKAGENAME
 ```
 
 
-#### To remove a specific program:
+#### Search for a specific installable program
 ```
-sudo apt-get remove PACKAGENAME
+apt search PACKAGENAME
+```
+
+
+#### Remove a specific program
+```
+sudo apt remove PACKAGENAME
 ```
 
 Or:
@@ -91,14 +79,9 @@ dpkg -r PACKAGENAME
 ```
 
 
-#### To install a downloaded package:
+#### Install a downloaded package
 ```
-sudo dpkg –i PACKAGENAME
-```
-
-Ex:
-```
-sudo dpkg –i samba.deb
+sudo dpkg –i PACKAGE.deb
 ```
 
 
