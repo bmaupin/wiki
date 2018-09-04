@@ -2,31 +2,53 @@
 title: Docker
 ---
 
+## Containers
+
+#### List running containers
+
+```
+docker ps
+```
+
+#### Stop a container
+
+```
+docker stop CONTAINER_ID
+```
+
+
+
 ## Images
 
 #### List images
-
-    docker images
+```
+docker images
+```
 
 
 #### Delete an image
-
-    docker rmi IMAGE_ID
+```
+docker rmi IMAGE_ID
+```
 
 
 
 ## Volumes
 
 #### List volumes
-
-    docker volume ls
+```
+docker volume ls
+```
 
 
 #### Create a volume
 
-    docker volume create VOLUME_NAME
+```
+docker volume create VOLUME_NAME
+```
 
 
 #### Delete a volume
-
-    docker volume rm VOLUME_NAME
+```
+docker volume rm VOLUME_NAME
+```
