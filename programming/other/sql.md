@@ -24,7 +24,7 @@ UPDATE table SET column1 = 'value1' WHERE column2 = 'value2';
 #### Insert or update
 For MySQL, use replace:
 ```sql
-REPLACE INTO table VALUES ('value1', value2', value3');
+REPLACE INTO table VALUES ('value1', 'value2', 'value3');
 ```
 
 
