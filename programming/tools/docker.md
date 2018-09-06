@@ -16,10 +16,16 @@ docker container ls --all
 ```
 
 
+#### Connect to a terminal in a container
+```
+docker container exec -it CONTAINER_NAME_OR_ID sh
+```
+
+
 #### Stop a container
 
 ```
-docker container stop CONTAINER_ID
+docker container stop CONTAINER_NAME_OR_ID
 ```
 
 
