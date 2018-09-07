@@ -20,3 +20,12 @@ sudo apt install ruby ruby-dev
 ```
 bundle exec jekyll serve --livereload
 ```
+
+
+#### Updating gems
+This is particularly useful if Github bugs you that you have a security vulnerability in one of your dependencies.
+
+```
+rm Gemfile.lock
+bundle install
+```
