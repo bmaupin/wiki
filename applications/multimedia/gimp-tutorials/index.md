@@ -10,6 +10,7 @@ title: GIMP tutorials
     ![](gimp-color-palette.png)
 1. Go to the *Edit* menu > *Stroke Selection* > adjust *Line width* as desired > *Stroke*
 
+
 #### Blending two images
 [http://boitblog.blogspot.com/2007/07/blending-two-images-with-gimp.html](http://boitblog.blogspot.com/2007/07/blending-two-images-with-gimp.html)
 
@@ -29,6 +30,7 @@ Or:
 1. *Edit* > *Clear* (or press the *Delete* key)
 1. *Select* > *None*
 
+
 #### Make transparency show up as grey checkerboard
 *Edit* > *Preferences* > *Display* > *Transparency* > *Mid-tone Checks*
 
@@ -37,6 +39,7 @@ Or:
 1. Make the selection
 1. *Edit* > *Copy*
 1. *Edit* > *Paste as* > *New Layer*
+
 
 #### Select a region using edge detection
 1. Click on the *Scissors Select Tool*

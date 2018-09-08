@@ -106,6 +106,7 @@ Only follow these steps if your partition has been formatted or corrupted and yo
 
 1. If any of the partitions found shows a list of files, highlight the partition and press *Space* (the highlight should turn green and there should be a *P* for primary partition or \* if you'd like it to be bootable) > *Enter* > *Write* > *Y*
 
+
 #### Recover filenames/folders from formatted/corrupted partitions
 If Testdisk was unable to recover the partition, you still may be able to get a list of the files on the drive if you have a Windows VM running in Virtualbox:
 1. Convert the disk image to a Virtualbox image file. See: [VirtualBox](https://sites.google.com/site/bmaupinwiki/home/applications/virtualization/virtualbox)

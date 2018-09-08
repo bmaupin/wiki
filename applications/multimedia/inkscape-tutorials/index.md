@@ -7,6 +7,7 @@ title: Inkscape/SVG tutorials
 1. Click on a color at the bottom for the fill color
 1. Find a color for the stroke (the edges) and right-click > *Set stroke*
 
+
 #### Set stroke (outline) width
 Right-click the object > *Fill and Stroke* > *Stroke style* > *Width*
 
@@ -17,9 +18,11 @@ Right-click the object > *Fill and Stroke* > *Stroke style* > *Width*
 1. The object's dimensions will be at the top of the screen. They can be changed to resize it.
 1. To lock the aspect ratio when resizing, click the lock at the top of the screen or hold down the Ctrl key and resize the image using the arrows around it.
 
+
 #### Group objects so they can be moved together
 1. Drag a box around the objects to group
 1. *Object* > *Group*
+
 
 #### Center objects within the page
 1. First, resize the page as desired
@@ -28,6 +31,7 @@ Right-click the object > *Fill and Stroke* > *Stroke style* > *Width*
 1. *Object* > *Align and Distribute*
 1. Check *Treat selection as group*
 1. Click *Center on vertical axis* and/or *Center on horizontal axis*
+
 
 #### Resize document to fit image
 *File* > *Document Properties* > expand *Resize page to content* > *Resize page to drawing or selection*
