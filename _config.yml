@@ -3,5 +3,6 @@ github:
     branch: master
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
 theme:
 title: My wiki
