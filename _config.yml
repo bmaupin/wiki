@@ -1,6 +1,11 @@
 github:
   source:
     branch: master
+# List of paths to ignore for things like subpage/menu listings
+paths_to_ignore:
+  - 404.md
+  - assets/css/style.scss
+  - index.md
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
