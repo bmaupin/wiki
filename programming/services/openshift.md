@@ -43,6 +43,13 @@ title: OpenShift Online v3
 
 
 
+## Secrets
+
+#### Configure SSH keys for a private Git repository
+[https://blog.openshift.com/private-git-repositories-part-2a-repository-ssh-keys/](https://blog.openshift.com/private-git-repositories-part-2a-repository-ssh-keys/)
+
+
+
 ## CLI reference
 
 #### Set up CLI tools
