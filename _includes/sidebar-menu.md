@@ -1,6 +1,6 @@
 {%- assign sorted_pages = site.pages | sort: 'url' -%}
 {%- for site_page in sorted_pages -%}
-  {%- if site_page.path != '404.md' and site_page.path != 'assets/css/style.scss' and site_page.path != 'index.md' -%}
+  {%- unless site.paths_to_ignore contains site_page.path -%}
     {% comment %} Don't show pages beginning with '/archive/' on the home page {% endcomment %}
     {%- assign first_url_segment = site_page.url | slice: 1, site_page.url.size | split: '/' | first -%}
     {%- unless first_url_segment == 'archive' -%}
@@ -10,6 +10,6 @@
         {% comment %} Indent links starting at the second level for a hierarchical page tree link list {% endcomment %}
         {%- for i in (2..url_segments.size ) -%}{{-"    "-}}{%- endfor -%}- [{{ site_page.title | default: directory_title }}]({{ site_page.url | relative_url }})
     {%- endunless %}
-  {%- endif %}
+  {%- endunless %}
 {% endfor -%}
 - [Archive]({{ '/archive/' | relative_url }})

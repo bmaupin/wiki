@@ -4,7 +4,7 @@
   {%- assign relative_subpage_url = site_page.url | remove_first: page.dir -%}
   {%- assign reconstructed_url = page.dir | append: relative_subpage_url -%}
   {%- if site_page.url == reconstructed_url and site_page.url != page.url -%}
-    {%- if site_page.path != '404.md' and site_page.path != 'assets/css/style.scss' and site_page.path != 'index.md' -%}
+    {%- unless site.paths_to_ignore contains site_page.path -%}
       {% comment %} Don't show pages beginning with '/archive/' on the home page {% endcomment %}
       {%- assign first_url_segment = site_page.url | slice: 1, site_page.url.size | split: '/' | first -%}
       {%- unless page.url == '/' and first_url_segment == 'archive' -%}
@@ -14,7 +14,7 @@
         {% comment %} Indent links starting at the second level for a hierarchical page tree link list {% endcomment %}
         {%- for i in (2..url_segments.size ) -%}{{-"    "-}}{%- endfor -%}- [{{ site_page.title | default: directory_title }}]({{ relative_subpage_url }})
       {%- endunless %}
-    {%- endif %}
+    {%- endunless %}
   {%- endif %}
 {% endfor %}
 {% if page.url == '/' %}
