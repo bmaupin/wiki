@@ -6,6 +6,8 @@ paths_to_ignore:
   - 404.md
   - assets/css/style.scss
   - index.md
+  - robots.txt
+  - sitemap.xml
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
