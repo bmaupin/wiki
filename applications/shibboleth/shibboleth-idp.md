@@ -43,44 +43,6 @@ On the local server:
     - This is the amount of time the IdP will internally store a session. This does not actually determine whether a user will have to log in again (that setting is idp.authn.defaultLifetime). idp.session.timeout must be at least as long as idp.authn.defaultLifetime
 
 
-#### Logging (IdP 2.x)
-[https://wiki.shibboleth.net/confluence/display/SHIB2/IdPLogging](https://wiki.shibboleth.net/confluence/display/SHIB2/IdPLogging)
-- edu.internet2.middleware.shibboleth
-    - DEBUG (very useful)
-        - Shows whether or not user authentication was successful
-        - Shows which attributes were found from LDAP and their values
-        - Shows LDAP connection error details
-        - Shows attribute resolution result
-        - Shows attribute filter result
-        - Shows whether assertions are encrypted or signed
-    - INFO (default)
-- org.opensaml
-    - DEBUG (useful for metadata/endpoint issues)
-        - Shows if metadata matching entity ID was found
-        - Shows endpoint matching results
-    - WARN (default)
-- edu.vt.middleware.ldap
-    - DEBUG (useful for general issues connecting to LDAP)
-        - Shows LDAP query information (bind, DN, filter, etc)
-    - INFO
-        - Shows if authentication failed
-    - WARN (default)
-- PROTOCOL_MESSAGE
-    - DEBUG (not super useful)
-        - Shows the actual XML protocol messages that are sent back and forth
-    - INFO (default)
-
-
-#### Shibboleth IdP 3.x features
-[http://www.incommon.org/docs/iamonline/20150311_IAMOnline.pptx](http://www.incommon.org/docs/iamonline/20150311_IAMOnline.pptx)
-- Improved clustering support
-- Improved upgrade process
-    - Simpler, maintains customizations
-- Easier UI and login customization
-- CAS protocol support
-- Improved error handling
-- Attribute release consent based on [uApprove](https://www.switch.ch/aai/support/tools/uapprove/)
-
 
 ## Fu
 
