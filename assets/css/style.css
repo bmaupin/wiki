@@ -19,6 +19,14 @@ h1, h2, h3 {
     font-family: "Roboto Slab","ff-tisa-web-pro","Georgia",Arial,sans-serif;
 }
 
+h1, h2, h3, h4 {
+    margin: 2em 0 0.5em;
+}
+
+h1:first-child {
+    margin-top: 0;
+}
+
 hr {
     height: 1px;
     border: 0;
@@ -48,8 +56,16 @@ pre {
     word-break: break-all;
 }
 
-.content li {
-    margin: 0 0 1em;
+.content ol, .content ul {
+    margin: 0;
+}
+
+.content ol > li {
+    margin: 0.5em 0 1em;
+}
+
+.content ul > li {
+    margin: 0.5em 0;
 }
 
 .nav-content {
