@@ -56,7 +56,7 @@ if [ "$LOCATION" == "home" ]; then
 - Spaces padding brackets and equals signs are required!
 - Use `[]` instead of `[[]]`
 - Always quote variable names, otherwise the script will crash if the variable isn't set
-- Use `==` for equality and `!=` for inequality for strings, -eq and -ne for integers. [Other comparison operators](http://tldp.org/LDP/abs/html/comparison-ops.html)
+- Use `==` for equality and `!=` for inequality for strings, `-eq` and `-ne` for integers. [Other comparison operators](http://tldp.org/LDP/abs/html/comparison-ops.html)
 
 
 

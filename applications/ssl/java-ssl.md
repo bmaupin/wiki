@@ -6,7 +6,7 @@ title: Java SSL (keytool)
 ```
 keytool -import -file ca-cert.pem -keystore /path/to/keystore -trustcacerts
 ```
-(`-trustcacerts` is important when adding a CA cert as it will add the CA cert to the keystore trust chain)
+- `-trustcacerts` is important when adding a CA cert as it will add the CA cert to the keystore trust chain
 - The root CA cert should be all that's necessary for Java cert verification; it doesn't seem to require the intermediate CA certs like OpenSSL does.
 
 
@@ -148,16 +148,18 @@ There are two methods:
         ```
 
         - Look for a `PrivateKeyEntry`, like this:
+            ```
             Alias name: importkey
             Creation date: 9-Dec-2015
             Entry type: PrivateKeyEntry
+            ```
 
     1. Convert the keystore
         ```
         keytool -importkeystore -srckeystore keystore.p12 -srcstoretype PKCS12 -srcstorepass PASSWORD -srcalias ALIAS -deststorepass PASSWORD -destkeypass PASSWORD -destkeystore keystore.jks
         ```
 
-        - **Note:** make sure you set deststorepass and destkeypass to the same value. If they're different, it will cause issues for certain applications, like Tomcat ([https://bz.apache.org/bugzilla/show_bug.cgi?id=38217](https://bz.apache.org/bugzilla/show_bug.cgi?id=38217))
+        - **Note:** make sure you set `-deststorepass` and `-destkeypass` to the same value. If they're different, it will cause issues for certain applications, like Tomcat ([https://bz.apache.org/bugzilla/show_bug.cgi?id=38217](https://bz.apache.org/bugzilla/show_bug.cgi?id=38217))
 
 - The short way
 
