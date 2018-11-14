@@ -24,6 +24,11 @@ Upgrade a dev dependency:
     npm install packagename@latest --save-dev
 
 
+#### List installed packages
+
+    npm ls
+
+
 
 ## Yarn
 
