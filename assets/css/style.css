@@ -46,6 +46,15 @@ pre {
     border-radius: 3px;
 }
 
+table {
+    border-collapse: collapse;
+}
+
+table td, table th {
+    border: 1px solid #e1e4e5;
+    padding: 8px 16px;
+}
+
 .breadcrumbs {
     display: flex;
     flex-flow: row wrap;
