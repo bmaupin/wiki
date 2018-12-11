@@ -43,6 +43,26 @@ title: OpenShift v3
 
 
 
+## Builds
+
+#### Get webhook URL
+
+1. Using `oc`, get the build configuration
+
+    ```
+    oc describe buildconfig
+    ```
+
+2. Look for *Webhook GitHub* or *Webhook Generic* and copy the URL
+
+3. In the OpenShift web interface, go to *Applications* > *Builds* > click the build for your application > *Actions* > *Edit* > *Show advanced options*
+
+4. Scroll down to *Triggers* > click the toggle button next to the secret for the webhook (GitHub or Generic) > copy the secret
+
+5. Replace the secret in the webhook URL with the secret you copied and configure it in your Git/build server as desired
+
+
+
 ## Secrets
 
 #### Configure SSH keys for a private Git repository
