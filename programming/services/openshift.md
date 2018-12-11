@@ -1,5 +1,5 @@
 ---
-title: OpenShift Online v3
+title: OpenShift v3
 ---
 
 
@@ -94,16 +94,26 @@ In the web interface click *?* > *Command Line Tools* and copy the line starting
 #### Delete an app
 Note: this can be done from the Web UI, you'd just have to delete all the components individually
 
-1. Delete everything except secrets and persistent volume claims
+1. Get the label for the app you want to delete by listing the deployment configs (look in the `LABELS` column)
 
-        oc get all 2>&1 | grep APPNAME | awk '{print $1}' | xargs -i -t oc delete {}
+    ```
+    oc get dc --show-labels
+    ```
 
-2. Delete secrets and persistent volume claims
+2. Delete the app by deleting everything with that label
 
-        oc get secrets
-        oc delete secrets ...
-        oc get pvc
-        oc delete pvc ...
+    ```
+    oc delete all -l app=APPLABEL
+    ```
+
+3. Delete secrets and persistent volume claims
+
+    ```
+    oc get secrets
+    oc delete secrets ...
+    oc get pvc
+    oc delete pvc ...
+    ```
 
 
 
