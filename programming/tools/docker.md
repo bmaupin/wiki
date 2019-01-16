@@ -29,10 +29,9 @@ docker container stop CONTAINER_NAME_OR_ID
 ```
 
 
-#### Clean up containers
-This will delete all stopped containers (typically this is safe since the associated images won't be affected):
+#### Delete a container
 ```
-docker container prune
+docker container rm CONTAINER_NAME_OR_ID
 ```
 
 
@@ -45,12 +44,11 @@ docker image ls
 ```
 
 
-#### Delete an image
+#### Clean up images
+This will delete all images that don't have an associated container (you may want to delete any unused containers first--see above)
 ```
-docker image rm IMAGE_ID
+docker image prune -a
 ```
-
-If the image is associated with a container, you may need to delete the container first. One quick way to do this is to use `docker container prune` (see above).
 
 
 
