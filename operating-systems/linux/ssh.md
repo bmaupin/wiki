@@ -1,0 +1,45 @@
+---
+title: SSH
+---
+
+## Troubleshooting
+
+#### Terminal prompts for SSH passphrase instead of GNOME Keyring
+
+1. Make sure public keys are named correctly
+
+    **Note**: If public keys in ~/.ssh don't end with a .pub extension, they won't be picked up by ssh-agent upon login.
+
+    ```
+    $ ls -1 ~/.ssh/*.pub
+    google_compute_engine.pub
+    id_rsa.somethingelse.pub
+    id_rsa.pub
+    ```
+
+1. Ensure files and folders have proper permissions
+
+    1. Make sure the .ssh folder has proper permissions
+        ```
+        chmod 700 ~/.ssh
+        ```
+
+    1. Make sure each private key has proper permissions
+
+        ```
+        chmod 600 ~/.ssh/id_rsa
+        ```
+
+        (Do the same for any other private SSH keys in ~/.ssh)
+
+    1. Make sure each private key has proper permissions
+
+        ```
+        chmod 644 ~/.ssh/*.pub
+        ```
+
+1. Log out and log back in
+
+1. All keys in ~/.ssh should be automatically picked up and added to ssh-agent
+
+    Verify using `ssh-add -l` or `ssh-add -L`
