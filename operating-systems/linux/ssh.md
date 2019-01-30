@@ -6,14 +6,14 @@ title: SSH
 
 #### Terminal prompts for SSH passphrase instead of GNOME Keyring
 
-1. Make sure public keys are named correctly
+1. Make sure public key filenames are correct
 
-    **Note**: If public keys in ~/.ssh don't end with a .pub extension, they won't be picked up by ssh-agent upon login.
+    **Note**: Public key filenames should be equal to the private key filename plus a .pub extension, otherwise they won't be picked up by ssh-agent upon login.
 
     ```
     $ ls -1 ~/.ssh/*.pub
     google_compute_engine.pub
-    id_rsa.somethingelse.pub
+    id_rsa.github.pub
     id_rsa.pub
     ```
 
@@ -37,6 +37,13 @@ title: SSH
         ```
         chmod 644 ~/.ssh/*.pub
         ```
+
+1. Set up ~/.ssh/config so the correct private key will be used for a particular host
+
+    ```
+    Host github.com
+        IdentityFile ~/.ssh/id_rsa.github
+    ```
 
 1. Log out and log back in
 
