@@ -11,6 +11,10 @@ title: Apache Tomcat
     - This points to where the Tomcat binaries are located
 
 The environment variables are normally set in the startup scripts for Tomcat
+- RHEL 7:
+    - See: /etc/tomcat/tomcat.conf
+- RHEL 6:
+    - See: /etc/tomcat6/tomcat6.conf
 
 #### Undeploy (delete) a deployed Tomcat application
 RHEL 6:
