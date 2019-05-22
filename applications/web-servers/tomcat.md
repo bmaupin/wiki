@@ -3,10 +3,10 @@ title: Apache Tomcat
 ---
 
 #### Environment variables
-- CATALINA_BASE
-    - The root of a particular Tomcat instance (the same as $CATALINA_HOME if multiple instances aren't configured)
+- `CATALINA_BASE`
+    - The root of a particular Tomcat instance (the same as `$CATALINA_HOME` if multiple instances aren't configured)
     - This points to the location of configuration files, logs, startup scripts, web apps, and work/temp folders
-- CATALINA_HOME
+- `CATALINA_HOME`
     - The root of your Tomcat installation
     - This points to where the Tomcat binaries are located
 
@@ -16,9 +16,10 @@ The environment variables are normally set in the startup scripts for Tomcat
 - RHEL 6:
     - See: /etc/tomcat6/tomcat6.conf
 
+
 #### Undeploy (delete) a deployed Tomcat application
 RHEL 6:
-1. Set CATALINA_BASE and CATALINA_HOME
+1. Set `CATALINA_BASE` and `CATALINA_HOME`
     ```
     source /etc/tomcat6/tomcat6.conf
     ```
@@ -63,6 +64,7 @@ RHEL 6:
             sudo cp /opt/shibboleth-idp/war/idp.war /opt/shibboleth-idp/war/idp.war-`date +%Y%m%d`
             ```
 
+
 #### Update a deployed Tomcat application
 1. Undeploy the old WAR file
     1. See above
@@ -89,3 +91,32 @@ RHEL 6:
             ```
             ls -l $CATALINA_HOME/work/Catalina/localhost/idp/
             ```
+
+
+#### Customizing application context
+1. Copy the filename of the application's WAR file from $CATALINA_BASE/webapps (e.g. myApp.war)
+
+1. Create a new context fragment file in $CATALINA_HOME/conf/Catalina/localhost
+    - Use the same filename as the war file, but replace the .war extension with .xml (e.g. myApp.xml)
+
+1. Add the xml header and an empty `<Context>` element
+
+    ```xml
+    <?xml version="1.0"?>
+    <Context>
+    </Context>
+    ```
+
+1. Add any customizations as desired
+
+    ```xml
+    <Context swallowOutput="true">
+        <WatchedResource>...
+    ```
+
+1. If this is a new context file, it should automatically be picked up and applied by Tomcat. Otherwise, Tomcat may need
+to be restarted
+
+    ```
+    sudo systemctl restart tomcat
+    ```
