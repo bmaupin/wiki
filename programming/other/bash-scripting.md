@@ -203,6 +203,15 @@ export https_proxy=http://proxy.example.org:3128/
 ```
 
 
+#### curl
+- Prefer curl to wget since curl will nearly always be present while wget may not be
+- Use `-s` to hide the progress bar:
+
+    ```
+    curl -s ...
+    ```
+
+
 #### telnet
 ```
 sleep 0 | telnet server.example.org 22 || true
