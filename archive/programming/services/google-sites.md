@@ -9,7 +9,7 @@ Template tips: [http://sites.google.com/site/sitetemplateinfo/](http://sites.goo
 (from [http://www.google.com/support/forum/p/sites/thread?tid=585c5ec8c9010383&hl=en#fid_585c5ec8c901038300048bdfbedb5cd7](http://www.google.com/support/forum/p/sites/thread?tid=585c5ec8c9010383&hl=en#fid_585c5ec8c901038300048bdfbedb5cd7))
 
 1. log in, edit the page you wish to add the comments box to
-2. Insert --> More Gadgets
+2. Insert > More Gadgets
 3. search for "code wrapper"
 4. paste the code from here: 
 

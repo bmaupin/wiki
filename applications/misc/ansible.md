@@ -89,7 +89,7 @@ Register the result of a command to a variable. The variable is a dict that has 
 #### [run_once](http://docs.ansible.com/ansible/playbooks_delegation.html#run-once)
 Only run the task once per play.
 
-**Note:** this will always run on the first host in the play, which may change if you use --limit. To make sure it always runs on one specific host, use run_once with delegate_to.
+**Note:** this will always run on the first host in the play, which may change if you use `--limit`. To make sure it always runs on one specific host, use run_once with delegate_to.
 
 
 #### [when](http://docs.ansible.com/ansible/playbooks_conditionals.html#the-when-statement)
