@@ -13,7 +13,7 @@ title: SLAMD
 
     - Ubuntu:
         1. Enable "partner" repository
-            - System --> Administration --> Software Sources --> Other Software --> (check partner) --> Close
+            - System > Administration > Software Sources > Other Software > (check partner) > Close
             - Or uncomment partner lines in /etc/apt/sources.list
 
         2. ```sudo aptitude install sun-java6-jre```
@@ -102,7 +102,7 @@ title: SLAMD
 
 
 #### Schedule a job
-1. Browse to the SLAMD server --> Manage Jobs --> Schedule a Job
+1. Browse to the SLAMD server > Manage Jobs > Schedule a Job
 2. Select a job type
 3. Specify either a stop time or a duration (in seconds)
 4. Specify the number of clients to use for the job

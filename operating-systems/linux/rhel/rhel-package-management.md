@@ -20,20 +20,20 @@ sudo yum install [package name]
 #### To install a downloaded package:
 
 ```
-sudo rpm –iv [package name]
+sudo rpm -iv [package name]
 ```
 
 Ex:
 
 ```
-sudo rpm –iv samba.rpm
+sudo rpm -iv samba.rpm
 ```
 
 
 #### To search for installed packages:
 
 ```
-rpm –qi [package name]
+rpm -qi [package name]
 ```
 
 

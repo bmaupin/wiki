@@ -81,7 +81,7 @@ dpkg -r PACKAGENAME
 
 #### Install a downloaded package
 ```
-sudo dpkg –i PACKAGE.deb
+sudo dpkg -i PACKAGE.deb
 ```
 
 

@@ -27,7 +27,7 @@ less openldap-X.X.X/README
     [http://www.openldap.org/doc/admin/appendix-recommended-versions.html](http://www.openldap.org/doc/admin/appendix-recommended-versions.html)
 
 5. Build Berkeley DB
-    - **Note:** we used to build this from source because many distros provide an older version of Berkeley DB, and newer versions generally provide better performance. At this point, OpenLDAP is shifting to using the mdb backend instead of bdb/hdb. You still may need to build from source if it isn't built with the correct flags for OpenLDAP (--enable-posixmutexes --with-mutex=POSIX/pthreads), but you can probably stick with an older known stable version, such as 4.7.25 or 4.8.30. note that two of the primary OpenLDAP developers have been using 4.7.25 (plus patches) for years:
+    - **Note:** we used to build this from source because many distros provide an older version of Berkeley DB, and newer versions generally provide better performance. At this point, OpenLDAP is shifting to using the mdb backend instead of bdb/hdb. You still may need to build from source if it isn't built with the correct flags for OpenLDAP (`--enable-posixmutexes --with-mutex=POSIX/pthreads`), but you can probably stick with an older known stable version, such as 4.7.25 or 4.8.30. note that two of the primary OpenLDAP developers have been using 4.7.25 (plus patches) for years:
     [http://www.openldap.org/its/index.cgi/Incoming?id=7378#followup8](http://www.openldap.org/its/index.cgi/Incoming?id=7378#followup8)
 
     1. First figure out whether you need to build Berkeley DB or can use the version provided by your distro
