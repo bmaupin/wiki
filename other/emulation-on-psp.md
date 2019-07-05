@@ -2,6 +2,14 @@
 title: Emulation on PSP
 ---
 
+**Note:** Some of these emulators may be outdated or unmaintained. Before installing
+any particular emulator, check these resources to see what the current recommendations
+are:
+
+- [Emulators List - 2019](http://wololo.net/talk/viewtopic.php?f=47&t=44039)
+- [Emulators on PSP](http://emulation.gametechwiki.com/index.php/Emulators_on_PSP)
+
+
 ## RetroArch (Game Boy, NES, Genesis, Game Gear, etc.)
 
 #### Install RetroArch
@@ -41,9 +49,9 @@ title: Emulation on PSP
 
 
 
-## gpSP (Game Boy Advance)
+## ~~gpSP mod (Game Boy Advance)~~
 
-#### Install gpSP
+#### Install gpSP mod
 
 1. Download gpSP mod 20090720
 
@@ -56,7 +64,7 @@ title: Emulation on PSP
 1. Download a GBA BIOS and copy it to /PSP/GAME/gpSP_mod/gba_bios.bin
 
 
-#### gpSP notes
+#### gpSP mod notes
 
 - Copy all ROMs to /PSP/GAME/gpSP_mod/roms/
 
@@ -66,17 +74,18 @@ title: Emulation on PSP
 #### Different gpSP versions
 
 More info
-- [http://emulation.gametechwiki.com/index.php/GpSP](http://emulation.gametechwiki.com/index.php/GpSP)
-- [https://github.com/bibanon/android-development-codex/wiki/gPSP](https://github.com/bibanon/android-development-codex/wiki/gPSP)
+- ~~[http://emulation.gametechwiki.com/index.php/GpSP](http://emulation.gametechwiki.com/index.php/GpSP)~~ (the info in this link is outdated)
+- ~~[https://github.com/bibanon/android-development-codex/wiki/gPSP](https://github.com/bibanon/android-development-codex/wiki/gPSP)~~ (the info in this link is outdated)
 
 Mirrors
-- [Mirror for original gpSP source](https://github.com/BASLQC/gPSP)
-    - Another mirror: [https://github.com/cedricwaltercson/gpsp](https://github.com/cedricwaltercson/gpsp)
+- ~~[Source for gpSP mod 20090720](http://web.archive.org/web/20100114113349/http://www.csync.net/service/file/view.cgi?id=1248059846)~~ (the link is no longer valid)
+- [Mirror for gpSP mod 20090329](https://github.com/BASLQC/gPSP-mod)
+    - Based on gpSP kai with improvements
 - [Mirror for gpSP kai](https://github.com/uberushaximus/gpsp-kai)
     - Based on original gpSP
     - [Original repo](https://osdn.net/projects/gpsp-kai/scm/svn/tree/head/trunk/)
-- [Mirror for gpSP mod 20090329](https://github.com/BASLQC/gPSP-mod)
-    - Based on gpSP kai with improvements
+- [Mirror for original gpSP source](https://github.com/BASLQC/gPSP)
+    - Another mirror: [https://github.com/cedricwaltercson/gpsp](https://github.com/cedricwaltercson/gpsp)
 
 
 
@@ -124,12 +133,3 @@ Use this for N64 emulation:
 Use this for Nintendo DS emulation:
 
 [https://github.com/TheMrIron2/DeSmuME-PSP](https://github.com/TheMrIron2/DeSmuME-PSP)
-
-
-
-## Misc
-
-#### References
-
-- [Emulators on PSP](http://emulation.gametechwiki.com/index.php/Emulators_on_PSP)
-- [List of All PSP Emulators](http://ky0uza.blogspot.com/2016/01/list-of-all-psp-emulator.html)
