@@ -28,6 +28,7 @@ are:
 #### RetroArch notes
 
 - Don't use RetroArch for SNES or GBA games. See below for alternative options.
+    - For GBA games, the mGBA core runs way too slowly. TempGBA works but the sound is crackly and it requires a BIOS to be copied to /PSP/RETROARCH/SYSTEM/gba_bios.bin
 - To return to the RetroArch menu while in a game, press and hold Start for a few seconds
     - To change this, go to *Settings* > *Input* > *Menu Toggle Gamepad Combo*
 - By default, O button is select, X is cancel
@@ -46,6 +47,27 @@ are:
 1. Extract the s9xTYLme_mod folder from the archive to /PSP/GAME/ on your PSP
 
     - For example, you should see this file on your PSP: /PSP/GAME/s9xTYLme_mod/EBOOT.PBP
+
+
+
+## TempGBA4PSP-mod (Game Boy Advance)
+
+#### Install TempGBA4PSP-mod
+
+1. Download TempGBA4PSP-mod
+
+    [https://github.com/phoe-nix/TempGBA4PSP-mod/releases](https://github.com/phoe-nix/TempGBA4PSP-mod/releases)
+
+1. Extract the TempGBA folder in the archive to /PSP/GAME/ on your PSP
+
+    - For example, you should see this file on your PSP: /PSP/GAME/TempGBA/EBOOT.PBP
+
+
+#### TempGBA4PSP-mod mod notes
+
+- Copy all ROMs to /PSP/GAME/TempGBA/roms/
+
+- O button is select, X is cancel
 
 
 
