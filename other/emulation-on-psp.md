@@ -113,8 +113,11 @@ Mirrors
 
 ## VICE (Commodore 64)
 
-**NOTE:** Loading games in VICE is very slow and can take several minutes. Be patient. Even if it seems to be frozen
-it's probably still loading.
+**NOTE:** Loading games in VICE can take several minutes with true drive emulation enabled (the default). Disabling true
+drive emulation can help drastically speed up loading times at the risk of compatibility issues (*System* >
+*True drive emulation* > *Disabled*)
+
+More info: [http://vice-emu.sourceforge.net/vice_2.html#SEC15](http://vice-emu.sourceforge.net/vice_2.html#SEC15)
 
 
 #### Install VICE
@@ -139,7 +142,6 @@ it's probably still loading.
     1. Hold the right trigger button
     1. Move to the key you'd like to select
     1. Press □ to select the key
-
 
 
 ## DaedalusX64 (N64)
