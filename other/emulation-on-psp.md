@@ -8,6 +8,7 @@ are:
 
 - [Emulators List - 2019](http://wololo.net/talk/viewtopic.php?f=47&t=44039)
 - [Emulators on PSP](http://emulation.gametechwiki.com/index.php/Emulators_on_PSP)
+- [Emulation General wiki](http://emulation.gametechwiki.com/index.php/Main_Page)
 
 
 ## RetroArch (Game Boy, NES, Genesis, Game Gear, etc.)
