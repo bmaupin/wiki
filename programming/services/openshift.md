@@ -114,20 +114,17 @@ In the web interface click *?* > *Command Line Tools* and copy the line starting
 #### Delete an app
 Note: this can be done from the Web UI, you'd just have to delete all the components individually
 
-1. Get the label for the app you want to delete by listing the deployment configs (look in the `LABELS` column)
-
+1. Get the label for the app you want to delete (look in the `LABELS` column)
     ```
-    oc get dc --show-labels
+    oc get all --show-labels
     ```
 
 2. Delete the app by deleting everything with that label
-
     ```
     oc delete all -l app=APPLABEL
     ```
 
 3. Delete secrets and persistent volume claims
-
     ```
     oc get secrets
     oc delete secrets ...
