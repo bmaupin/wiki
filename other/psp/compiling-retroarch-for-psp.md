@@ -66,6 +66,7 @@ title: Compiling RetroArch for PSP
 1. Copy the core library into the RetroArch repo
 
     ```
+    rm ../retroarch/dist-scripts/*_psp1.a
     cp *_psp1.a ../retroarch/dist-scripts
     cd ..
     ```
