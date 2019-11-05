@@ -123,3 +123,19 @@ Refer to the previous section with the following differences:
 
     - retroarch/retroarchpsp.elf
     - retroarch/retroarchpsp.prx
+
+1. Edit retroarch.cfg so RetroArch can find the core when debugging
+
+    On the PSP, edit PSP/RETROARCH/retroarch.cfg and change these two lines:
+
+    ```
+    libretro_directory = "ms0:/PSP/GAME/RetroArch/CORES"
+    libretro_info_path = "ms0:/PSP/GAME/RetroArch/INFO"
+    ```
+
+    To this:
+
+    ```
+    libretro_directory = "host0:/CORES"
+    libretro_info_path = "host0:/INFO"
+    ```
