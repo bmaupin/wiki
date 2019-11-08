@@ -111,6 +111,16 @@ Mirrors
     - Another mirror: [https://github.com/cedricwaltercson/gpsp](https://github.com/cedricwaltercson/gpsp)
 
 
+## PicoDrive (Master System, Game Gear, Genesis/Mega Drive)
+
+1. Download PicoDrive
+
+    [http://notaz.gp2x.de/releases/PicoDrive/PicoDrive_psp_151b.zip](http://notaz.gp2x.de/releases/PicoDrive/PicoDrive_psp_151b.zip)
+
+1. Extract the PicoDrive folder from the archive to /PSP/GAME/ on your PSP
+
+    - For example, you should see this file on your PSP: /PSP/GAME/PicoDrive/EBOOT.PBP
+
 
 ## VICE (Commodore 64)
 
