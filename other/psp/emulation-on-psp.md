@@ -135,7 +135,9 @@ More info: [http://vice-emu.sourceforge.net/vice_2.html#SEC15](http://vice-emu.s
 
 1. Download VICE PSP v2
 
-    [https://psp.akop.org/vice.htm](https://psp.akop.org/vice.htm) > *2.00 and above*
+    ~~[https://psp.akop.org/vice.htm](https://psp.akop.org/vice.htm) > *2.00 and above*~~
+
+    [https://github.com/rsn8887/pspvice/releases](https://github.com/rsn8887/pspvice/releases)
 
 1. Extract the vice folder in the archive to /PSP/GAME/ on your PSP
 
