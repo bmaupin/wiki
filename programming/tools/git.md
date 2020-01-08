@@ -17,6 +17,45 @@ git push origin --delete BRANCH_NAME
 
 
 
+## Stash
+
+#### Stash all uncommitted files with a description
+```
+git stash save "DESCRIPTION"
+```
+
+
+#### Restore the most recent stash and remove it from the list of stashes
+```
+git stash pop
+```
+
+
+#### Restore the most recent stash and keep it in the list of stashes
+```
+git stash apply
+```
+
+
+#### Restore a specific stash
+1. List all available saved stashes
+    ```
+    git stash list
+    ```
+
+1. Restore the stash
+    - Restore the stash and remove it from the list of stashes
+        ```
+        git stash pop stash@{INDEX}
+        ```
+
+    - Restore the stash and keep it in the list of stashes
+        ```
+        git stash apply stash@{INDEX}
+        ```
+
+
+
 ## Other
 
 #### Interactive rebasing/squashing
