@@ -2,109 +2,158 @@
 title: JavaScript async
 ---
 
-## General
+## Quick reference
 
 #### Gotchas
-- Don't use async/await in a forEach loop. Just use a regular for loop ([https://stackoverflow.com/a/37576787/399105](https://stackoverflow.com/a/37576787/399105))
+- Don't use `await `inside a Promise constructor. Make the function that handles the Promise `async` or use `.then`
+([https://eslint.org/docs/rules/no-async-promise-executor](https://eslint.org/docs/rules/no-async-promise-executor))
+- Don't use `throw` inside a Promise constructor; use `reject`
+([https://stackoverflow.com/a/33446005/399105](https://stackoverflow.com/a/33446005/399105))
+- Don't use `async`/`await` in a forEach loop. Just use a regular for loop
+([https://stackoverflow.com/q/37576685/399105](https://stackoverflow.com/q/37576685/399105))
 
-#### [async](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) (ES8)
+
+#### [async](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) (ES2017)
 - Functions marked as `async` return a Promise implicitly (using the return keyword)
 - If a function returns a promise explicitly (`return new Promise...`) it doesn't need to be marked as `async`
 - Prefer the use of `async` to returning a Promise explicitly when possible
 
-#### [await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await) (ES8)
+
+#### [await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await) (ES2017)
 - The `await` operator is used to wait for a Promise
 - It can only be used inside an `async` function
+
 
 #### [.then](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise/then) (ES6)
 - Used after calling a function that returns a Promise
 - Prefer `await` to `.then` when possible
 
+
 #### [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise) (ES6)
 - Prefer `async` to returning a Promise when possible
-- Returning a Promise explicitly may be needed in certain situations, such as handling onload/onerror events or with functions that only use callbacks (you can call resolve() in the callback to return a Promise)
+- Only use Promises in situations where you can't use `async`/`await`, e.g.:
+    - Use the Promise constructor to wrap callback/asynchronous functions that do not already support promises/`async`
+    - Use `.then` to call an `async` function (or function that returns a Promise) when you can't make that function
+    `async`
 
 
 
-## Async/await (ES8, preferred)
-**Important:** since async/await is based on Promises, you must understand Promises first. See below for more.
+## Async/await (ES2017, preferred)
+**Important:** async/await is merely syntactic sugar for Promises, so you must understand Promises first. See below for
+more information.
 
-#### Creating an async function
-Use `async` when possible:
+#### `async`
+`async` is syntactic sugar used to create a function which implicitly returns a Promise:
 
-    async function returnPromise() {
-      // ...
-    }
+```javascript
+async function returnPromise() {
+  // ...
+}
+```
+
+
+#### Throwing an error inside an async function
+Use `throw` as you would with synchronous code
 
 
 #### Calling an async function
-Use await
+Use `await` (**Note:** As mentioned above, `await` can only be used inside an `async` function. To call an async function from a
+non-async function you must use `.then` (see below under Promises))
 
-    await value = returnPromise();
+```javascript
+value = await returnPromise();
+```
+
+
+#### Catching errors
+Use `try`/`catch` as you would with synchronous code
+
+```javascript
+try {
+  await doSomething();
+} catch {
+  // ...
+}
+```
 
 
 
 ## Promises (ES6)
 [https://developer.mozilla.org/docs/Web/JavaScript/Guide/Using_promises](https://developer.mozilla.org/docs/Web/JavaScript/Guide/Using_promises)
 
-#### Creating a Promise
+#### Creating a Promise using the Promise constructor
 **Note:** using `async` is preferred. See above for more information.
 
-    function returnPromise() {
-      return new Promise((resolve, reject) => {
-        if (successCondition) {
-          resolve(valueToReturnOnSuccess);
-        } else {
-          reject(messageToReturnOnFailure);
-        }
-      });
+```javascript
+function returnPromise() {
+  return new Promise((resolve, reject) => {
+    if (successCondition) {
+      resolve(valueToReturnOnSuccess);
+    } else {
+      reject(messageToReturnOnFailure);
     }
+  });
+}
+```
 
-Calling reject() is optional; if any exceptions are encountered, the Promise rejection will be automatically handled:
+Calling `reject` is optional; if any exceptions are encountered, the Promise rejection will be automatically handled:
 
-    function returnPromise() {
-      return new Promise(resolve => {
-        if (successCondition) {
-          resolve(valueToReturnOnSuccess);
-        }
-      });
+```javascript
+function returnPromise() {
+  return new Promise(resolve => {
+    if (successCondition) {
+      resolve(valueToReturnOnSuccess);
     }
+  });
+}
+```
+
+
+#### Throwing errors in Promises
+
+Use `reject` as detailed above. Do not use `throw` ([https://stackoverflow.com/a/33446005/399105](https://stackoverflow.com/a/33446005/399105))
 
 
 #### Using a Promise
 **Note:** using `await` is preferred. See above for more information.
 
-Use `then`:
+Use `.then`:
 
-    let promise = returnPromise();
-    promise.then(successValue => {
-      // fulfillment
-    }, errorMessage => ) {
-      // rejection
-    });
-
-If you don't explicitly handle the error, it will be thrown as an exception:
-
-    promise.then(successValue => {
-      // fulfillment
-    });
+```javascript
+promise().then(value => {
+  // do something with value
+});
+```
 
 
+#### Catching errors
 
-## Error handling
+If you don't explicitly handle errors when using `.then`, they will be passed to the calling function (similarly to
+what happens with synchronous code when you don't handle errors).
 
-#### await by itself
-If you use await to handle a Promise, it functions just like synchronous code (with one exception below)
+If you do wish to explicitly handle errors, use `.catch` (here's why:
+[https://stackoverflow.com/a/24663315/399105](https://stackoverflow.com/a/24663315/399105)):
 
-- try/catch can be used to catch errors
-- If try/catch aren't used, errors will continue to be passed up the stack as normal for synchronous code
+```javascript
+promise()
+  .then(value => {
+    return value;
+  })
+  .catch(reason => {
+    return reason;
+  });
+```
 
-Exception:
-If you use await within an asynchronous callback inside a Promise, throw() won't be caught by the Promise as a rejection. The solution is to wrap all async code inside Promises, then you don't need to worry about this.
 
 
-#### .then
-If you use `.then` to handle a promise, you must explicitly handle errors
+#### [`Promise.all`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
+
+You can use `Promise.all` to fulfill an array of promises asynchronously. The easiest way to call `Promise.all` is to
+use `await`:
+
+```javascript
+await Promise.all(arrayOfPromises);
+```
 
 
 
@@ -113,14 +162,14 @@ If you use `.then` to handle a promise, you must explicitly handle errors
 #### Using await to call a function that returns a Promise
 [https://stackoverflow.com/a/39914235/399105](https://stackoverflow.com/a/39914235/399105)
 
-    function sleep(ms) {
-      return new Promise(resolve => setTimeout(resolve, ms));
-    }
+```javascript
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-    async function demo() {
-      console.log('Taking a break...');
-      await sleep(2000);
-      console.log('Two seconds later');
-    }
-
-    demo();
+async function demo() {
+  console.log('Taking a break...');
+  await sleep(2000);
+  console.log('Two seconds later');
+}
+```
