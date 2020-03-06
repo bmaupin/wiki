@@ -16,6 +16,8 @@ are:
 
 #### System support
 
+[http://emulation.gametechwiki.com/index.php/Emulators_on_PSP#RetroArch](http://emulation.gametechwiki.com/index.php/Emulators_on_PSP#RetroArch)
+
 - Game Boy/Game Boy Color: Use Gambatte
 - GBA: Use gpSP (faster) or TempGBA (higher compatibility)
     - Download a GBA BIOS and copy it to /PSP/RETROARCH/SYSTEM/gba_bios.bin (MD5: `a860e8c0b6d573d191e4ec7db1b1e4f6`)
