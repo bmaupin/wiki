@@ -11,6 +11,7 @@ are:
 - [Emulation General wiki](http://emulation.gametechwiki.com/index.php/Main_Page)
 
 
+
 ## RetroArch
 
 #### System support
@@ -98,19 +99,12 @@ More info: [http://vice-emu.sourceforge.net/vice_2.html#SEC15](http://vice-emu.s
     1. Press □ to select the key
 
 
+
 ## DaedalusX64 (N64)
 
 Use this for N64 emulation:
 
 [https://github.com/DaedalusX64/daedalus](https://github.com/DaedalusX64/daedalus)
-
-
-
-## DeSmuME-PSP (Nintendo DS)
-
-Use this for Nintendo DS emulation:
-
-[https://github.com/TheMrIron2/DeSmuME-PSP](https://github.com/TheMrIron2/DeSmuME-PSP)
 
 
 
