@@ -50,10 +50,7 @@ title: PSP debugging (PSPLink)
 1. Debug
     1. In a **third terminal**, start gdb on the .elf file you want to debug
         ```
-        $ docker container exec -it $(docker container ls | grep usbhostfs_pc | awk '{print $1}') bash
-        ```
-        ```
-        # psp-gdb retroarchpsp.elf
+        $ docker container exec -it $(docker container ls | grep usbhostfs_pc | awk '{print $1}') psp-gdb retroarchpsp.elf
         ```
         ```
         (gdb) target remote :10001
