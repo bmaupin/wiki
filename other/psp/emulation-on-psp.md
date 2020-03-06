@@ -30,6 +30,9 @@ are:
 
 - Don't use RetroArch for SNES or GBA games. See below for alternative options.
     - For GBA games, the mGBA core runs way too slowly. TempGBA works but the sound is crackly and it requires a BIOS to be copied to /PSP/RETROARCH/SYSTEM/gba_bios.bin
+- For Sega Master System, Game Gear, Genesis/Mega Drive, use Picodrive
+    - In the core options, set the renderer to fast if needed to improve performance
+    - In the core options, you can also set the sound quality to a lower value to improve performance
 - To return to the RetroArch menu while in a game, press and hold Start for a few seconds
     - To change this, go to *Settings* > *Input* > *Menu Toggle Gamepad Combo*
 - By default, O button is select, X is cancel
@@ -72,7 +75,7 @@ are:
 
 
 
-## ~~gpSP mod (Game Boy Advance)~~
+## ~~gpSP mod (Game Boy Advance)~~ (Use RetroArch)
 
 #### Install gpSP mod
 
@@ -111,7 +114,7 @@ Mirrors
     - Another mirror: [https://github.com/cedricwaltercson/gpsp](https://github.com/cedricwaltercson/gpsp)
 
 
-## PicoDrive (Master System, Game Gear, Genesis/Mega Drive)
+## ~~PicoDrive (Master System, Game Gear, Genesis/Mega Drive)~~ (Use RetroArch)
 
 1. Download PicoDrive
 
