@@ -17,6 +17,39 @@ title: Oracle
 [https://gist.github.com/bmaupin/ad02e5b4a17abfc662d61664bced2773](https://gist.github.com/bmaupin/ad02e5b4a17abfc662d61664bced2773)
 
 
+#### Using the OCI/thick client
+
+1. Install the Oracle client (see above)
+
+1. Close SQL Developer
+
+1. Run this command to configure `java.library.path`
+
+    ```
+    echo "AddVMOption -Djava.library.path=/usr/lib/oracle/12.1/client64/lib" >> ~/.sqldeveloper/19.4.0/product.conf
+    ```
+    
+    Change the paths as necessary
+
+1. Open SQL Developer
+
+1. *Tools* > *Preferences* > *Database* > *Advanced*
+
+1. Check *Use Oracle Client*
+
+1. *Configure*
+
+    1. *Client Type* > *Instant Client*
+    
+    1. *Client Location*: /usr/lib/oracle/12.1/client64/lib
+    
+    1. Click *Test* and make sure there are no errors
+    
+    1. Click *OK*
+    
+1. Check *Use OCI/Thick driver*, *OK*
+
+
 #### Viewing tables
 
 1. In the *Connections* view on the left, expand *Tables* under the applicable database connection
