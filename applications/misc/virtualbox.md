@@ -113,15 +113,7 @@ If that isn't an option:
 1. Set the second network adapter for the VM to Host-only Adapter
     1. *Adapter 2* > check *Enable Network Adapter* > *Attached to* > *Host-only Adapter* > *OK*
         - If *OK* is greyed out and you see *Invalid settings detected*:
-            1. *Cancel* > *File* > *Preferences* > *Network* > *Host-only Networks*
-
-            1. Click the + button on the right to add a new host-only network > *OK*
-
-            1. Select the new host-only network (vboxnet0 by default) and click the *Edit* button on the right > DHCP Server > check Enable Server
-                - Server Address: 192.168.56.100
-                - Server Mask: 255.255.255.0
-                - Lower Address Bound: 192.168.56.101
-                - Upper Address Bound: 192.168.56.254
+            1. *Cancel* > *File* > *Host Network Manager* > *Create* > *Close*
 
             1. Repeat the above instructions to add a new network adapter to the newly created VM
 
