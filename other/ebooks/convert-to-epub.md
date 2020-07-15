@@ -32,8 +32,8 @@ Use [dotEPUB](http://dotepub.com/)
 3. It's best to edit the paragraphs so there's spacing between them. In LibreOffice:
     1. *Edit* > *Select All*
     2. *Format* > *Paragraph*
-    3. *Spacing* > *Above paragraph* > 0.19"
-    4. *Spacing* > *Below paragraph* > 0.19" > *OK*
+    3. *Spacing* > *Above paragraph* > 0.50 cm (or 0.19")
+    4. *Spacing* > *Below paragraph* > 0.50 cm (or 0.19") > *OK*
 
 4. *Add books* > browse to the .docx or .rtf file > Open
 
