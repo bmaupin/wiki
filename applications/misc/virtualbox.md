@@ -221,3 +221,10 @@ Your user must be part of the vboxusers group
         ```
 
     1. Then try to start the VM again
+
+
+#### VM is unable to access the internet
+
+1. Double-check the network settings (see above)
+
+1. If you're running Docker, you may need to stop it or change the default network range used by Docker, as this can conflict with the private network ranges used by VirtualBox
