@@ -50,6 +50,10 @@ Notes:
 
 
 #### LDAP client software
+- [LDAP Admin](http://www.ldapadmin.org/)
+    - Lightweight LDAP browser and editor
+    - Linux port: [https://github.com/ibv/LDAP-Admin](https://github.com/ibv/LDAP-Admin)
+
 - [Apache Directory Studio](http://directory.apache.org/studio/)
     - LDAP browser, schema editor, LDIF editor
     - Designed specifically to work with Apache Directory Server, but will work with other LDAP servers as well
