@@ -78,3 +78,69 @@ This makes sure the time zone takes effect if you're using it in your firewall r
     ```
     service dnsmasq restart
     ```
+
+
+#### Set up a secondary router to extend the network using WDS
+
+[https://openwrt.org/docs/guide-user/network/wifi/atheroswds#luci](https://openwrt.org/docs/guide-user/network/wifi/atheroswds#luci)
+
+All steps are done on the secondary router; no changes are necessary on the primary router
+
+1. Disable DHCP server
+    1. *Network* > *Interfaces* > *LAN* > *Edit*
+    1. Under *DHCP Server* check *Ignore interface*
+    1. *Save & Apply*
+
+1. Set a static IP on the same network as the primary router
+
+    Make sure you use a different IP as the primary router (e.g. 192.168.0.2)
+
+    1. *Network* > *Interfaces* > *LAN* > *Edit*
+    1. Change *IPv4 address*
+    1. *Save & Apply*
+    1. Wait until the configuration has been applied; if you see *Configuration has been rolled back!*, click *Apply unchecked*
+    1. Connect to the device at the new address
+
+1. Join the network of the primary router
+    1. *Network* > *Wireless* > *Scan*
+    1. Find the network of the primary router and click *Join Network*
+    1. Enter the *WPA passphrase* of the existing network
+    1. Set the firewall zone to *lan*
+    1. *Submit*
+    1. Under *Device Configuration* and *Operating frequency* set *Channel* to *auto*
+    1. Under *Interface Configuration* change *Mode* to *Client (WDS)*
+    1. Under *Interface Configuration* change *Network* to *lan*
+    1. *Save & Apply*
+
+1. Configure DNS forwarding
+    1. *Network* > *DHCP and DNS*
+    1. Set *DNS forwardings* to the IP address of the primary router
+    1. *Save & Apply*
+
+1. Configure IPv4 gateway
+    1. *Network* > *Interfaces* > *LAN* > *Edit*
+    1. Set *IPv4 gateway* to the IP address of the primary router
+    1. *Save & Apply*
+
+1. Enable Spanning Tree Protocol
+    1. *Network* > *Interfaces* > *LAN* > *Edit*
+    1. Go to the *Physical Settings* tab
+    1. Check *Enable STP*
+    1. *Save & Apply*
+
+1. (Optional) Rename the secondary router SSID
+
+    If you wish for the secondary router to use the same SSID so it looks like part of the same network for clients:
+
+    1. *Network* > *Wireless*
+    1. By the network for the secondary router (the one with *Mode: Master*) click *Edit*
+    1. Under *Interface Configuration* set *ESSID* to the same SSID as the primary router
+    1. *Save & Apply*
+    1. Wait until the configuration has been applied; if you see *Configuration has been rolled back!*, click *Apply unchecked*
+
+1. (Optional) Remove the wwan interface
+
+    This gets automatically created when you join the network of the primary router and can be safely removed
+
+    1. *Network* > *Interfaces*
+    1. By *WWAN* click *Delete* > *OK*
