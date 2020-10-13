@@ -80,11 +80,24 @@ This makes sure the time zone takes effect if you're using it in your firewall r
     ```
 
 
-#### Set up a secondary router to extend the network using WDS
+## WDS (wireless distribution system)
 
-[https://openwrt.org/docs/guide-user/network/wifi/atheroswds#luci](https://openwrt.org/docs/guide-user/network/wifi/atheroswds#luci)
+WDS can be used to extend a wireless network by adding an additional wireless router. Although a mesh network is superior, WDS is an alternative option when a mesh isn't possible.
 
-All steps are done on the secondary router; no changes are necessary on the primary router
+
+#### Set up a secondary router as a WDS access point (recommended)
+
+On the secondary router:
+
+1. (Optional) Rename the secondary router SSID
+
+    If you wish for the secondary router to use the same SSID so it looks like part of the same network for clients:
+
+    1. *Network* > *Wireless* > *Edit*
+    1. Under *Interface Configuration* set *ESSID* to the same SSID as the primary router
+    1. *Save & Apply*
+    1. Wait until the configuration has been applied; if you see *Configuration has been rolled back!*, click *Apply unchecked*
+    1. Connect to the new network
 
 1. Disable DHCP server
     1. *Network* > *Interfaces* > *LAN* > *Edit*
@@ -101,15 +114,9 @@ All steps are done on the secondary router; no changes are necessary on the prim
     1. Wait until the configuration has been applied; if you see *Configuration has been rolled back!*, click *Apply unchecked*
     1. Connect to the device at the new address
 
-1. Join the network of the primary router
-    1. *Network* > *Wireless* > *Scan*
-    1. Find the network of the primary router and click *Join Network*
-    1. Enter the *WPA passphrase* of the existing network
-    1. Set the firewall zone to *lan*
-    1. *Submit*
-    1. Under *Device Configuration* and *Operating frequency* set *Channel* to *auto*
-    1. Under *Interface Configuration* change *Mode* to *Client (WDS)*
-    1. Under *Interface Configuration* change *Network* to *lan*
+1. Enable WDS
+    1. *Network* > *Wireless* > *Edit*
+    1. Under *Interface Configuration* set *Mode* to *Access Point (WDS)*
     1. *Save & Apply*
 
 1. Configure DNS forwarding
@@ -128,6 +135,57 @@ All steps are done on the secondary router; no changes are necessary on the prim
     1. Check *Enable STP*
     1. *Save & Apply*
 
+On the primary router:
+
+1. Configure the primary router as a WDS client according to the vendor's documentation
+    - If the primary router only has an option to "enable" WDS, this typically means it will be enabled as a WDS client
+    - Don't set a static IP or disable the DHCP server (we did that on the secondary router instead)
+    - Vendor links
+        - TP-Link: https://www.tp-link.com/en/support/faq/1555/
+        - TP-Link (legacy): https://www.tp-link.com/us/support/faq/227/
+
+
+#### Set up a secondary router as a WDS client
+
+[https://openwrt.org/docs/guide-user/network/wifi/atheroswds#luci](https://openwrt.org/docs/guide-user/network/wifi/atheroswds#luci)
+
+⚠️ This is only recommended if the stock firmware on the primary router has support for running as a WDS access point or if you do not have administrative access to the primary router. If the stock firmware on the primary router does not have support for running as a WDS access point, devices connected to the primary router may be unable to see devices on the secondary router (e.g. network printers or the secondary router admin interface).
+
+On the primary router:
+
+1. Configure the primary router to act as a WDS access point
+    - If the primary router only has an option to "enable" WDS, this may actually configure it as a client. If so, follow the steps in the above section instead.
+
+On the secondary router:
+
+1. Follow all of these steps using the instructions in the previous section:
+    1. Disable DHCP server
+    1. Set a static IP on the same network as the primary router
+    1. Configure DNS forwarding
+    1. Configure IPv4 gateway
+    1. Enable Spanning Tree Protocol
+
+1. Join the network of the primary router
+
+    This creates a new wireless network on the secondary router that acts as a client of the network on the primary router
+
+    1. *Network* > *Wireless* > *Scan*
+    1. Find the network of the primary router and click *Join Network*
+    1. Enter the *WPA passphrase* of the existing network
+    1. Set the firewall zone to *lan*
+    1. *Submit*
+    1. Under *Device Configuration* and *Operating frequency* set *Channel* to *auto*
+    1. Under *Interface Configuration* change *Mode* to *Client (WDS)*
+    1. Under *Interface Configuration* change *Network* to *lan*
+    1. *Save & Apply*
+
+1. (Optional) Remove the wwan interface
+
+    This gets automatically created when you join the network of the primary router and can be safely removed
+
+    1. *Network* > *Interfaces*
+    1. By *WWAN* click *Delete* > *OK*
+
 1. (Optional) Rename the secondary router SSID
 
     If you wish for the secondary router to use the same SSID so it looks like part of the same network for clients:
@@ -137,10 +195,3 @@ All steps are done on the secondary router; no changes are necessary on the prim
     1. Under *Interface Configuration* set *ESSID* to the same SSID as the primary router
     1. *Save & Apply*
     1. Wait until the configuration has been applied; if you see *Configuration has been rolled back!*, click *Apply unchecked*
-
-1. (Optional) Remove the wwan interface
-
-    This gets automatically created when you join the network of the primary router and can be safely removed
-
-    1. *Network* > *Interfaces*
-    1. By *WWAN* click *Delete* > *OK*
