@@ -101,7 +101,10 @@ On the secondary router:
 
 1. Disable DHCP server
     1. *Network* > *Interfaces* > *LAN* > *Edit*
-    1. Under *DHCP Server* check *Ignore interface*
+    1. Under *DHCP Server* > *General Setup* check *Ignore interface*
+    1. Under *DHCP Server* > *IPv6 Settings*
+        1. Set *Router Advertisement-Service* to *disabled*
+        1. Set *DHCPv6-Service* to *disabled*
     1. *Save & Apply*
 
 1. Set a static IP on the same network as the primary router
