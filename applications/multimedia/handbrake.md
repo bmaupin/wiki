@@ -3,14 +3,14 @@ title: Handbrake
 ---
 
 #### Documentation
-[https://trac.handbrake.fr/wiki/HandBrakeGuide](https://trac.handbrake.fr/wiki/HandBrakeGuide)
+[https://handbrake.fr/docs/](https://handbrake.fr/docs/)
 
 
 #### Install Handbrake
 
     sudo apt-add-repository -y ppa:stebbins/handbrake-releases
-    sudo apt-get update
-    sudo apt-get -y install handbrake-gtk
+    sudo apt update
+    sudo apt install handbrake-gtk
 
 
 #### Re-encoding videos
@@ -29,6 +29,7 @@ title: Handbrake
 
     - Video
         - Encoder: x264 (default) - produces the highest quality and lowest file sizes
+        - Framerate: *Same as source*
         - Container: mp4 (default)
         - Quality RF: 20 (default) - a higher number gives lower quality (on a logarithmic scale)
         - Size: Using x264 and RF: 20 will average about 925M per hour of video (this can vary greatly; this is only an average)
