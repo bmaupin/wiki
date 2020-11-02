@@ -1,3 +1,4 @@
+<!-- prettier-ignore -->
 <div class="breadcrumbs">
   <span><a href="{{ '/' | relative_url }}">{{ site.title }}</a>&nbsp;&raquo;&nbsp;</span>
   {% comment %} Create an empty array {% endcomment %}
@@ -18,5 +19,7 @@
       {% endif %}
     {% endfor %}
   {% endfor %}
-  <span class="breadcrumbs-aside"><a href="{% github_edit_link %}"><span class="fab fa-github"></span> Edit on GitHub</a></span>
+  <span class="breadcrumbs-aside">
+    <a href="{% capture github_generated_link %}{% github_edit_link %}{% endcapture %}{{ github_generated_link | replace: '/edit/master/', '/blob/master/' }}"><span class="fab fa-github"></span> View source</a>
+  </span>
 </div>
