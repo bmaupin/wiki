@@ -92,7 +92,20 @@ title: OpenWrt
 
 ## WDS (wireless distribution system)
 
-WDS can be used to extend a wireless network by adding an additional wireless router. Although a mesh network is superior, WDS is an alternative option when a mesh isn't possible.
+⚠️ WDS is one way to extend a wireless network by adding an additional wireless router, however it has many issues; a superior option would be a wireless mesh such as the 802.11s mesh in OpenWrt or mesh functionality of vendor-provided firmware.
+
+Here are some of the issues with WDS:
+
+- The routers must all use the same chipset family (e.g. Qualcomm Atheros)
+- All routers must be explicitly configured as a WDS AP (access point) or client, otherwise devices on one router may not be able to communicate with devices on the other
+- While it's possible to use one wireless network in OpenWrt that serves as both a WDS client/AP and an AP for wireless clients, this seems to exacerbate WDS connection issues between the routers
+- Even taking the above into account, WDS seems to sometimes lose connectivity between the two routers and the only way to resolve this seems to be by restarting the wireless network on the WDS AP
+
+References:
+
+- [Repeating Mode Comparisons](https://wiki.dd-wrt.com/wiki/index.php/Repeating_Mode_Comparisons)
+- [WDS Linked router network](https://wiki.dd-wrt.com/wiki/index.php/WDS)
+- [Atheros and MAC80211 WDS to implement a wireless network bridge (wireless repeater)](https://openwrt.org/docs/guide-user/network/wifi/atheroswds)
 
 #### Set up a secondary router as a WDS access point (recommended)
 
