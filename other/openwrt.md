@@ -123,7 +123,7 @@ On the secondary router:
    1. Under _Interface Configuration_ > _General Setup_
 
       1. Make sure _Mode_ is set to _Access Point_
-      1. (Optional) Set _ESSID_ to the same SSID as the primary router
+      1. (Recommended) Set _ESSID_ to the same SSID as the primary router
 
          This will make the network look like the same network as the primary router so clients can automatically use either one
 
@@ -208,8 +208,8 @@ On the primary router:
    - If the primary router only has an option to "enable" WDS, this typically means it will be enabled as a WDS client
    - Don't set a static IP or disable the DHCP server (we did that on the secondary router instead)
    - Vendor links
-     - TP-Link: https://www.tp-link.com/en/support/faq/1555/
-     - TP-Link (legacy): https://www.tp-link.com/us/support/faq/227/
+     - TP-Link: [https://www.tp-link.com/en/support/faq/1555/](https://www.tp-link.com/en/support/faq/1555/)
+     - TP-Link (legacy): [https://www.tp-link.com/us/support/faq/227/](https://www.tp-link.com/us/support/faq/227/)
 
 On the secondary router:
 
@@ -256,14 +256,14 @@ On the secondary router:
    1. Under _Interface Configuration_ change _Network_ to _lan_
    1. _Save & Apply_
 
-1. (Optional) Remove the wwan interface
+1. (Recommended) Remove the wwan interface
 
    This gets automatically created when you join the network of the primary router and can be safely removed
 
    1. _Network_ > _Interfaces_
    1. By _WWAN_ click _Delete_ > _OK_
 
-1. (Optional) Rename the secondary router SSID
+1. (Recommended) Rename the secondary router SSID
 
    If you wish for the secondary router to use the same SSID so it looks like part of the same network for clients:
 
