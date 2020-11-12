@@ -210,6 +210,12 @@ On the secondary router:
       5 6 * * * /sbin/wifi down && /sbin/wifi up
       ```
 
+      Or you could ping the primary router every 10 minutes and restart the wireless if it fails:
+
+      ```
+      */10 * * * * /bin/ping -c 1 192.168.0.1 || (/sbin/wifi down && /sbin/wifi up)
+      ```
+
    1. _Submit_
    1. Restart the cron service
 
