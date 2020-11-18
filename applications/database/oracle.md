@@ -65,3 +65,71 @@ title: Oracle
 1. Near the top of the package tab that opens up, click _Open Body_ to view the source
 
    - If you click _Open Body_ and nothing happens, it's possible your user does not have permissions to view the package body
+
+## Database
+
+#### Run Oracle Database XE (Express Edition) in a container
+
+[https://github.com/oracle/docker-images/tree/master/OracleDatabase/SingleInstance#readme](https://github.com/oracle/docker-images/tree/master/OracleDatabase/SingleInstance#readme)
+
+1. Check out Oracle's container image repo
+
+   ```
+   git clone https://github.com/oracle/docker-images.git
+   ```
+
+1. For 11.2.0.2, download the Oracle DB XE binaries and copy to docker-images/OracleDatabase/SingleInstance/dockerfiles/11.2.0.2
+
+1. Build the container image
+
+   e.g.
+
+   ```
+   ./buildDockerImage.sh -v 11.2.0.2 -x -o --network=host
+   ```
+
+   `-o --network=host` is needed to allow the container to reach the internet for installing dependencies
+
+1. Run the container
+
+   - Run it just once and automatically delete it when it's stopped
+
+     e.g.
+
+     ```
+     docker run --rm --shm-size=1g -p 1521:1521 oracle/database:11.2.0.2-xe
+     ```
+
+   - Stop the container using <kbd>Ctrl</kbd>+<kbd>C</kbd>
+
+   - Run it so it can be stopped and restarted
+
+     - Run it the first time
+
+       e.g.
+
+       ```
+       docker run --name oracledb --shm-size=1g -p 1521:1521 -e oracle/database:11.2.0.2-xe
+       ```
+
+     - Run it after it's been stopped
+
+       e.g.
+
+       ```
+       docker container start -a oracledb
+       ```
+
+     - Delete it when you're finished
+
+       e.g.
+
+       ```
+       docker container rm oracledb
+       ```
+
+1. Connect to the database
+
+   - If no password is provided, one will be generated and printed near the top of the output of `docker run`
+   - SID: `XE`
+   - User: `system`
