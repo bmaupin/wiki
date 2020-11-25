@@ -52,13 +52,13 @@ Alternatively, ROMs can be played through other software such as RetroArch or TW
 - Nintendo DS games are not in the 3DS eShop
 - The 3DS can play NDS cartridges natively
 - NDS ROMs can be played natively using TWiLight Menu++ (see below)
-- NDS ROMs can be converted to an installable CIA using a tool called a forwarder
+- NDS ROMs can be converted to an installable CIA using a tool like [Forwarder3-DS](https://gbatemp.net/threads/nds-forwarder-cias-for-your-home-menu.426174/)
 
 #### Game Boy Advance
 
 - The 3DS can natively play GBA games
   - Game Boy Advance games are not in the 3DS eShop, except for 10 games that were released only to early adopters of the 3DS
-  - Those 10 games and others can be found as or converted to CIA files using a tool called an injector
+  - Those 10 games and others can be found as or converted to CIA files using a tool like New Super Ultimate Injector (see below)
 - GBA ROMs can be emulated using RetroArch
 - GBA ROMs can be emulated using TWiLight Menu++
 
@@ -69,7 +69,7 @@ Alternatively, ROMs can be played through other software such as RetroArch or TW
 #### Other systems
 
 - Many Game Boy, Game Boy Color, NES, SNES (New 3DS only), Game Gear, and TurboGrafx-16 (Japan only) titles are available in the eShop
-  - These titles and others can be found as or converted to CIA files using a tool called an injector
+  - These titles and others can be found as or converted to CIA files using a tool like New Super Ultimate Injector (see below)
 - RetroArch can emulate the largest number of systems, including PlayStation 1
 
   [https://emulation.gametechwiki.com/index.php/Emulators_on_3DS#RetroArch](https://emulation.gametechwiki.com/index.php/Emulators_on_3DS#RetroArch)
@@ -107,3 +107,18 @@ Alternatively, ROMs can be played through other software such as RetroArch or TW
 - Exit a game
 
   - Hold L + R + Down + B for 2 seconds
+
+## Tools
+
+#### New Super Ultimate Injector (NSUI)
+
+- Run on Linux using Wine: [https://gist.github.com/bmaupin/93d31e1b2d738ae656b9d3617e19622b](https://gist.github.com/bmaupin/93d31e1b2d738ae656b9d3617e19622b)
+
+- Create a new CIA
+
+  1. _File_ > _New_ > select the system as appropriate
+  1. _Project_ > _Load ROM_ > select the ROM
+  1. Under _CIA metadata_ > _Game icon_ click _Download Title Screen from database_
+  1. Under _CIA banner_ click _Download Title Screen from database_
+  1. Under _Game patches and extras_ uncheck _Enable Download Play_ (this doubles the size of the file)
+  1. _Project_ > _Export CIA_
