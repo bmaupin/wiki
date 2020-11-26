@@ -76,6 +76,7 @@ title: Oracle
 
    ```
    git clone https://github.com/oracle/docker-images.git
+   cd docker-images/OracleDatabase/SingleInstance/dockerfiles
    ```
 
 1. For 11.2.0.2, download the Oracle DB XE binaries and copy to docker-images/OracleDatabase/SingleInstance/dockerfiles/11.2.0.2
