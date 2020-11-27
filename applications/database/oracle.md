@@ -83,23 +83,38 @@ title: Oracle
 
 1. Build the container image
 
-   e.g.
+   - 18
 
-   ```
-   ./buildDockerImage.sh -v 11.2.0.2 -x -o --network=host
-   ```
+     ```
+     # Workaround for https://github.com/oracle/docker-images/issues/1797
+     sed -i 's/yum -y install openssl oracle-database-preinstall-18c/yum -y install expect openssl oracle-database-preinstall-18c/' 18.4.0/Dockerfile.xe
+     sed -i 's/yum -y localinstall $INSTALL_FILE_1/unbuffer yum -y localinstall $INSTALL_FILE_1/' 18.4.0/Dockerfile.xe
+     ./buildDockerImage.sh -v 18.4.0 -x -o --network=host
+     ```
 
-   `-o --network=host` is needed to allow the container to reach the internet for installing dependencies
+     (`-o --network=host` is only required if you're using Docker with `iptables: false`)
+
+   - 11
+
+     ```
+     ./buildDockerImage.sh -v 11.2.0.2 -x -o --network=host
+     ```
 
 1. Run the container
 
    - Run it just once and automatically delete it when it's stopped
 
-     e.g.
+     - 18
 
-     ```
-     docker run --rm --shm-size=1g -p 1521:1521 oracle/database:11.2.0.2-xe
-     ```
+       ```
+       docker run --rm -p 1521:1521 oracle/database:18.4.0-xe
+       ```
+
+     - 11
+
+       ```
+       docker run --rm --shm-size=1g -p 1521:1521 oracle/database:11.2.0.2-xe
+       ```
 
    - Stop the container using <kbd>Ctrl</kbd>+<kbd>C</kbd>
 
@@ -107,11 +122,17 @@ title: Oracle
 
      - Run it the first time
 
-       e.g.
+       - 18
 
-       ```
-       docker run --name oracledb --shm-size=1g -p 1521:1521 -e oracle/database:11.2.0.2-xe
-       ```
+         ```
+         docker run --name oracledb -p 1521:1521 oracle/database:18.4.0-xe
+         ```
+
+       - 11
+
+         ```
+         docker run --name oracledb --shm-size=1g -p 1521:1521 -e oracle/database:11.2.0.2-xe
+         ```
 
      - Run it after it's been stopped
 
