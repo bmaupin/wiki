@@ -92,14 +92,12 @@ title: OpenWrt
 
 ## WDS (wireless distribution system)
 
-⚠️ WDS is one way to extend a wireless network by adding an additional wireless router, however it has many issues; a superior option would be a wireless mesh such as the 802.11s mesh in OpenWrt or mesh functionality of vendor-provided firmware.
+⚠️ WDS is one way to extend a wireless network by adding an additional wireless router, however it has many issues and should really be considered when frequent loss of network connectivity will not be an issue. A superior option would be a wireless mesh such as the 802.11s mesh in OpenWrt or mesh functionality of vendor-provided firmware.
 
-Here are some of the issues with WDS:
+Prerequisites:
 
 - The routers must all use the same chipset family (e.g. Qualcomm Atheros)
-- All routers must be explicitly configured as a WDS AP (access point) or client, otherwise devices on one router may not be able to communicate with devices on the other
-- While it's possible to use one wireless network in OpenWrt that serves as both a WDS client/AP and an AP for wireless clients, this seems to exacerbate WDS connection issues between the routers
-- Even taking the above into account, WDS seems to sometimes lose connectivity between the two routers and the only way to resolve this seems to be by restarting the wireless network on the WDS AP
+- All routers must be explicitly configured as a WDS AP (access point) or WDS client, otherwise devices on one router may not be able to communicate with devices on the other
 
 References:
 
@@ -130,41 +128,19 @@ On the secondary router:
    1. Wait until the configuration has been applied; if you see _Configuration has been rolled back!_, click _Apply unchecked_
    1. Connect to the device at the new address
 
-1. Reconfigure the primary wireless network on the secondary router
+1. Configure the primary wireless network on the secondary router for WDS
+
+   While it's possible to use one wireless network in OpenWrt that serves as both a WDS client/AP and an AP for wireless clients, this seems to exacerbate WDS connection issues between the routers. Here we will create one wireless network for WDS and another for clients.
 
    1. _Network_ > _Wireless_ > _Edit_ (at this point there should only be one network on the wireless interface)
-   1. Under _Interface Configuration_ > _General Setup_
-
-      1. Make sure _Mode_ is set to _Access Point_
-      1. (Recommended) Set _ESSID_ to the same SSID as the primary router
-
-         This will make the network look like the same network as the primary router so clients can automatically use either one
-
-      1. Make sure _Network_ is set to _lan_
-
-         This should ensure that devices that connect to the secondary router won't get blocked by the firewall from seeing devices on the primary router
-
-   1. Under _Wireless Security_
-
-      1. Set _Encryption_ and _Key_ to the same values as the primary wireless network
-
-         This is required if you use the same SSID
-
-   1. _Save & Apply_
-   1. Wait until the configuration has been applied; if you see _Configuration has been rolled back!_, click _Apply unchecked_
-   1. Connect to the new network (if you're connected wirelessly)
-
-1. Add a secondary wireless network for WDS
-
-   1. _Network_ > _Wireless_ > _Add_
    1. Under _Interface Configuration_ > _General Setup_
 
       1. Set _Mode_ to _Access Point (WDS)_
       1. Set _ESSID_ to a **different** value than the SSID used by the primary router
 
-         This is a safeguard to prevent clients from connecting to this network because it will cause the WDS connection between the two routers to have problems
+         This is a safeguard to prevent clients from connecting to this network
 
-      1. Set _Network_ to _lan_
+      1. Make sure _Network_ is set to _lan_
 
          This will make sure the firewall doesn't block the WDS connection between the secondary and primary routers
 
@@ -175,6 +151,31 @@ On the secondary router:
       1. Set _Key_ to a different value from the key used by the primary network
 
          This is another safeguard to prevent clients to connecting to this network
+
+   1. _Save & Apply_
+      - If you're connected wirelessly and you see _Configuration has been rolled back!_, either use a wired connection or click _Apply unchecked_ and connect using the new SSID and key to do the remaining steps
+
+1. Add a secondary wireless network for clients
+
+   In OpenWrt when you disable the primary network, the secondary network BSSID changes to the previous BSSID of the primary network. This will break WDS, but clients typically won't care. By having the clients connect to the secondary network, the client network can be disabled without breaking the WDS connection between the two routers.
+
+   1. _Network_ > _Wireless_ > _Add_
+   1. Under _Interface Configuration_ > _General Setup_
+
+      1. Set _Mode_ to _Access Point_
+      1. (Recommended) Set _ESSID_ to the same SSID as the primary router
+
+         This will make the network look like the same network as the primary router so clients can automatically use either one
+
+      1. Set _Network_ to _lan_
+
+         This should ensure that devices that connect to the secondary router won't get blocked by the firewall from seeing devices on the primary router
+
+   1. Under _Wireless Security_
+
+      1. Set _Encryption_ and _Key_ to the same values as the primary wireless network
+
+         This is required if you use the same SSID
 
    1. _Save & Apply_
 
@@ -199,21 +200,21 @@ On the secondary router:
 
 1. (Recommended) Schedule a periodic wireless restart
 
-   Unfortunately WDS can periodically get disconnected, so this is a workaround to alleviate that
+   WDS seems to frequently lose connectivity between the two routers and the only way to resolve this seems to be by restarting the wireless network on the WDS AP
 
    1. _System_ > _Scheduled Tasks_
    1. Create a scheduled task to periodically restart the wireless
 
-      For example, this would restart the wireless every day at 6:05:
-
-      ```
-      5 6 * * * /sbin/wifi down && /sbin/wifi up
-      ```
-
-      Or you could ping the primary router every 10 minutes and restart the wireless if it fails:
+      For example, this will ping the primary router once every 10 minutes and restart the wireless if it fails:
 
       ```
       */10 * * * * /bin/ping -c 1 192.168.0.1 || (/sbin/wifi down && /sbin/wifi up)
+      ```
+
+      Or you could restart the wireless every day at 6:05:
+
+      ```
+      5 6 * * * /sbin/wifi down && /sbin/wifi up
       ```
 
    1. _Submit_
