@@ -9,12 +9,6 @@ title: Git
 
 ## Quick reference
 
-#### Change remote push URL from https:// to git://:
-
-```
-git remote set-url --push origin git@`git remote -v | grep push | cut -d / -f 3`:`git remote -v | grep push | awk '{print $2}' | cut -d / -f 4-5`
-```
-
 #### Undo uncommitted local changes
 
 ```
@@ -106,18 +100,6 @@ git add .
 git reset HEAD
 git checkout .
 git clean -df
-```
-
-#### Undo the last local commit (will remove the last local commit, leaving your changes in place)
-
-```
-git reset HEAD~1
-```
-
-#### Undo the last public commit (like SVN revert; will make a new commit)
-
-```
-git revert HEAD
 ```
 
 ## Push

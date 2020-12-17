@@ -57,6 +57,20 @@ git stash apply
      git stash apply stash@{INDEX}
      ```
 
+## Undo
+
+#### Undo the last local commit (will remove the last local commit, leaving your changes in place)
+
+```
+git reset HEAD~1
+```
+
+#### Undo the last public commit (like SVN revert; will make a new commit)
+
+```
+git revert HEAD
+```
+
 ## Other
 
 #### Interactive rebasing/squashing
