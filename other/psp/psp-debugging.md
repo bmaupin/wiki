@@ -11,10 +11,6 @@ title: PSP debugging (PSPLink)
    cd psplinkusb
    ```
 
-1. Apply workaround
-
-   https://github.com/pspdev/psplinkusb/issues/7
-
 1. Compile
 
    ```
