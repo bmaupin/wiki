@@ -14,6 +14,8 @@ title: OpenWrt
 
    1. Still in the Supported Devices page, click on the link in the Device Page column
    1. Download the latest release for your model and hardware number
+      - Download the `factory` image if you're flashing over stock firmware
+      - Download the `sysupgrade` image if you're flashing over an existing OpenWrt installation
 
 1. Flash OpenWrt
 
