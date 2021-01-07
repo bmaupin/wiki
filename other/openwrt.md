@@ -69,12 +69,14 @@ title: OpenWrt
 
    1. _System_ > _Reboot_ > _Perform reboot_
 
-#### Change the IP range
+#### Change the IP address
 
 1. _Network_ > _Interfaces_ > _LAN_ > _Edit_
-1. Change _IPv4 address_
-1. _Save & Apply_
-1. Reconnect wireless and reconnect to the new address
+1. Change _IPv4 address_ > _Save_
+1. At the bottom of the page, if there's a dropdown near _Save & Apply_, select _Apply unchecked_, then click _Apply unchecked_
+   - Otherwise, click _Save & Apply_, and if you see _Configuration has been rolled back!_, click _Apply unchecked_
+1. Connect to the device at the new address
+   - If you're unable to connect, try rebooting the router
 
 #### Add a host file blacklist
 
