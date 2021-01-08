@@ -4,7 +4,9 @@ title: OpenWrt WDS
 
 ## WDS (wireless distribution system)
 
-⚠️ WDS is one way to extend a wireless network by adding an additional wireless router, however it has many issues and should really be considered when frequent loss of network connectivity will not be an issue. A superior option would be a wireless mesh such as the 802.11s mesh in OpenWrt or mesh functionality of vendor-provided firmware.
+WDS is one way to extend a wireless network by adding an additional wireless router.
+
+⚠️ WDS seems to suffer from frequent loss of network connectivity between the routers and as such cannot be recommended. A superior option would be a wireless mesh such as the [802.11s mesh in OpenWrt](../../../other/openwrt/openwrt-80211s.html) or mesh functionality of vendor-provided firmware.
 
 Prerequisites:
 
