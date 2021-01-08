@@ -2,6 +2,8 @@
 title: OpenWrt
 ---
 
+## Basics
+
 #### Installation and initial configuration
 
 [https://openwrt.org/docs/guide-quick-start/factory_installation](https://openwrt.org/docs/guide-quick-start/factory_installation)
@@ -20,6 +22,8 @@ title: OpenWrt
 1. Flash OpenWrt
 
    1. Follow the instructions on the device page
+
+      **Note:** If you're flashing a different version of OpenWrt, make sure you don't keep the existing configuration as this will likely cause problems
 
 1. Connect to the device
 
@@ -92,4 +96,55 @@ title: OpenWrt
 1. Restart dnsmasq
    ```
    service dnsmasq restart
+   ```
+
+#### Create a scheduled task
+
+1. _System_ > _Scheduled Tasks_
+
+1. Create the scheduled task
+
+   For example, if you wanted to start the wireless network every day at 6:00 and shut it down at 21:00:
+
+   ```
+   0 6 * * * /sbin/wifi up
+   0 21 * * * /sbin/wifi down
+   ```
+
+1. _Submit_
+
+1. As mentioned on that page, if there were no scheduled tasks already, you need to restart the cron service:
+
+   _System_ > _Startup_ > find _cron_ and click _Restart_
+
+## Flashing firmware via TFTP
+
+#### Tips
+
+- Make sure the firewall on the TFTP server is configured to allow TFTP traffic
+- Disable Wifi on the TFTP server
+- Make sure the file on the TFTP server is appropriately named (varies by device)
+- Make sure the router is connected to the TFTP server on the appropriate port (varies by device)
+- Connect the router directly to the TFTP server using a normal network cable (not a crossover cable)
+
+#### TFTP server setup on Ubuntu
+
+1. Install TFTP server
+
+   ```
+   sudo apt install atftpd
+   ```
+
+1. Copy the firmware to /srv/tftp/
+
+1. Change permissions of the firmware
+
+   ```
+   sudo chown nobody:nogroup -R /srv/tftp
+   ```
+
+1. Tail the TFTP logs
+
+   ```
+   sudo journalctl -f | grep --line-buffered tftp
    ```
