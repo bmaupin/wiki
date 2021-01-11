@@ -62,11 +62,11 @@ To use 802.11s mesh, you'll need OpenWrt 19.07+ with the `wpad-mesh-openssl` or 
 
 #### Set up the mesh network using LUCI
 
-1. If you're just setting up the router after flashing it, see _Installation and initial configuration_ here to do the initial setup: [OpenWrt](openwrt.html)
+1. If you're just setting up the router after flashing it, see _Installation and initial configuration_ here to do the initial setup: [OpenWrt](https://bmaupin.github.io/wiki/other/openwrt/openwrt.html#installation-and-initial-configuration)
 
 1. Make sure each router on the mesh network has a different IP on the same subnet (e.g. 192.168.0.2)
 
-   - See _Change the IP address_ here: [OpenWrt](openwrt.html)
+   - See _Change the IP address_ here: [OpenWrt](https://bmaupin.github.io/wiki/other/openwrt/openwrt.html#change-the-ip-address)
 
 1. Disable DHCP server
 

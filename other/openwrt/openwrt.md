@@ -48,7 +48,7 @@ title: OpenWrt
 
    1. _Network_ > _Wireless_ > _Edit_ > _Advanced Settings_
    1. Set _Country Code_
-   1. _Save & Apply_
+   1. _Save_ > _Save & Apply_
 
 1. Configure wireless
 
