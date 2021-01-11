@@ -100,6 +100,16 @@ title: OpenWrt
 
 #### Create a scheduled task
 
+1. First, make sure the system time is correct
+
+   1. _System_ > _System_
+
+   1. Make sure the _Timezone_ is properly set
+
+   1. Make sure _Local Time_ is correct. If not, click _Sync with NTP-Server_
+
+      If syncing with NTP doesn't work, see below for troubleshooting NTP issues
+
 1. _System_ > _Scheduled Tasks_
 
 1. Create the scheduled task
@@ -116,6 +126,43 @@ title: OpenWrt
 1. As mentioned on that page, if there were no scheduled tasks already, you need to restart the cron service:
 
    _System_ > _Startup_ > find _cron_ and click _Restart_
+
+## NTP
+
+#### Troubleshoot NTP issues
+
+1. Before doing anything else, make sure DNS is working
+
+   1. _Network_ > _Diagnostics_ > _Nslookup_
+
+      If DNS isn't working, you'll need to get that fixed before NTP will work
+
+Additional troubleshooting:
+
+1. Get the command that's being used to run the NTP client (ntpd):
+
+   ```
+   tr '\0' ' ' < /proc/$(ps | grep [n]tp | awk '{print $1}')/cmdline; echo
+   ```
+
+   e.g.
+
+   ```
+   # tr '\0' ' ' < /proc/$(ps | grep [n]tp | awk '{print $1}')/cmdline; echo
+   /usr/sbin/ntpd -n -N -S /usr/sbin/ntpd-hotplug -p 0.openwrt.pool.ntp.org -p 1.openwrt.pool.ntp.org -p 2.openwrt.pool.ntp.org -p 3.openwrt.pool.ntp.org
+   ```
+
+1. Watch the command line to see what the output is, e.g.
+
+   ```
+   # /usr/sbin/ntpd -n -N -S /usr/sbin/ntpd-hotplug -p 0.openwrt.pool.ntp.org -p 1.openwrt.pool.ntp.org -p 2.openwrt.pool.ntp.org -p 3.openwrt.pool.ntp.org
+   ntpd: bad address '0.openwrt.pool.ntp.org'
+   ntpd: bad address '1.openwrt.pool.ntp.org'
+   ntpd: bad address '2.openwrt.pool.ntp.org'
+   ntpd: bad address '3.openwrt.pool.ntp.org'
+   ```
+
+   (In this example, the router isn't able to find the NTP servers due to DNS misconfiguration)
 
 ## Flashing firmware via TFTP
 
