@@ -47,14 +47,14 @@ To use 802.11s mesh, you'll need OpenWrt 19.07+ with the `wpad-mesh-openssl` or 
 1. Build the package, e.g.
 
    ```
-   make image PROFILE=tplink_tl-wr841-v8 PACKAGES="wpad-mesh-wolfssl -wpad-basic -wpad-mini -ppp -ppp-mod-pppoe -ip6tables -odhcp6c -kmod-ipv6 -kmod-ip6tables -odhcpd-ipv6only -odhcpd -iptables -opkg -firewall"
+   make image PROFILE=tplink_tl-wr841-v8 PACKAGES="uhttpd uhttpd-mod-ubus libiwinfo-lua luci-base luci-mod-admin-full luci-theme-bootstrap wpad-mesh-wolfssl -wpad-basic -wpad-mini -ppp -ppp-mod-pppoe -kmod-pppoe -ip6tables -odhcp6c -kmod-ipv6 -kmod-ip6tables -odhcpd-ipv6only -odhcpd -iptables -opkg -uclient-fetch -libuclient20160123 -firewall -kmod-ipt-core -kmod-ipt-offload -kmod-nf-conntrack -kmod-nf-flow -kmod-nf-ipt -kmod-nf-reject -dnsmasq"
    ```
 
    - If you see this error: `[mktplinkfw] *** error: images are too big by 799789 bytes`
 
-     See here to see which additional packages you can remove to save space: [https://openwrt.org/docs/guide-user/additional-software/saving_space](https://openwrt.org/docs/guide-user/additional-software/saving_space)
+     See here to see some packages you can remove to save space: [https://openwrt.org/docs/guide-user/additional-software/saving_space](https://openwrt.org/docs/guide-user/additional-software/saving_space). You may be able to remove more packages depending on your needs; see above for an example.
 
-     ⚠️ Devices with 4 MB of flash storage will not have enough space for the LUCI web interface and the mesh package. Thankfully, it is fairly easy to set up the mesh over SSH (see below).
+     ⚠️ Devices with 4 MB of flash storage may not have enough space for the LUCI web interface and the mesh package. Thankfully, it is fairly easy to set up the mesh over SSH (see below).
 
 1. Get the built image from bin/targets, e.g. bin/targets/ath79/tiny
 
