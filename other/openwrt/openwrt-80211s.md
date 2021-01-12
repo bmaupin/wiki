@@ -62,22 +62,49 @@ To use 802.11s mesh, you'll need OpenWrt 19.07+ with the `wpad-mesh-openssl` or 
 
 #### Set up the mesh network using LUCI
 
+Devices:
+
+- Primary mesh device
+  - This is the device that is connected to the internet (e.g. via a network cable to a cable/DSL modem)
+  - This device acts as a router and will manage the DHCP, DNS, and firewall for the network
+  - This device can also act as a wireless AP (access point)
+- Secondary mesh device(s)
+  - These devices will extend the wireless network and act as wireless APs
+
 1. If you're just setting up the router after flashing it, see _Installation and initial configuration_ here to do the initial setup: [OpenWrt](https://bmaupin.github.io/wiki/other/openwrt/openwrt.html#installation-and-initial-configuration)
 
-1. Make sure each router on the mesh network has a different IP on the same subnet (e.g. 192.168.0.2)
+1. Configure the LAN interface
 
-   - See _Change the IP address_ here: [OpenWrt](https://bmaupin.github.io/wiki/other/openwrt/openwrt.html#change-the-ip-address)
+   1. Set the IP
 
-1. Disable DHCP server
+      On the primary mesh device you'll want to set a static IP (e.g. 192.168.0.1). On the secondary mesh devices you can also set a static IP on the same subnet (e.g. 192.168.0.2) or you can use DHCP instead.
 
-   **Note:** If you built your own OpenWrt package without DHCP (`-odhcpd`), you can skip this part
+      - Set a static IP: see _Change the IP address_ here: [OpenWrt](https://bmaupin.github.io/wiki/other/openwrt/openwrt.html#change-the-ip-address)
 
-   1. _Network_ > _Interfaces_ > _LAN_ > _Edit_
-   1. Under _DHCP Server_ > _General Setup_ check _Ignore interface_
-   1. Under _DHCP Server_ > _IPv6 Settings_
-      1. Set _Router Advertisement-Service_ to _disabled_
-      1. Set _DHCPv6-Service_ to _disabled_
-   1. _Save_ > _Save & Apply_
+      - Use DHCP: _Network_ > _Interfaces_ > _LAN_ > _Edit_ > _Protocol_ > _DHCP client_ > _Save_ > _Apply unchecked_
+
+   1. For all secondary mesh devices with a static IP:
+
+      1. _Network_ > _Interfaces_ > _LAN_ > _Edit_
+
+      1. _IPv4 gateway_ > Set to the IP of the primary mesh device (e.g. 192.168.0.1)
+
+      1. _Use custom DNS servers_ > Add the IP of the primary mesh device
+
+      1. _Save_ > _Save & Apply_
+
+1. (Optional) Disable unnecessary services
+
+   For secondary mesh devices, you can optionally disable some services that will be provided by the primary mesh device
+
+   1. _System_ > _Startup_
+   1. Click _Enabled_ for each of these services (if you see _Disabled_, it means they're already disabled):
+
+      - dnsmasq
+      - firewall
+      - odhcpd
+
+      (If you built your own OpenWrt package without these services (`-dnsmasq`, `-firewall`, `-odhcpd`), they will not be displayed on the _Startup_ screen)
 
 1. Configure the mesh wireless network
 
@@ -111,6 +138,8 @@ To use 802.11s mesh, you'll need OpenWrt 19.07+ with the `wpad-mesh-openssl` or 
       1. Set _Encryption_ to _WPA3-SAE_
       1. Set _Key_ to a randomly generated secure string
    1. _Save_ > _Save & Apply_
+
+   1. If you see _Wireless network is disabled_ under the mesh network, click _Enable_
 
 1. Configure the wireless network for clients
 
@@ -168,6 +197,15 @@ To use 802.11s mesh, you'll need OpenWrt 19.07+ with the `wpad-mesh-openssl` or 
       ```
       service network reload
       ```
+
+1. For all secondary mesh devices:
+
+   ```
+   uci set network.lan.gateway='192.168.0.1'
+   uci add_list network.lan.dns='192.168.0.1'
+   ```
+
+   (Replace the IP address with the IP of the mesh device that is connected to the internet)
 
 1. Configure the mesh wireless network
 
