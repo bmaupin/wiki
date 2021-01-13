@@ -96,29 +96,6 @@ let anotherArray = ["item1", item2"];
 myArray.push("some string");
 ```
 
-#### Loop through an array
-
-(Preferred) Use a simple for loop:
-
-```
-for (let i = 0 ; i < array.length; i++) {
-    // Do something with array[i]
-}
-```
-
-Other methods ([http://jsbench.github.io/#8ed37bb81a337674e317ab5625c701ea](http://jsbench.github.io/#8ed37bb81a337674e317ab5625c701ea))
-
-- [`for...of`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/for...of)
-  - For now it's slower than a simple for loop, but it might be eventually faster
-- [`forEach`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
-  - Don't use: forEach is slower and can't be used with await
-
-#### Determine if a value is in an array
-
-```
-array.includes(value)
-```
-
 #### Get the length of an array
 
 ```
