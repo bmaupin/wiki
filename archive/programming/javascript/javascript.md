@@ -102,10 +102,6 @@ myArray.push("some string");
 myArray.length
 ```
 
-## Maps (associative arrays/dictionaries)
-
-Use [Map](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)
-
 ## Objects
 
 #### Iterate over an object

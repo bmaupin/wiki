@@ -34,3 +34,25 @@ Do not use:
 ```javascript
 array.includes(value);
 ```
+
+## [Maps](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map)
+
+**Note:** Use `Map` when you want a key/value associative array and you want to guarantee the insertion order. Otherwise, the convention is to use a simple JavaScript object.
+
+#### Logging the contents of a map to the console
+
+```javascript
+console.log(`myMap=`, myMap);
+```
+
+Unfortunately none of these will log the content of the map:
+
+```javascript
+console.log(JSON.stringify(myMap));
+console.log(`myMap=${myMap}`);
+console.log('myMap=' + myMap);
+```
+
+#### Iterating over a `Map`
+
+Use `for..of`: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#Iterating_Map_with_for..of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#Iterating_Map_with_for..of)
