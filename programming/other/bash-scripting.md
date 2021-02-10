@@ -173,7 +173,16 @@ $#
 
 ## Scripting tips
 
-#### Copying
+#### Environment variables
+
+Make sure to export environment variables if they're needed by a command in your script (and not just used internally by your script):
+
+```
+export http_proxy=http://proxy.example.org:3128/
+export https_proxy=http://proxy.example.org:3128/
+```
+
+#### `cp`
 
 Use:
 
@@ -188,26 +197,7 @@ $ alias cp
 alias cp='cp -i'
 ```
 
-#### Preventing errors when performing actions that have already been done
-
-Use alternate versions of some of these common commands:
-
-```
-ln -fs
-mkdir -p
-rm -f
-```
-
-#### Environment variables
-
-Make sure to export environment variables if they're needed by a command in your script (and not just used internally by your script):
-
-```
-export http_proxy=http://proxy.example.org:3128/
-export https_proxy=http://proxy.example.org:3128/
-```
-
-#### curl
+#### `curl`
 
 - Prefer curl to wget since curl will nearly always be present while wget may not be
 - Use `-s` to hide the progress bar:
@@ -216,7 +206,39 @@ export https_proxy=http://proxy.example.org:3128/
   curl -s ...
   ```
 
-#### telnet
+#### `ln`
+
+Don't fail if the link already exists:
+
+```
+ln -fs
+```
+
+#### `mkdir`
+
+Create child directories and don't fail if the directory already exists:
+
+```
+mkdir -p
+```
+
+#### `rm`
+
+Don't fail if the directory/file has already been deleted:
+
+```
+rm -f
+```
+
+#### `systemctl`
+
+Use `--no-pager` to not page results, e.g.
+
+```
+systemctl status docker --no-pager || sudo systemctl start docker
+```
+
+#### `telnet`
 
 ```
 sleep 0 | telnet server.example.org 22 || true
