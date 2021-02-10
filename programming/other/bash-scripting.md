@@ -184,7 +184,7 @@ export https_proxy=http://proxy.example.org:3128/
 
 #### `cp`
 
-Use:
+Don't ask before overwriting files:
 
 ```
 /bin/cp -f
@@ -199,16 +199,15 @@ alias cp='cp -i'
 
 #### `curl`
 
-- Prefer curl to wget since curl will nearly always be present while wget may not be
-- Use `-s` to hide the progress bar:
+Use `-s` to hide the progress bar:
 
-  ```
-  curl -s ...
-  ```
+```
+curl -s ...
+```
 
 #### `ln`
 
-Don't fail if the link already exists:
+Overwrite existing links and don't fail if the link already exists:
 
 ```
 ln -fs
@@ -243,6 +242,10 @@ systemctl status docker --no-pager || sudo systemctl start docker
 ```
 sleep 0 | telnet server.example.org 22 || true
 ```
+
+#### `wget`
+
+Prefer curl to wget since curl will often be present when wget is not
 
 ## Misc
 
