@@ -166,7 +166,17 @@ Include the video track from the first file (an album cover image):
 
 [https://trac.ffmpeg.org/wiki/Encode/MP3#VBREncoding](https://trac.ffmpeg.org/wiki/Encode/MP3#VBREncoding)
 
+(Recommended for music files)
+
     ffmpeg -i input.wav -codec:a libmp3lame -qscale:a 2 output.mp3
+
+#### Convert to CBR mono MP3
+
+(Recommended for voice files)
+
+```
+ffmpeg -i input.wav -codec:a libmp3lame -b:a 64k -ac 1 output.mp3
+```
 
 ## Subtitles
 
