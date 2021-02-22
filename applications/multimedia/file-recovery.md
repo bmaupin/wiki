@@ -127,12 +127,13 @@ If Testdisk was unable to recover the partition, you still may be able to get a 
 1. Attach the Virtualbox image file to the Windows VM and boot it
 
 1. Download and install one of the following programs depending on your need:
+
+   - [ZAR](http://www.z-a-recovery.com/)
+     - "In digital image recovery mode program operates as freeware with no functional limitations."
+     - Doesn't seem to recover folder structure, but does recover some filenames (Is this still true?)
    - [R-Studio](http://www.r-studio.com/)
      - Seems to do a good job of listing the files and folder structure
      - The demo version can only recover files < 256 KB
-   - [ZAR](http://www.z-a-recovery.com/)
-     - Doesn't seem to recover folder structure, but does recover some filenames
-     - Size of recovered files is unlimited in the demo version, but you can only recover a limited number of files
 
 ## Recover files (photorec)
 
