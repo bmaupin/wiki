@@ -66,6 +66,27 @@ table th {
   padding: 8px 16px;
 }
 
+.admonition-attention {
+  background: #ffedcc;
+  margin-bottom: 24px;
+  padding: 12px;
+}
+
+.admonition-attention p {
+  line-height: 24px;
+  margin: 0;
+}
+
+.admonition-attention p.admonition-title {
+  background: #f0b37e;
+  color: #fff;
+  font-weight: bold;
+  line-height: 16.5px;
+  margin: -12px;
+  margin-bottom: 12px;
+  padding: 6px 12px;
+}
+
 .breadcrumbs {
   display: flex;
   flex-flow: row wrap;

@@ -5,7 +5,8 @@
     <title>{{ page.title | default: directory_title }} | {{ site.title }}</title>
     {% seo title=false %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Slab" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
@@ -38,6 +39,10 @@
         {% assign directory_title = page.dir | split: '/' | last | capitalize %}
         <h1>{{ page.title | default: directory_title }}</h1>
         {% if page.content != "" %}
+        {%- assign first_url_segment = page.url | slice: 1, page.url.size | split: '/' | first -%}
+        {%- if first_url_segment == 'archive' -%}
+          {%- include archive-notice.html -%}
+        {%- endif -%}
         <div class="content">
           {{ content }}
         </div>
