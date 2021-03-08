@@ -119,6 +119,12 @@ Alternatively, ROMs can be played through other software such as RetroArch or TW
   1. _File_ > _New_ > select the system as appropriate
   1. _Project_ > _Load ROM_ > select the ROM
   1. Under _CIA metadata_ > _Game icon_ click _Download Title Screen from database_
+     - If you get this error: `The request was aborted: Could not create SSL/TLS secure channel.`
+       1. Go here: [https://github.com/libretro-thumbnails](https://github.com/libretro-thumbnails)
+       1. Go to the specific repo for the system
+       1. Click _Go to file_ and start typing the name of the file
+       1. Download the appropriate file under `Named_Titles`
+       1. In NSUI, click _Load image from file_ to use the local file
   1. Under _CIA banner_ click _Download Title Screen from database_
   1. Under _Game patches and extras_ uncheck _Enable Download Play_ (this doubles the size of the file)
   1. _Project_ > _Export CIA_
