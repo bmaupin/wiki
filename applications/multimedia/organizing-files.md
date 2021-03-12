@@ -30,6 +30,12 @@ fdupes -r -dP /path1 /path2
 
 ## Organizing files
 
+#### Remove all metadata from file
+
+```
+exiftool -all= path/to/file
+```
+
 #### Organize multimedia files by date
 
 Put files in a directory by year with subdirectories for each month:
@@ -75,3 +81,5 @@ Add 1 year, 12 month, 28 days, 14 hours, 54 minutes, 32 seconds:
 ```
 exiftool "-AllDates+=1:12:28 14:54:32" *.jpg
 ```
+
+You can use WolframAlpha to calculate the amount to adjust, if needed: [https://www.wolframalpha.com/input/?i=2017-07-10+11%3A24%3A00+-+1980-07-05+20%3A24%3A00](https://www.wolframalpha.com/input/?i=2017-07-10+11%3A24%3A00+-+1980-07-05+20%3A24%3A00)
