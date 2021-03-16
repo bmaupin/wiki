@@ -119,7 +119,13 @@ Alternatively, ROMs can be played through other software such as RetroArch or TW
   1. _File_ > _New_ > select the system as appropriate
   1. _Project_ > _Load ROM_ > select the ROM
   1. Under _CIA metadata_ > _Game icon_ click _Download Title Screen from database_
+
      - If you get this error: `The request was aborted: Could not create SSL/TLS secure channel.`
+
+       Install .NET 4.6 and the registry fix from here: [https://gist.github.com/bmaupin/93d31e1b2d738ae656b9d3617e19622b](https://gist.github.com/bmaupin/93d31e1b2d738ae656b9d3617e19622b)
+
+       Alternatively you can download the title manually:
+
        1. Go here: [https://github.com/libretro-thumbnails](https://github.com/libretro-thumbnails)
        1. Go to the specific repo for the system
        1. Click _Go to file_ and start typing the name of the file
