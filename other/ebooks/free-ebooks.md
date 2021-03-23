@@ -13,13 +13,11 @@ title: Where to get free ebooks
 
 - Google Play
 
-  1. Go to [https://play.google.com/store/books/collection/topselling_free](https://play.google.com/store/books/collection/topselling_free)
+  1. Use the steps here to find free ebooks: [Free Google Play Books ](https://libguides.com.edu/c.php?g=649098&p=4553421)
   1. Find a book you like, and click the _FREE_ link to acquire it
   1. Go to your book library: [https://play.google.com/books](https://play.google.com/books)
   1. Find the book, put your mouse over it, and click the menu icon that will appear in the upper-right corner
   1. Click _Download EPUB_
-
-  - French classics on Google Play: [https://play.google.com/store/search?q=subject:%22Literary+Collections+/+Ancient+%26+Classical%22&c=books](https://play.google.com/store/search?q=subject:%22Literary+Collections+/+Ancient+%26+Classical%22&c=books)
 
 - Kobo Books
   1. Go to [http://www.kobobooks.com/lists/FreeClassics/Q4tVw0Es7E2y7y_8RndJzw-1.html](http://www.kobobooks.com/lists/FreeClassics/Q4tVw0Es7E2y7y_8RndJzw-1.html)
