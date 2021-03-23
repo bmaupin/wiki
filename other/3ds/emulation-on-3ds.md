@@ -70,7 +70,7 @@ Alternatively, ROMs can be played through other software such as RetroArch or TW
 
 - Many Game Boy, Game Boy Color, NES, SNES (New 3DS only), Game Gear, and TurboGrafx-16 (Japan only) titles are available in the eShop
   - These titles and others can be found as or converted to CIA files using a tool like New Super Ultimate Injector (see below)
-- RetroArch can emulate the largest number of systems, including PlayStation 1
+- RetroArch can emulate the largest number of systems, including PlayStation 1 (see below)
 
   [https://emulation.gametechwiki.com/index.php/Emulators_on_3DS#RetroArch](https://emulation.gametechwiki.com/index.php/Emulators_on_3DS#RetroArch)
 
@@ -97,6 +97,42 @@ Alternatively, ROMs can be played through other software such as RetroArch or TW
 - Install RetroArch
 
   [https://docs.libretro.com/guides/install-3ds2ds/](https://docs.libretro.com/guides/install-3ds2ds/)
+
+  1. Go to the RetroArch download page
+
+     [https://www.retroarch.com/](https://www.retroarch.com/) > _Download_
+
+  1. Scroll down to 3DS/2DS and click _Download (cia)_
+
+  1. In the download archive, extract the _retroarch_ directory and copy it to your SD card
+
+  1. (Optional) Extract cia/retroarch_3ds.cia to the cias folder on your SD card
+
+     - This acts as a launcher for the cores but isn't necessary if you don't mind installing the first core manually
+
+  1. To avoid very slow loading times, delete any unwanted cores from retroarch/cores or move them into another directory
+
+  1. Using FBI, install the core(s) or retroarch_3ds.cia
+
+- Controls
+
+  - Tap the center bottom screen to turn it off
+
+  - Tap the bottom of the bottom screen to go back to the RetroArch menu
+
+- Mapping 3DS buttons to keyboard keys in RetroArch (e.g. when using DOSBox)
+
+  1. Open RetroArch and load the game you wish to play
+
+  1. Go back to the RetroArch menu > _Quick Menu_ > _Controls_ > _Port 1 Controls_
+
+  1. _Device Type_ > _Keyboard + Mouse_
+
+  1. Go to each of the buttons and assign them to a key, for example, to assign the A button to left Ctrl go to _Auto: L (btn)_ > _Keyboard Left Control_
+
+  1. Go back to the previous menu and select _Save Game Remap File_
+
+  1. To use the same mappings for another game, load that game and then go to _Quick Menu_ > _Controls_ > _Load Remap File_ > _Save Game Remap File_
 
 #### TWiLight Menu++
 
