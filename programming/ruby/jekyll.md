@@ -4,10 +4,10 @@ title: Jekyll
 
 #### Install Ruby
 
-(Includes the gem command and header files for installing native modules)
+(Includes bundle, gem, and header files for installing native modules)
 
 ```
-sudo apt install ruby ruby-dev
+sudo apt install ruby ruby-bundler ruby-dev
 ```
 
 
