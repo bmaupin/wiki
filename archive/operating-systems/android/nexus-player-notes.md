@@ -2,9 +2,37 @@
 title: Nexus Player notes
 ---
 
-#### Copy files to the Nexus Player
+#### Boot to custom recovery
 
-[http://cord-cutters.wonderhowto.com/how-to/sideload-apps-nexus-player-0160364/](http://cord-cutters.wonderhowto.com/how-to/sideload-apps-nexus-player-0160364/)
+1. Install tools
+
+   ```
+   sudo apt install adb fastboot
+   ```
+
+1. Download the latest TWRP recovery image
+
+   [https://dl.twrp.me/fugu/](https://dl.twrp.me/fugu/)
+
+1. Reboot into the bootloader
+
+   ```
+   adb reboot bootloader
+   ```
+
+1. Boot the custom recovery image
+
+   ```
+   sudo fastboot boot twrp-X.X.X-X-fugu.img
+   ```
+
+#### Set up Amazon Fire TV remote
+
+The remote included with the Nexus Player disconnects a lot (as indicated by the flashing light). The basic Amazon Fire TV remote (not the one with the microphone) seems to work much better.
+
+It mostly works out of the box but benefits from a button remapping, which can be done by following the steps here:
+
+[https://forum.xda-developers.com/t/will-the-fire-tv-remote-work-with-the-nexus-player.2939508/page-2#post-63171780](https://forum.xda-developers.com/t/will-the-fire-tv-remote-work-with-the-nexus-player.2939508/page-2#post-63171780)
 
 #### Install RetroArch
 
@@ -105,32 +133,6 @@ title: Nexus Player notes
 
    1. _Save Core Remap File_
 
-#### Boot to custom recovery
+#### Copy files to the Nexus Player
 
-1. Install tools
-
-   ```
-   sudo apt install adb fastboot
-   ```
-
-1. Download the latest TWRP recovery image
-
-   [https://dl.twrp.me/fugu/](https://dl.twrp.me/fugu/)
-
-1. Reboot into the bootloader
-
-   ```
-   adb reboot bootloader
-   ```
-
-1. Boot the custom recovery image
-
-   ```
-   sudo fastboot boot twrp-X.X.X-X-fugu.img
-   ```
-
-#### Set up Amazon Fire TV remote
-
-The remote included with the Nexus Player disconnects a lot (as indicated by the flashing light). The basic Amazon Fire TV remote (not the one with the microphone) seems to work much better. Install using the steps here:
-
-[https://forum.xda-developers.com/t/will-the-fire-tv-remote-work-with-the-nexus-player.2939508/page-2#post-63171780](https://forum.xda-developers.com/t/will-the-fire-tv-remote-work-with-the-nexus-player.2939508/page-2#post-63171780)
+[http://cord-cutters.wonderhowto.com/how-to/sideload-apps-nexus-player-0160364/](http://cord-cutters.wonderhowto.com/how-to/sideload-apps-nexus-player-0160364/)
