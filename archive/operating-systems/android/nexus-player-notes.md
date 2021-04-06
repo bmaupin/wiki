@@ -107,7 +107,30 @@ title: Nexus Player notes
 
 #### Boot to custom recovery
 
-```
-adb reboot bootloader
-sudo fastboot boot twrp-3.2.1-0-fugu.img
-```
+1. Install tools
+
+   ```
+   sudo apt install adb fastboot
+   ```
+
+1. Download the latest TWRP recovery image
+
+   [https://dl.twrp.me/fugu/](https://dl.twrp.me/fugu/)
+
+1. Reboot into the bootloader
+
+   ```
+   adb reboot bootloader
+   ```
+
+1. Boot the custom recovery image
+
+   ```
+   sudo fastboot boot twrp-X.X.X-X-fugu.img
+   ```
+
+#### Set up Amazon Fire TV remote
+
+The remote included with the Nexus Player disconnects a lot (as indicated by the flashing light). The basic Amazon Fire TV remote (not the one with the microphone) seems to work much better. Install using the steps here:
+
+[https://forum.xda-developers.com/t/will-the-fire-tv-remote-work-with-the-nexus-player.2939508/page-2#post-63171780](https://forum.xda-developers.com/t/will-the-fire-tv-remote-work-with-the-nexus-player.2939508/page-2#post-63171780)
