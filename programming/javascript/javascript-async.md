@@ -169,3 +169,9 @@ async function demo() {
   console.log('Two seconds later');
 }
 ```
+
+If you need an inline timeout for testing/troubleshooting (don't do this in production 😉):
+
+```javascript
+await new Promise((resolve) => setTimeout(resolve, 5000));
+```
