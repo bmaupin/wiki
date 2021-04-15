@@ -48,6 +48,10 @@ hr {
   margin: 24px 0;
 }
 
+li {
+  margin: 0.5em 0;
+}
+
 pre {
   padding: 16px;
   overflow: auto;
@@ -107,11 +111,7 @@ table th {
 }
 
 .content ol > li {
-  margin: 0.5em 0 1em;
-}
-
-.content ul > li {
-  margin: 0.5em 0;
+  margin-bottom: 1em;
 }
 
 .nav-content {
@@ -122,9 +122,9 @@ table th {
 }
 
 .page-tree li {
-  position: relative;
   /* Make up for the extra space added by .list-collapser */
   left: -17px;
+  position: relative;
 }
 
 .page-tree ul {
@@ -174,10 +174,6 @@ table th {
   color: white;
 }
 
-.sidebar-menu {
-  line-height: 1.5em;
-}
-
 .sidebar-menu a {
   color: #b3b3b3;
 }
@@ -211,6 +207,7 @@ pre.highlight {
     margin-left: 0;
     padding: 1.618em;
   }
+
   .sidebar {
     display: none;
   }
