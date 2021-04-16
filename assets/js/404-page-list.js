@@ -10,7 +10,7 @@ const basename = (url) => {
   }
 };
 
-fetch('/assets/js/pages.json')
+fetch('/wiki/assets/js/pages.json')
   .then((response) => response.json())
   .then((pages) => {
     const matchingPages = [];
