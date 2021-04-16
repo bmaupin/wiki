@@ -1,0 +1,13 @@
+---
+layout: none
+---
+[
+  {% for page in site.pages -%}
+    {% comment %} The capitalized directory name will be used if the page doesn't have a title {% endcomment %}
+    {%- assign directory_title = page.dir | split: '/' | last | capitalize -%}
+    {
+      "title": "{{ page.title | default: directory_title | escape }}",
+      "url": "{{ site.baseurl }}{{ page.url }}"
+    } {%- unless forloop.last %},{% endunless %}
+  {% endfor -%}
+]
