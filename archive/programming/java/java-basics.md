@@ -100,7 +100,8 @@ public int myNumber;
 
 ```
 List<String> myList = new ArrayList<String>();
-myList.add(someString);myList.get(int index);
+myList.add(someString);
+myList.get(int index);
 myList.remove(int index);
 myList.size();
 myList.isEmpty();
