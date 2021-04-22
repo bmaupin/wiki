@@ -24,7 +24,7 @@ title: Android databases
    - it could possibly be said that this is the most "common" way, as most apps will be using that database to store preferences, notes, etc, and any other data the app needs will probably come from the internet
 
 1. creating a database ahead of time and packaging it with your app
-   - this is the most efficient method if you want to create an app whose data will be accessible offline ([http://stackoverflow.com/questions/2887119/populate-android-database-from-csv-file](http://stackoverflow.com/questions/2887119/populate-android-database-from-csv-file))
+   - this is the most efficient method if you want to create an app whose data will be accessible offline ([Populate Android Database From CSV file?](https://stackoverflow.com/q/2887119/399105))
 
 #### creating a SQLite database within your android app
 
@@ -36,10 +36,10 @@ title: Android databases
 
 #### creating an SQLite database to package with an android application
 
-- [http://stackoverflow.com/questions/513084/how-to-ship-an-android-application-with-a-database](http://stackoverflow.com/questions/513084/how-to-ship-an-android-application-with-a-database)
+- [Ship an application with a database](https://stackoverflow.com/q/513084/399105)
 - [http://notes.theorbis.net/2010/02/batch-insert-to-sqlite-on-android.html](http://notes.theorbis.net/2010/02/batch-insert-to-sqlite-on-android.html)
 - [http://www.reigndesign.com/blog/using-your-own-sqlite-database-in-android-applications/](http://www.reigndesign.com/blog/using-your-own-sqlite-database-in-android-applications/)
-- [http://stackoverflow.com/questions/2387421/how-to-use-my-own-sqlite-database](http://stackoverflow.com/questions/2387421/how-to-use-my-own-sqlite-database)
+- [How to use my own sqlite database?](https://stackoverflow.com/q/2387421/399105)
 
 1. gather/organize your data in whatever program you desire
 

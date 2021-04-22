@@ -14,7 +14,7 @@ use suds
 
 [https://fedorahosted.org/suds/](https://fedorahosted.org/suds/)
 
-[http://stackoverflow.com/questions/206154/whats-the-best-soap-client-library-for-python-and-where-is-the-documentation-fo](http://stackoverflow.com/questions/206154/whats-the-best-soap-client-library-for-python-and-where-is-the-documentation-fo)
+[What SOAP client libraries exist for Python, and where is the documentation for them?](https://stackoverflow.com/q/206154/399105)
 
 #### URL parsing
 
