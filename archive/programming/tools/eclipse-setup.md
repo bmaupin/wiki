@@ -100,8 +100,7 @@ title: Eclipse setup
 
          [http://developer.android.com/sdk/installing/installing-adt.html](http://developer.android.com/sdk/installing/installing-adt.html)
 
-         If you get the error "sdk platform tools is missing": [
-         http://stackoverflow.com/questions/4527414/huh-sdk-platform-tools-component-is-missing](http://stackoverflow.com/questions/4527414/huh-sdk-platform-tools-component-is-missing)
+         If you get the error "sdk platform tools is missing": ["SDK Platform Tools component is missing!"](https://stackoverflow.com/q/4527414/399105)
 
 1. _Window_ > _Preferences_ > _General_ > _Editors_ > _Text Editors_ > _Spelling_ > uncheck _Enable spell checking_ > _OK_
 1. _Window_ > _Preferences_ > _General_ > _Startup and Shutdown_ > uncheck all plugins > _OK_
