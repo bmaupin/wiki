@@ -1,6 +1,6 @@
 <!-- prettier-ignore -->
 <div class="breadcrumbs">
-  <span><a href="{{ '/' | relative_url }}">{{ site.title }}</a>&nbsp;&raquo;&nbsp;</span>
+  <span><a href="{{ '/' | relative_url }}"><span class="fas fa-home"></span></a>&nbsp;/&nbsp;</span>
   {% comment %} Create an empty array {% endcomment %}
   {% assign breadcrumb_paths = '' | split: ',' %}
   {% assign dir_segments = page.dir | split: '/' %}
@@ -15,7 +15,7 @@
     {% for site_page in site.pages %}
       {% if site_page.url == breadcrumb_path and site_page.url != '/' and site_page.url != page.url %}
       {% assign directory_title = site_page.dir | split: '/' | last | capitalize %}
-      <span><a href="{{ site_page.url | relative_url }}">{{ site_page.title | default: directory_title }}</a>&nbsp;&raquo;&nbsp;</span>
+      <span><a href="{{ site_page.url | relative_url }}">{{ site_page.title | default: directory_title }}</a>&nbsp;/&nbsp;</span>
       {% endif %}
     {% endfor %}
   {% endfor %}
