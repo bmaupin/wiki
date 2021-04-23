@@ -13,7 +13,7 @@ Template tips: [http://sites.google.com/site/sitetemplateinfo/](http://sites.goo
 3. search for "code wrapper"
 4. paste the code from here: 
 
-    [http://www.htmlcommentbox.com/]([http://www.htmlcommentbox.com/])
+    [http://www.htmlcommentbox.com/](http://www.htmlcommentbox.com/)
 
 5. width: 100%
 
