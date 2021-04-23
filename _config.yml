@@ -1,4 +1,6 @@
 baseurl: /wiki
+exclude:
+  - .github/
 github:
   source:
     branch: master
