@@ -1,6 +1,8 @@
 baseurl: /wiki
 exclude:
   - .github/
+  # Fixes GitHub Actions build (https://github.com/jekyll/jekyll/issues/2938)
+  - vendor/bundle
 github:
   source:
     branch: master

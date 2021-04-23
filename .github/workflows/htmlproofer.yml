@@ -13,8 +13,13 @@ jobs:
         with:
           # Only build, don't publish
           build_only: true
+        env:
+          # Fix GitHub Metadata: No GitHub API authentication could be found. Some fields may be missing or have incorrect data.
+          JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Fix jekyll-github-metadata/repository_finder.rb:29:in `block in nwo': No repo name found.
+          PAGES_REPO_NWO: ${{ github.repository }}
       - name: Check HTML using htmlproofer
         uses: chabad360/htmlproofer@master
         with:
-          directory: '_site'
+          directory: './_site'
           arguments: --assume_extension --disable-external --empty-alt-ignore --url-ignore "_,#" --url-swap "^/wiki:"
