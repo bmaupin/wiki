@@ -20,7 +20,7 @@ $now = date("Y-m-d H:i:s");
 $time = date("Y-m-d H:i:s", $epoch);
 ```
 
-#### Convert Microsoft's [FILETIME](<[https://docs.microsoft.com/windows/win32/api/minwinbase/ns-minwinbase-filetime](https://docs.microsoft.com/windows/win32/api/minwinbase/ns-minwinbase-filetime)>) to epoch
+#### Convert Microsoft's [FILETIME](https://docs.microsoft.com/windows/win32/api/minwinbase/ns-minwinbase-filetime) to epoch
 
 ```
 $epoch = ($filetime / 10000000) - 11644473600;
