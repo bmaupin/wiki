@@ -8,18 +8,22 @@ jobs:
     steps:
       - name: Check out the code
         uses: actions/checkout@v2
+
       - name: Build the Jekyll site
         uses: helaili/jekyll-action@v2
         with:
           # Only build, don't publish
           build_only: true
+          # Set _site as the destination directory
+          jekyll_build_options: -d _site
         env:
           # Fix GitHub Metadata: No GitHub API authentication could be found. Some fields may be missing or have incorrect data.
           JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Fix jekyll-github-metadata/repository_finder.rb:29:in `block in nwo': No repo name found.
           PAGES_REPO_NWO: ${{ github.repository }}
+
       - name: Check HTML using htmlproofer
         uses: chabad360/htmlproofer@master
         with:
-          directory: './_site'
+          directory: '_site'
           arguments: --assume_extension --disable-external --empty-alt-ignore --url-ignore "_,#" --url-swap "^/wiki:"
