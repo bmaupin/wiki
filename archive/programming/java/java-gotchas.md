@@ -2,22 +2,6 @@
 title: Java gotchas
 ---
 
-#### Comparing two objects, in particular Strings, must use `.equals`, not `==`
-
-(`==` evaluates whether it's the same object, not whether the object has the same contents, etc.)
-
-Ex:
-
-```
-if (myString.equals("my text") {
-```
-
-not
-
-```
-if (myString == "my text ") {
-```
-
 #### Java Strings have no built-in method to join an array of strings
 
 #### Java doesn't support nested methods/functions
