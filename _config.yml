@@ -10,6 +10,7 @@ github:
 paths_to_ignore:
   - 404.md
   - assets/css/style.scss
+  - assets/js/pages.json
   - index.md
   - robots.txt
   - sitemap.xml
