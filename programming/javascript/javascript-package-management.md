@@ -5,47 +5,88 @@ title: JavaScript package management
 ## NPM
 
 #### Install NPM
+
 NPM comes with Node.js. To install Node.js:
 [https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
 
-
 #### List outdated packages
 
-    npm outdated
-
+```
+npm outdated
+```
 
 #### Upgrade a package
+
 Upgrade a dependency:
 
-    npm install packagename@latest
+```
+npm install packagename@latest
+```
 
 Upgrade a dev dependency:
 
-    npm install packagename@latest --save-dev
-
+```
+npm install packagename@latest --save-dev
+```
 
 #### List installed packages
 
-    npm ls
+```
+npm ls
+```
 
+#### Scan for vulnerabilities
 
+```
+npm audit
+```
+
+#### Fix vulnerabilities
+
+1. Try to fix automatically
+
+   ```
+   npm audit fix
+   ```
+
+1. If that doesn't work:
+   ```
+   rm -rf node_modules/*
+   npm install
+   ```
 
 ## Yarn
 
 #### Install Yarn
-[https://yarnpkg.com/en/docs/install](https://yarnpkg.com/en/docs/install)
 
+[https://yarnpkg.com/en/docs/install](https://yarnpkg.com/en/docs/install)
 
 #### Install a package as a dependency
 
-    yarn add packagename
-
+```
+yarn add packagename
+```
 
 #### Install a package as a dev dependency
 
-    yarn add --dev packagename
-
+```
+yarn add --dev packagename
+```
 
 #### Upgrade a package
 
-    yarn add packagename
+```
+yarn add packagename
+```
+
+#### Scan for vulnerabilities
+
+```
+yarn audit
+```
+
+#### Fix vulnerabilities
+
+```
+yarn upgrade
+```
