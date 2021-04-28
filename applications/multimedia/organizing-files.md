@@ -52,10 +52,16 @@ Replace `/path` with path to a file, directory, or a wildcard pattern
 exiftool '-DateTimeOriginal<filename' /path
 ```
 
+#### Set image timestamp to specific value
+
+```
+exiftool -AllDates="2017-06-30 18:25:07" image.jpg
+```
+
 #### Set file timestamps based on metadata
 
 ```
-exiftool "-FileCreateDate<DateTimeOriginal" "-FileModifyDate<DateTimeOriginal"  file
+exiftool "-FileCreateDate<DateTimeOriginal" "-FileModifyDate<DateTimeOriginal" file
 ```
 
 #### Fix EXIF metadata
