@@ -24,7 +24,7 @@ Use [dotEPUB](http://dotepub.com/)
 
 8. The generated EPUB will be located in your home folder/Calibre Library/_author_/_title_
 
-#### Convert Word Document to EPUB
+#### Convert document (.doc, .docx, .odt, .rtf) to EPUB
 
 - Using Calibre
 
@@ -32,7 +32,9 @@ Use [dotEPUB](http://dotepub.com/)
 
   1. Install and open [Calibre](http://calibre-ebook.com/)
 
-  2. If it's a .odt or .doc file, open it in LibreOffice and save it as a .docx file first (not necessary for .rtf files)
+  2. If it's a .doc file, open it in LibreOffice and save it as a .docx file first
+
+     **Note:** Calibre can convert .odt files directly to EPUB, but the results may be better if they're converted to .docx first
 
   3. It's best to edit the paragraphs so there's spacing between them. In LibreOffice:
 
