@@ -26,6 +26,12 @@ rdfind -dryrun true -makesymlinks true /path1 /path2
 fdupes -r -dP /path1 /path2
 ```
 
+You may get an error if you're running an older version of fdupes; in that case, use this command:
+
+```
+fdupes -r -d /path1 /path2
+```
+
 - Replace `/path1 /path2` with one or more directories to search for duplicates
 
 ## Organizing files
