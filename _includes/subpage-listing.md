@@ -10,7 +10,7 @@
       {%- unless page.url == '/' and first_url_segment == 'archive' -%}
         {%- assign url_segments = relative_subpage_url | split: '/' -%}
         {% comment %} The capitalized directory name will be used if the page doesn't have a title {% endcomment %}
-        {%- assign directory_title = site_page.dir | split: '/' | last | capitalize -%}
+        {%- assign directory_title = site_page.dir | split: '/' | last | capitalize | replace: "-", " " -%}
         {% comment %} Indent links starting at the second level for a hierarchical page tree link list {% endcomment %}
         {%- for i in (2..url_segments.size ) -%}{{-"    "-}}{%- endfor -%}- [{{ site_page.title | default: directory_title }}]({{ relative_subpage_url }})
       {%- endunless %}
