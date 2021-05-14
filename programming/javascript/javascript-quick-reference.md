@@ -17,7 +17,7 @@ for (let i = 0; i < array.length; i++) {
 Or use [`for...of`](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/for...of) for better readability:
 
 ```javascript
-for (let element of array) {
+for (const element of array) {
   console.log(element);
 }
 ```
@@ -56,3 +56,9 @@ console.log('myMap=' + myMap);
 #### Iterating over a `Map`
 
 Use `for..of`: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#Iterating_Map_with_for..of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#Iterating_Map_with_for..of)
+
+## Objects
+
+#### Iterate over an object
+
+See [https://stackoverflow.com/a/684692/399105](https://stackoverflow.com/a/684692/399105)
