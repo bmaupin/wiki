@@ -102,20 +102,6 @@ myArray.push("some string");
 myArray.length
 ```
 
-## Objects
-
-#### Iterate over an object
-
-Use `for...in` ([https://stackoverflow.com/a/684692/399105](https://stackoverflow.com/a/684692/399105))
-
-```
-for (let prop in obj) {
-  if (obj.hasOwnProperty(prop)) {
-    console.log(prop[obj]);
-  }
-}
-```
-
 ## Exceptions
 
 #### Throwing exceptions
