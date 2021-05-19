@@ -39,23 +39,28 @@ array.includes(value);
 
 **Note:** Use `Map` when you want a key/value associative array and you want to guarantee the insertion order. Otherwise, the convention is to use a simple JavaScript object.
 
-#### Logging the contents of a map to the console
+#### Iterating over a `Map`
+
+Use [`for..of`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#Iterating_Map_with_for..of):
+
+## Logging
+
+#### Logging non-primitive variables
+
+When you wish to log a non-primitive variable, it's best to log it directly, e.g.
 
 ```javascript
-console.log(`myMap=`, myMap);
+console.log(myMap);
+console.log('myMap=', myMap);
 ```
 
-Unfortunately none of these will log the content of the map:
+If you use one of these methods, the string conversion will cause some loss of data and will not work for certain objects such as Maps:
 
 ```javascript
 console.log(JSON.stringify(myMap));
 console.log(`myMap=${myMap}`);
 console.log('myMap=' + myMap);
 ```
-
-#### Iterating over a `Map`
-
-Use `for..of`: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#Iterating_Map_with_for..of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#Iterating_Map_with_for..of)
 
 ## Objects
 
