@@ -20,44 +20,44 @@ sudo apt install handbrake-gtk
 
 2. _Source_ > browse to video
 
-3. Under _Presets List_ on the right select _Regular_ > _High Profile_
+3. Under _Presets List_ on the right select one of the presets under _General_
 
-   - If the device you'll be playing the video back on is older, you may need to select the Normal profile here if you have problems with a video encoded with High Profile.
+   - The _Fast 1080p30_ preset is more or less the default preset
+   - Choose one of the _Very Fast_ presets for a smaller file size and slightly reduced quality
+   - Choose one of the _480p_ presets for playback on an older SD television
 
 4. Change settings as needed (most of the defaults are fine except as noted in bold)
 
-   - Picture
+   - _Dimensions_
 
-     - **If your video is interlaced, make sure you select _Decomb_ > _Default_**
-       - This is the default for the _High Profile_ preset, but not for the _Normal_ preset.
-     - Auto Crop (enabled by default): the video will be automatically cropped to remove black bars on any side
+     - _Auto Crop_ (enabled by default): the video will be automatically cropped to remove black bars on any side
 
-   - Video
+   - _Filters_
 
-     - Encoder: x264 (default) - produces the highest quality and lowest file sizes
+     - **If your video is interlaced, make sure you select _Deinterlace_ > _Decomb_** (this may be set by default for some presets)
+
+   - _Video_
+
+     - Encoder: x264 (default) - this is the best default choice for most devices
+       - Some older devices like Sony DVD players only support _MPEG-4_. Try that if x264 doesn't work.
+       - _x265_ will give better video quality and smaller file sizes, but isn't supported by many devices yet; only use it if you know your device supports it
      - Framerate: _Same as source_
+       - This doesn't seem to be the default and I'm not sure how much it matters; YMMV
      - Container: mp4 (default)
      - Quality RF: 20 (default) - a higher number gives lower quality (on a logarithmic scale)
      - Size: Using x264 and RF: 20 will average about 925M per hour of video (this can vary greatly; this is only an average)
 
-   - Audio Defaults
+   - _Audio_
 
-     - Encoder: AAC (default) - produces the highest quality at a given bitrate
-     - Mixdown: for watching on a system with only 2 speakers, Dolby Pro Logic II (the default) is fine
+     - **For some reason, Handbrake will often do an unnecessary audio reencode by default.** If the source audio (to the left of the arrow) doesn't have more channels than you need, and the destination audio (to the right of the arrow) doesn't say _Passthrough_, remove the default audio track(s), click _Add_ to add a new track, and for _Encoder_ choose the appropriate _Passthru_ option
+     - If your device doesn't support the source codec or if you want to reencode the audio, the AAC (default) codec is fine for most purposes
+       - If you play the video and the audio doesn't work, try reencoding it with a different codec
 
-   - Audio List
+   - _Subtitles_
 
-     - **If any passthrough tracks are listed, delete the AAC reencoded track (the one that says AAC to the right of the arrow)**
-       - This will keep the audio from being reencoded and will ensure higher quality. Reencoding the audio isn't always necessary.
-       - If you play the video and the audio doesn't work, try reencoding it and keeping both tracks (AAC and passthrough)
-     - **If no passthrough tracks are listed, delete the AC3 reencoded track (the one that says AC3 to the right of the arrow)**
-
-   - Adding subtitles
-     1. Select the _Subtitle List_ tab
-     2. Click _Add_ to add a subtitle track
-     3. Select the subtitle track you added
-     4. From the dropdown box, select the subtitle language you want that track to be
-     5. Repeat these steps for any other subtitles you want
+     - **For many presets, Handbrake will only add subtitles if the audio tracks are in a foreign language**
+     - To keep any of the source subtitle tracks, click _Add_ > _Embedded Subtitle List_ and choose the desired source tracks, or click _Add All_ to keep them all
+     - If your subtitles are in a different file you can choose _Import SRT_ or _Import SSA_ to import them into the destination file (recommended)
 
 5. When you're ready to start encoding, click _Start_
 
