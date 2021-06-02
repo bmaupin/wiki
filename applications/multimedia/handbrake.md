@@ -71,25 +71,28 @@ sudo apt install handbrake-gtk
 
     - Ubuntu
 
-            sudo apt-get -y install libdvdread4
-            sudo /usr/share/doc/libdvdread4/install-css.sh
+      ```
+      sudo apt -y install libdvdread4
+      sudo /usr/share/doc/libdvdread4/install-css.sh
+      ```
 
       (Reboot may be necessary)
 
     - Mac
 
-      1.  Install Homebrew
+      1. Install Homebrew
 
-          - Go here and follow installation instructions:
-            [http://brew.sh/](http://brew.sh/)
+         - Go here and follow installation instructions: [http://brew.sh/](http://brew.sh/)
 
-          - If you see a window prompt to install Xcode, choose not to install it (all necessary dependencies will be installed by the script)
+         - If you see a window prompt to install Xcode, choose not to install it (all necessary dependencies will be installed by the script)
 
-      2.  Install libdvdcss
+      2. Install libdvdcss
 
-              brew install libdvdcss
+         ```
+         brew install libdvdcss
+         ```
 
-      3.  Close and reopen Handbrake
+      3. Close and reopen Handbrake
 
 2.  Insert the DVD
 
