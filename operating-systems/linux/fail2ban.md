@@ -44,3 +44,17 @@ dbfile = /var/lib/fail2ban/fail2ban.sqlite3
    ```
    sudo service fail2ban restart
    ```
+
+#### Get Fail2ban status
+
+1. Get the list of jails
+
+   ```
+   sudo fail2ban-client status
+   ```
+
+1. Get the status of a particular jail
+
+   ```
+   sudo fail2ban-client status sshd
+   ```
