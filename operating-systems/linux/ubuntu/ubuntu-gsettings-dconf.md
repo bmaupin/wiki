@@ -22,10 +22,45 @@ gsettings set com.canonical.Unity.Lenses remote-content-search 'none'
 gsettings set org.gnome.DejaDup full-backup-period 180
 ```
 
+#### Reset a particular setting to the default value
+
+```
+gsettings reset com.canonical.Unity.Lenses remote-content-search 'none'
+gsettings reset org.gnome.DejaDup full-backup-period 180
+```
+
+#### Recursively list all keys and values
+
+```
+gsettings list-recursively | sort
+```
+
+This is particularly useful when figuring out which key is used for a setting, e.g.
+
+1. Dump the list of keys/values before the change
+
+   ```
+   gsettings list-recursively | sort > before
+   ```
+
+1. Make the change
+
+1. Dump the list of keys/values after the change
+
+   ```
+   gsettings list-recursively | sort > after
+   ```
+
+1. Diff to see which key was changed
+
+   ```
+   diff before after
+   ```
+
 #### Search for a particular schema
 
 ```
-gsettings list-schemas  | egrep -i "deja|duplicity"
+gsettings list-schemas | egrep -i "deja|duplicity"
 ```
 
 #### Search for a particular key (setting)
