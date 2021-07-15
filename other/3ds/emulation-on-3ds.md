@@ -26,11 +26,11 @@ Follow the instructions here: [https://3ds.hacks.guide/](https://3ds.hacks.guide
   - (Recommended) DSP1: allows homebrew applications to have sound
   - (Recommended) FBI: allows you to install CIA files
   - (Recommended) Homebrew Launcher Loader: this gives you an icon to directly open the Homebrew Launcher; otherwise it's a multi-step process involving opening Download Play, using a button combo, and selecting a specific menu item
-  - (Recommended) Luma3DS Updater: makes the update process of Luma3DS (the CFW) easier; Luma3DS needs to be updated any time Nintendo releases new 3DS firmware
+  - (Recommended) Universal-Updater: this allows you to install and update 3DS homebrew
   - (Optional) Anemone3DS: install if you want custom themes
   - (Optional) Checkpoint: install if you want to be able to back up and restore saves for DS and 3DS games
   - (Optional) ctr-no-timeoffset: install if you want to bypass penalties from certain games for your system clock changing
-  - (Optional) GodMode9
+  - (Optional) GodMode9: this allows you to copy the CFW to the 3DS' internal memory instead of the SD card so you can boot the CFW without an SD card installed
 
 ## Emulation
 
@@ -85,6 +85,7 @@ Alternatively, ROMs can be played through other software such as RetroArch or TW
   [https://3ds.hacks.guide/finalizing-setup](https://3ds.hacks.guide/finalizing-setup)
 
 - Install a CIA file
+
   1. Copy the CIA file to your SD card
   1. Open the Homebrew Launcher
   1. Open FBI
@@ -167,6 +168,7 @@ Alternatively, ROMs can be played through other software such as RetroArch or TW
        1. Click _Go to file_ and start typing the name of the file
        1. Download the appropriate file under `Named_Titles`
        1. In NSUI, click _Load image from file_ to use the local file
+
   1. Under _CIA banner_ click _Download Title Screen from database_
   1. Under _Game patches and extras_ uncheck _Enable Download Play_ (this doubles the size of the file)
   1. _Project_ > _Export CIA_
