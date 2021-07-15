@@ -99,6 +99,18 @@ Alternatively, ROMs can be played through other software such as RetroArch or TW
   1. Select _&lt;current directory&gt;_
   1. Select _Install and delete all CIAs_
 
+- Install from a QR code
+
+  Anything that can typically be installed as a CIA file can be installed using a QR code to avoid having to copy the file to your SD card
+
+  1. On another device, find the QR code for what you would like to install
+  1. On the 3DS, make sure the wireless is enabled
+  1. Open the Homebrew Launcher
+  1. Open FBI
+  1. Go to _Remote Install_ > _Scan QR Code_
+  1. Point the camera at the QR code
+  1. Select _Yes_ to install the software when prompted
+
 #### RetroArch
 
 - Install RetroArch
