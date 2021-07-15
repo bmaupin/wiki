@@ -32,6 +32,12 @@ Follow the instructions here: [https://3ds.hacks.guide/](https://3ds.hacks.guide
   - (Optional) ctr-no-timeoffset: install if you want to bypass penalties from certain games for your system clock changing
   - (Optional) GodMode9: this allows you to copy the CFW to the 3DS' internal memory instead of the SD card so you can boot the CFW without an SD card installed
 
+#### Updating custom firmware (CFW)
+
+⚠ If you get a notification that there's a new system update available, you'll want to update the CFW **before** installing the system update.
+
+Follow the directions here: [Updating B9S](https://3ds.hacks.guide/updating-b9s.html)
+
 ## Emulation
 
 **Note:** Some of these emulators may be outdated or unmaintained. Before installing
