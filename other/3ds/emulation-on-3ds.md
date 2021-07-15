@@ -145,7 +145,7 @@ Alternatively, ROMs can be played through other software such as RetroArch or TW
 
 - Install TWiLight Menu++
 
-  [https://github.com/DS-Homebrew/TWiLightMenu/wiki/installing-%283ds%29](https://github.com/DS-Homebrew/TWiLightMenu/wiki/installing-%283ds%29)
+  [Installing TWiLight Menu++ (3DS)](https://wiki.ds-homebrew.com/twilightmenu/installing-3ds)
 
 - Exit a game
 
