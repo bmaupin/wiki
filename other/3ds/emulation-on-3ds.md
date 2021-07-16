@@ -111,6 +111,12 @@ Alternatively, ROMs can be played through other software such as RetroArch or TW
   1. Point the camera at the QR code
   1. Select _Yes_ to install the software when prompted
 
+#### Luma3DS
+
+- Open Rosalina menu (shows battery percentage and other features)
+
+  Press <kbd>L</kbd> + <kbd>down</kbd> + <kbd>select</kbd>
+
 #### RetroArch
 
 - Install RetroArch
