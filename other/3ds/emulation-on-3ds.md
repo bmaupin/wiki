@@ -167,7 +167,18 @@ Alternatively, ROMs can be played through other software such as RetroArch or TW
 
 - Exit a game
 
-  - Hold L + R + Down + B for 2 seconds
+  - Hold <kbd>L</kbd> + <kbd>R</kbd> + <kbd>down</kbd> + <kbd>B</kbd> for 2 seconds
+
+- Access the settings
+
+  1. Press <kbd>Select</kbd>
+  1. Go all the way down to the icon on the bottom and press <kbd>A</kbd>
+  1. Use <kbd>L</kbd> and <kbd>R</kbd> to change between the menu pages
+  1. Press <kbd>B</kbd> to exit
+
+- Playing games in widescreen
+
+  See [Playing in Widescreen](https://wiki.ds-homebrew.com/twilightmenu/playing-in-widescreen)
 
 ## Tools
 
