@@ -10,28 +10,29 @@ sudo apt install simple-scan
 
 ## Scanning
 
-**Note:** work in progress; tweak these as needed, particularly the DPI settings
+1. Set the page size
 
-#### Scanning black and white text documents
+   Menu > _Preferences_ > _Scanning_ > _Page Size_
 
-1. In the menu go to _Preferences_
-   1. Under _Scanning_ set the _Page Size_
-   1. Under _Quality_ set _Text Resolution_ to _150 dpi_ (the default)
-1. In the menu select _Text_
-1. Click _Scan_
+1. Set the resolution and document type depending on the type of document
 
-#### Scanning colour text documents
+   - Black-and-white text documents
 
-1. In the menu go to _Preferences_
-   1. Under _Scanning_ set the _Page Size_
-   1. Under _Quality_ set _Image Resolution_ to _300 dpi_ (the default)
-1. In the menu select _Image_
-1. Click _Scan_
+     1. Menu > _Preferences_ > _Quality_ > _Text Resolution_ > _300 dpi_
+     1. Click the button to the right of _Scan_ > _Text_
 
-#### Scanning photos
+   - Colour documents
 
-1. In the menu go to _Preferences_
-   1. Under _Scanning_ set the _Page Size_
-   1. Under _Quality_ set _Image Resolution_ to _600 dpi_
-1. In the menu select _Image_
-1. Click _Scan_
+     1. Menu > _Preferences_ > _Quality_ > _Image Resolution_ > _300 dpi_
+     1. Click the button to the right of _Scan_ > _Image_
+
+   - Photos
+
+     **Note:** Tweak the DPI as needed for better image quality
+
+     1. Menu > _Preferences_ > _Quality_ > _Image Resolution_ > _600 dpi_
+     1. Click the button to the right of _Scan_ > _Image_
+
+1. For each page, insert it into the scanner and click _Scan_
+
+1. Click _Save_ when you've scanned all the documents
