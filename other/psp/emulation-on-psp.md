@@ -10,6 +10,26 @@ are:
 - [Emulators on PSP](http://emulation.gametechwiki.com/index.php/Emulators_on_PSP)
 - [Emulation General wiki](http://emulation.gametechwiki.com/index.php/Main_Page)
 
+## Is the PSP a good device for emulation?
+
+#### Advantages
+
+- Convenient size
+- Buttons are sized well (the Vita buttons are smaller)
+- Plays PSP and most PlayStation 1 games natively
+- Powerful enough to emulate most 8 and 16-bit consoles
+- Second-hand systems are fairly inexpensive to purchase
+
+#### Disadvantages
+
+- Official replacement batteries are no longer available and most third-party batteries are low quality
+- Build quality is average; shell is painted and the paint rubs off, battery cover pops off easily, system creaks a bit, connectors near some of the screws break easily, memory card sometimes disconnects during play
+- Built-in Wifi doesn't work with newer Wifi standards
+
+#### Other notes
+
+- Uses a proprietary memory card, but an adaptor for a micro SD card can be purchased very cheaply
+
 ## RetroArch
 
 #### System support
