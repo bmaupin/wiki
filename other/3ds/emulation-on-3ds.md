@@ -9,6 +9,19 @@ title: Emulation on 3DS
 - This document mostly uses the term "3DS" but is also applicable to the 2DS
 - Many emulators are only capable of running on a New 3DS
 
+#### Reasons the 3DS is great for emulation
+
+- Easily hacked to install homebrew/emulators
+- Natively plays 3DS, DS, and GBA games
+- Powerful enough to emulate most 8-bit consoles
+- The New 3DS models are powerful enough to emulate most 16-bit consoles and some limited ability to emulate Nintendo 64 and PlayStation 1
+- Decent build quality typical of Nintendo consoles
+- Clamshell design protects the screens
+- Second screen is convenient for emulator menus, logs, etc
+- Uses a standard micro SD card instead of a proprietary memory stick
+- Decent battery life and official replacement batteries are still available for purchase
+- Individual games can be installed to the home screen if desired (see _New Super Ultimate Injector_ below)
+
 #### Glossary
 
 - .3dsx files
@@ -76,10 +89,7 @@ Alternatively, ROMs can be played through other software such as RetroArch or TW
 
 - Many Game Boy, Game Boy Color, NES, SNES (New 3DS only), Game Gear, and TurboGrafx-16 (Japan only) titles are available in the eShop
   - These titles and others can be found as or converted to CIA files using a tool like New Super Ultimate Injector (see below)
-- RetroArch can emulate the largest number of systems, including PlayStation 1 (see below)
-
-  [https://emulation.gametechwiki.com/index.php/Emulators_on_3DS#RetroArch](https://emulation.gametechwiki.com/index.php/Emulators_on_3DS#RetroArch)
-
+- RetroArch (see below) can emulate the largest number of systems, including PlayStation 1 ([https://emulation.gametechwiki.com/index.php/Emulators_on_3DS#RetroArch](https://emulation.gametechwiki.com/index.php/Emulators_on_3DS#RetroArch))
 - TWiLight Menu++ can launch Nintendo DS, SNES, NES, Game Boy, Game Boy Advance, Game Gear, Master System, and Mega Drive/Genesis ROMs
 
 ## Software
