@@ -24,13 +24,6 @@ title: GitHub Actions
 
    - When copying the starter workflow, replace `$default-branch` with `main` or `master` as appropriate (`$default-branch` is only for workflow templates)
 
-   - To run a script in the repo, prefix it with `./`, e.g.
-
-     ```yaml
-     - name: Build
-       run: ./build.sh
-     ```
-
 1. (Optional) Create a badge in your readme
 
    Follow this pattern:
@@ -48,3 +41,28 @@ title: GitHub Actions
    ```markdown
    [![CI](https://github.com/bmaupin/devops-cheatsheets/workflows/CI/badge.svg)](https://github.com/bmaupin/devops-cheatsheets/actions)
    ```
+
+#### Skip CI
+
+Add `[skip ci]` to the commit message
+
+## Jobs
+
+#### Run an executable file in the repo
+
+Prefix it with `./`, e.g.
+
+```yaml
+- name: Build
+  run: ./build.sh
+```
+
+#### Run multiple commands in a step
+
+Use a pipe, e.g.
+
+```yaml
+run: |
+  wget https://github.com/IDPF/epubcheck/releases/download/v${EPUBCHECK_VERSION}/epubcheck-${EPUBCHECK_VERSION}.zip
+  unzip epubcheck-${EPUBCHECK_VERSION}.zip
+```
