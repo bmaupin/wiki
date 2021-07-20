@@ -8,6 +8,12 @@ title: OpenWrt 802.11s mesh
 
 To use 802.11s mesh, you'll need OpenWrt 19.07+ with the `wpad-mesh-openssl` or `wpad-mesh-wolfssl` package installed. See steps below.
 
+#### Buying a device for 802.11s mesh
+
+For secondary mesh devices (that will just act as access points), at a bare minimum you will need a device with 4 MB of flash and 32 MB of RAM. However, this will require building a custom OpenWrt package for your device and/or doing all of the configuration over SSH.
+
+It will be much easier with a device with at least 8 MB of flash and 64 MB of RAM, which are also the minimum requirements for a primary mesh device. For more information, see [Buying a device for use with OpenWrt](openwrt.html#buying-a-device-for-use-with-openwrt)
+
 #### Adding mesh support to a device already running OpenWrt
 
 1. Set up internet access on the device
@@ -29,6 +35,8 @@ To use 802.11s mesh, you'll need OpenWrt 19.07+ with the `wpad-mesh-openssl` or 
    1. If you joined an existing wireless network to get internet access, go to _Network_ > _Wireless_ and click _Remove_ by that network
 
 #### Building OpenWrt 19.07 with mesh support for a device with limited storage/RAM
+
+The example below is for the TP-Link TL-WRN841N v8; customize it to suit your needs as per the documentation: [Beginners guide to building your own firmware](https://openwrt.org/docs/guide-user/additional-software/beginners-build-guide)
 
 1. Download and extract the source, e.g.
 
