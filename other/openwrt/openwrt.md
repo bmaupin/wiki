@@ -4,6 +4,12 @@ title: OpenWrt
 
 ## Basics
 
+#### Buying a device for use with OpenWrt
+
+OpenWrt supports a large number of devices. When shopping for a device you can check if it's supported here: [https://openwrt.org/toh/start](https://openwrt.org/toh/start)
+
+One device that's currently popular (as of 2021) due to its low cost and capable hardware is the [Xiaomi Mi Router 4A Gigabit Edition](https://openwrt.org/inbox/toh/xiaomi/xiaomi_mi_router_4a_gigabit_edition).
+
 #### Installation and initial configuration
 
 [https://openwrt.org/docs/guide-quick-start/factory_installation](https://openwrt.org/docs/guide-quick-start/factory_installation)
