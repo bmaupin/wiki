@@ -1,8 +1,9 @@
 ---
 title: Python MySQL
-# Remove this page from the sitemap so it hopefully doesn't get indexed as it's generating a soft 404
-sitemap: false
 ---
+
+<!-- Tell web crawlers not to index this page as it's so light on content it generates a soft 404 (https://developers.google.com/search/docs/advanced/crawling/block-indexing) -->
+<meta name="robots" content="noindex">
 
 use [MySQLdb](http://mysql-python.sourceforge.net) or [SQLAlchemy](http://www.sqlalchemy.org/) (for greater abstraction)
 
