@@ -23,6 +23,9 @@ are:
 #### Disadvantages
 
 - Official replacement batteries are no longer available and most third-party batteries are low quality
+  - The battery from Insten is okay but doesn't last nearly as long as the OEM battery
+  - The battery from Cameron Sino lasts as long as the Insten battery but the battery temperature measurement is broken
+  - Stay away from any batteries with a listed capacity higher than 1200/1800 mAh (e.g. 2400 mAh, 3600 mAh) as they are fakes with a very low capacity
 - Build quality is average; shell is painted and the paint rubs off, battery cover pops off easily, system creaks a bit, connectors near some of the screws break easily, memory card sometimes disconnects during play
 - Built-in Wifi doesn't work with newer Wifi standards
 
