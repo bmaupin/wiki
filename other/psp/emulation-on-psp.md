@@ -40,7 +40,7 @@ are:
 [http://emulation.gametechwiki.com/index.php/Emulators_on_PSP#RetroArch](http://emulation.gametechwiki.com/index.php/Emulators_on_PSP#RetroArch)
 
 - Game Boy/Game Boy Color: Use Gambatte
-- GBA: Use gpSP (faster) or TempGBA (higher compatibility)
+- GBA: Use gpSP
   - Download a GBA BIOS and copy it to /PSP/RETROARCH/SYSTEM/gba_bios.bin (MD5: `a860e8c0b6d573d191e4ec7db1b1e4f6`)
   - Most games will require frame skipping. See the core options to enable it.
 - NES: Use QuickNES
@@ -63,7 +63,7 @@ are:
 
 1. (Recommended) Remove unusable cores. In the RetroArch/cores folder:
    - Delete mgba_libretro.PBP
-     - It runs too slow to be usable. Use gpSP or TempGBA instead
+     - It runs too slow on the PSP to be usable. Use gpSP instead
    - Delete fceumm_libretro.PBP
      - Use QuickNES instead
 
@@ -124,7 +124,9 @@ Use this for N64 emulation:
 
 [https://github.com/DaedalusX64/daedalus](https://github.com/DaedalusX64/daedalus)
 
-## ~~TempGBA4PSP-mod (Game Boy Advance)~~ (Use RetroArch)
+## ~~TempGBA4PSP-mod (Game Boy Advance)~~
+
+(Use [RetroArch](#retroarch) instead)
 
 #### Install TempGBA4PSP-mod
 
@@ -142,7 +144,9 @@ Use this for N64 emulation:
 
 - O button is select, X is cancel
 
-## ~~gpSP mod (Game Boy Advance)~~ (Use RetroArch)
+## ~~gpSP mod (Game Boy Advance)~~
+
+(Use [RetroArch](#retroarch) instead)
 
 #### Install gpSP mod
 
@@ -180,7 +184,9 @@ Mirrors
 - [Mirror for original gpSP source](https://github.com/BASLQC/gPSP)
   - Another mirror: [https://github.com/cedricwaltercson/gpsp](https://github.com/cedricwaltercson/gpsp)
 
-## ~~PicoDrive (Master System, Game Gear, Genesis/Mega Drive)~~ (Use RetroArch)
+## ~~PicoDrive (Master System, Game Gear, Genesis/Mega Drive)~~
+
+(Use [RetroArch](#retroarch) instead)
 
 1. Download PicoDrive
 
