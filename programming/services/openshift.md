@@ -134,6 +134,16 @@ Note: this can be done from the Web UI, you'd just have to delete all the compon
 
 
 
+## Templates
+
+#### Create a template from an existing project
+
+Follow the steps here: [https://github.com/bmaupin/kleanup#usage](https://github.com/bmaupin/kleanup#usage)
+
+See also: [https://docs.openshift.com/container-platform/latest/dev_guide/templates.html#export-as-template](https://docs.openshift.com/container-platform/latest/dev_guide/templates.html#export-as-template)
+
+
+
 ## Common Problems
 
 #### Build is pending and never starts
