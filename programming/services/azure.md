@@ -12,6 +12,39 @@ The best way to delete a resource cleanly is to delete the resource group associ
 
 2. Click the menu icon to the right of the resource group you'd like to delete > _Delete resource group_
 
+## App Service
+
+#### Build process
+
+The build process is run by [Oryx](https://github.com/microsoft/Oryx)
+
+Oryx will build the application based on the detected language. See its documentation on how it detects and builds languages.
+
+#### Building Java apps using Local Git
+
+Local Git isn't officially supported for Java apps. To get it working:
+
+1. Create a `.deployment` file with this content:
+
+   ```ini
+   [config]
+   command = bash deployment.sh
+   ```
+
+1. Create a `deployment.sh` file with this content:
+
+   ```bash
+   /opt/oryx/oryx build --platform java --output "$DEPLOYMENT_TARGET" "$DEPLOYMENT_SOURCE"
+   ```
+
+That will use the default Oryx build logic for Java, [which relies on Maven](https://github.com/microsoft/Oryx/blob/main/doc/runtimes/java.md). To use something else (e.g. Gradle), `deployment.sh` will need to be customized, e.g.:
+
+```bash
+/opt/oryx/oryx prep -s "$DEPLOYMENT_SOURCE"
+export JAVA_HOME=$(ls -d /tmp/oryx/platforms/java/*)
+./gradlew build
+```
+
 ## Web apps
 
 #### Create a new web app from a Github repo
