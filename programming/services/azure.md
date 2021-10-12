@@ -20,7 +20,11 @@ The build process is run by [Oryx](https://github.com/microsoft/Oryx)
 
 Oryx will build the application based on the detected language. See its documentation on how it detects and builds languages.
 
-#### Building Java apps using Local Git
+#### Deployment process
+
+The deployment process is run by [kudu](https://github.com/projectkudu/kudu)
+
+#### Deploying Java apps using Local Git
 
 Local Git isn't officially supported for Java apps. To get it working:
 
@@ -34,16 +38,40 @@ Local Git isn't officially supported for Java apps. To get it working:
 1. Create a `deployment.sh` file with this content:
 
    ```bash
-   /opt/oryx/oryx build --platform java --output "$DEPLOYMENT_TARGET" "$DEPLOYMENT_SOURCE"
+   # Echo all commands in this script
+   set -x
+
+   # Install Java (the Azure App Service build runs using https://github.com/microsoft/Oryx)
+   /opt/oryx/oryx prep -s "$DEPLOYMENT_SOURCE" 2>&1
+
+   # Gradle needs to know where Java is
+   export JAVA_HOME=$(ls -d /tmp/oryx/platforms/java/*)
+
+   # Clean any previous builds and build the jar file
+   ./gradlew clean bootJar 2>&1
+
+   # Get the path to the app jar file
+   APP_JAR=$(find build/ -name "*.jar" -not -name "*-plain.jar")
+
+   # Copy the app jar file to /home/site/wwwroot/app.jar which will be run by default
+   # (https://github.com/Azure-App-Service/java/blob/dbba8f05c433df825a06d7a27bbf5060b1c4d812/shared/init_container.sh#L146)
+   cp "${DEPLOYMENT_SOURCE}/${APP_JAR}" "${DEPLOYMENT_TARGET}/app.jar"
    ```
 
-That will use the default Oryx build logic for Java, [which relies on Maven](https://github.com/microsoft/Oryx/blob/main/doc/runtimes/java.md). To use something else (e.g. Gradle), `deployment.sh` will need to be customized, e.g.:
+   Customize as needed, e.g. for Maven you might use this instead:
 
-```bash
-/opt/oryx/oryx prep -s "$DEPLOYMENT_SOURCE"
-export JAVA_HOME=$(ls -d /tmp/oryx/platforms/java/*)
-./gradlew build
-```
+   ```bash
+   ./mvnw clean package 2>&1
+   APP_JAR=$(find target/ -name "*.jar" -not -name "*-plain.jar")
+   ```
+
+   You can also use the [built-in Oryx build logic for Java](https://github.com/microsoft/Oryx/blob/main/doc/runtimes/java.md) by replacing the `oryx` line with this:
+
+   ```bash
+   /opt/oryx/oryx build --platform java --output "$DEPLOYMENT_TARGET" "$DEPLOYMENT_SOURCE" 2>&1
+   ```
+
+   However, it seems to run `mvn clean compile` so you'll still need to run `mvn clean package` manually in order to generate the `.jar` file.
 
 ## Web apps
 
