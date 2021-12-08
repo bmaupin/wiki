@@ -35,9 +35,9 @@ title: Install Ubuntu/Xubuntu
 
    [https://askubuntu.com/a/843678/18665](https://askubuntu.com/a/843678/18665)
 
-1. If it has Windows installed, boot the install media to the live Ubuntu
+1. If it has Windows installed, boot the install media and select _Try Ubuntu_ (instead of _Install Ubuntu_)
 
-   1. Open gparted, and delete all the partitions
+   1. Open GParted, and delete all the partitions
 
    1. Then start the install
 
@@ -60,3 +60,45 @@ title: Install Ubuntu/Xubuntu
       1. Select _Use LVM with the new Ubuntu installation_
 
       1. Check _Encrypt the new Ubuntu installation for security_ > _OK_
+
+1. (Optional) Resize the swap partition
+
+   Ubuntu may create a swap partition of only 1 GB, which isn't really enough if you want to use hibernate and seems a bit undersized in general
+
+   1. Once the installation has finished, click _Continue Testing_
+
+   1. Resize the swap partition
+
+      - If you're using LVM
+
+        1. Open a terminal window
+
+        1. Reduce the size of the primary partition, e.g.
+
+           (These examples will increase the swap partition to 32 GB)
+
+           ```
+           sudo lvreduce --resizefs -L 32G /dev/vgubuntu/root
+           ```
+
+        1. Increase the size of the swap. e.g.
+
+           ```
+           sudo lvextend -L 32G /dev/vgubuntu/swap_1
+           ```
+
+        1. Increase the size of the primary partition to use the remaining available free space
+
+           ```
+           sudo lvextend --resizefs -l +100%FREE /dev/vgubuntu/root
+           ```
+
+        1. Format the swap partition
+
+           ```
+           sudo mkswap /dev/vgubuntu/swap_1
+           ```
+
+      - If you're not using LVM, resize the swap partition using GParted
+
+   1. Reboot
