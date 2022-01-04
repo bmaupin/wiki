@@ -136,7 +136,7 @@ Devices:
 
          This can be any string (e.g. `80211s-mesh`), but it must be the same on all mesh devices
 
-         I like to use a random value (e.g. generated using `openssl rand -hex 6`) since the mesh network will be visible by clients
+         I like to use a random value (e.g. generated using `openssl rand -hex 6`) since the mesh network may be visible by some clients
 
       1. Set _Network_ to _lan_
 
