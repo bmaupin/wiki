@@ -86,9 +86,6 @@ title: Oracle
    - 18
 
      ```
-     # Workaround for https://github.com/oracle/docker-images/issues/1797
-     sed -i 's/yum -y install openssl oracle-database-preinstall-18c/yum -y install expect openssl oracle-database-preinstall-18c/' 18.4.0/Dockerfile.xe
-     sed -i 's/yum -y localinstall $INSTALL_FILE_1/unbuffer yum -y localinstall $INSTALL_FILE_1/' 18.4.0/Dockerfile.xe
      ./buildDockerImage.sh -v 18.4.0 -x -o --network=host
      ```
 
