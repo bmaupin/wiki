@@ -35,6 +35,7 @@ Some helpful flags:
 - `-v`: Mount a directory from the host machine on the container, e.g. `-v "$PWD:/build"`
 - `-e`: Set an environment variable, e.g. `-e grails.env=dev`
   - Or use `--env-file` to read in a `.env` file
+- `--name`: When not using `--rm`, give the container a name which can be used to re-run it using `docker start`, e.g. `docker start -a NAME`
 
 ## Containers
 
