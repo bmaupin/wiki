@@ -35,3 +35,9 @@ title: Android Studio
       1. Press <kbd>Ctrl</kbd>+<kbd>H</kbd>
 
       1. _OK_ > _Remove_
+
+#### Disable spell checking
+
+1. _File_ > _Settings_ > _Editor_ > _Inspections_ > _Proofreading_ > _Typo_
+
+1. Uncheck everything under _Options_ > _OK_
