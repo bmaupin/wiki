@@ -36,6 +36,10 @@ title: Android Studio
 
       1. _OK_ > _Remove_
 
+1. Create keyboard shortcut to auto format and save
+
+   [Auto format code in Android Studio/Intellij IDEA](https://medium.com/nerd-for-tech/auto-format-code-in-android-studio-intellij-idea-1f0450ee44a3)
+
 #### Disable spell checking
 
 1. _File_ > _Settings_ > _Editor_ > _Inspections_ > _Proofreading_ > _Typo_
