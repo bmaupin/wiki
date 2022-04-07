@@ -1,6 +1,8 @@
 ---
-title: Android Studio
+title: Android
 ---
+
+## Android Studio
 
 #### Install Android Studio
 
