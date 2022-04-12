@@ -23,7 +23,7 @@ title: Ansible
 ## Organization
 
 #### Folder structure
-See [Ansible Best Practices](http://docs.ansible.com/ansible/playbooks_best_practices.html)
+See [Sample Ansible setup](https://docs.ansible.com/ansible/latest/user_guide/sample_setup.html#sample-directory-layout)
 
 
 #### Operational tasks
