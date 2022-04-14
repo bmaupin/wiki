@@ -44,9 +44,7 @@ title: Android
 
 #### Disable spell checking
 
-1. _File_ > _Settings_ > _Editor_ > _Inspections_ > _Proofreading_ > _Typo_
-
-1. Uncheck everything under _Options_ > _OK_
+1. _File_ > _Settings_ > _Editor_ > _Inspections_ > _Proofreading_ > under _Proofreading_ uncheck _Typo_
 
 ## Layouts
 
