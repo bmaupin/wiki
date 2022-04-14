@@ -52,3 +52,7 @@ _Tools_ > _Create Desktop Entry_
 #### Disable spell checking
 
 _File_ > _Settings_ > _Editor_ > _Inspections_ > _Proofreading_ > under _Proofreading_ uncheck _Typo_
+
+#### Lombok support
+
+(Doesn't apply to Android Studio) Follow the steps here: [https://stackoverflow.com/questions/14866765/building-with-lomboks-slf4j-and-intellij-cannot-find-symbol-log](https://stackoverflow.com/a/63926345/399105)
