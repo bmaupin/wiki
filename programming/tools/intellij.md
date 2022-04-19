@@ -47,6 +47,12 @@ _Tools_ > _Create Desktop Entry_
      - _Reformat code_
      - _Optimize imports_
 
+  1. Disable formatting properties files
+
+     (It doesn't seem to do anything except annoyingly remove blank lines, which can be useful to group properties)
+
+     _Reformat code_ > _All file types_ > uncheck _Properties_
+
 - Android Studio: [Auto format code in Android Studio/Intellij IDEA](https://medium.com/nerd-for-tech/auto-format-code-in-android-studio-intellij-idea-1f0450ee44a3)
 
 #### Disable spell checking
