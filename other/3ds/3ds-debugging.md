@@ -1,5 +1,5 @@
 ---
-title: 3DS debugging (3dslink)
+title: 3DS debugging
 ---
 
 #### Prerequisites
@@ -12,7 +12,7 @@ title: 3DS debugging (3dslink)
 
   You either need [Docker](https://docs.docker.com/get-docker/) (recommended) or devkitARM installed on your PC
 
-#### Run applications remotely
+#### Run `.3dsx` files remotely
 
 1. Connect 3dslink
 
@@ -43,6 +43,24 @@ title: 3DS debugging (3dslink)
       ```
       docker run --rm -v "$PWD:/build" --network=host devkitpro/devkitarm 3dslink /build/retroarch_3ds.3dsx -a 192.168.0.212
       ```
+
+#### Run `.cia` files remotely
+
+[https://github.com/Steveice10/FBI/tree/master/servefiles](https://github.com/Steveice10/FBI/tree/master/servefiles)
+
+1. On a PC, download this file: [https://raw.githubusercontent.com/Steveice10/FBI/master/servefiles/servefiles.py](https://raw.githubusercontent.com/Steveice10/FBI/master/servefiles/servefiles.py
+
+1. On the 3DS, open FBI and go to _Remote Install_ > _Receive URLs over the network_
+
+1. Send the file from the PC
+
+   ```
+   python /path/to/servefiles.py 192.168.0.212 FILE.cia
+   ```
+
+   (Replace `/path/to/servefiles.py` with the path to `servefiles.py`, `192.168.0.212` with the IP of the 3DS, and `FILE.cia` with the CIA file to install)
+
+1. On the 3DS, press <kbd>A</kbd> to confirm the remote install
 
 #### Debugging
 
