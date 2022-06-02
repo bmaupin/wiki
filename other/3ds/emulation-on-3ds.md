@@ -35,7 +35,7 @@ This is a prerequisite for anything mentioned on this page.
 
 Follow the instructions here: [https://3ds.hacks.guide/](https://3ds.hacks.guide/)
 
-- Under _Finalizing Setup_, all of the steps are optional
+- Under [_Finalizing Setup_](https://3ds.hacks.guide/finalizing-setup), all of the steps are optional
   - (Recommended) DSP1: allows homebrew applications to have sound
   - (Recommended) FBI: allows you to install CIA files
   - (Recommended) Homebrew Launcher Loader: this gives you an icon to directly open the Homebrew Launcher; otherwise it's a multi-step process involving opening Download Play, using a button combo, and selecting a specific menu item
@@ -49,7 +49,23 @@ Follow the instructions here: [https://3ds.hacks.guide/](https://3ds.hacks.guide
 
 ⚠ If you get a notification that there's a new system update available, you'll want to update the CFW **before** installing the system update.
 
-Follow the directions here: [Updating B9S](https://3ds.hacks.guide/updating-b9s.html)
+In most cases, it should be sufficient to update Luma3DS before installing the system update:
+
+[https://github.com/LumaTeam/Luma3DS/wiki/Installation-and-upgrade](https://github.com/LumaTeam/Luma3DS/wiki/Installation-and-upgrade)
+
+1. Get the installed version of Luma3DS
+   1. Turn on your 3DS while holding <kbd>Select</kbd>
+   1. Make note of the Luma3DS version
+1. Compare that to the latest version here: [https://github.com/LumaTeam/Luma3DS/releases](https://github.com/LumaTeam/Luma3DS/releases)
+1. Upgrade Luma3DS if necessary
+   1. Download the latest version from [https://github.com/LumaTeam/Luma3DS/releases](https://github.com/LumaTeam/Luma3DS/releases)
+   1. (Optional) Make a backup of the `boot.3dsx` and `boot.firm` files from your SD card
+   1. Extract the new `boot.3dsx` and `boot.firm` files from the download to the root of your SD card
+1. Install the 3DS system update by going to _System Settings_ > _Other Settings_ > _System Update_
+
+If you're running an old version of boot9strap (less than v1.2), you'll need to update that first:
+
+[Updating B9S](https://3ds.hacks.guide/updating-b9s.html)
 
 ## Emulation
 
