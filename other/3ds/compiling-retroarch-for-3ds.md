@@ -70,6 +70,16 @@ title: Compiling RetroArch for 3DS
 
       (Replace `fceumm_libretro_ctr.a` based on the core you built)
 
+   1. (Optional) Enable the console
+
+      The bottom screen can display the RetroArch logs; to do this, edit Makefile.ctr:
+
+      ```
+      CONSOLE_LOG             = 1
+      ```
+
+      ⚠ This currently doesn't work due to [https://github.com/libretro/RetroArch/issues/13973](https://github.com/libretro/RetroArch/issues/13973)
+
    1. Build RetroArch
 
       From `libretro-super/retroarch`:
@@ -79,3 +89,5 @@ title: Compiling RetroArch for 3DS
       ```
 
       The built CIA will be at `libretro-super/retroarch/retroarch_3ds.cia`
+
+      Or you can remotely run the file at `libretro-super/retroarch/retroarch_3ds.3dsx` using the instructions here: [3DS debugging](3ds-debugging)
