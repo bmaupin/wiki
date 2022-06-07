@@ -55,8 +55,10 @@ title: Compiling RetroArch for 3DS
       From `libretro-super/retroarch`:
 
       ```
-      docker run --rm -v "$PWD:/build" --network=host devkitpro/devkitarm sh -c "cd /build; make -f Makefile.ctr.salamander USE_CTRULIB_2=1"
+      docker run --rm -v "$PWD:/build" --network=host devkitpro/devkitarm sh -c "cd /build; make -f Makefile.ctr.salamander USE_CTRULIB_2=1 DEBUG=1"
       ```
+
+      (Remove `DEBUG=1` here and elsewhere in this page for a production build, or if you want to test performance)
 
 1. Build RetroArch
 
@@ -85,9 +87,7 @@ title: Compiling RetroArch for 3DS
       From `libretro-super/retroarch`:
 
       ```
-      docker run --rm -v "$PWD:/build" --network=host devkitpro/devkitarm sh -c "cd /build; make -f Makefile.ctr USE_CTRULIB_2=1"
+      docker run --rm -v "$PWD:/build" --network=host devkitpro/devkitarm sh -c "cd /build; make -f Makefile.ctr USE_CTRULIB_2=1 DEBUG=1"
       ```
 
-      The built CIA will be at `libretro-super/retroarch/retroarch_3ds.cia`
-
-      Or you can remotely run the file at `libretro-super/retroarch/retroarch_3ds.3dsx` using the instructions here: [3DS debugging](3ds-debugging)
+      The built CIA will be at `libretro-super/retroarch/retroarch_3ds.cia`. You can remotely install it (or remotely run the `retroarch_3ds.3dsx` file) using the instructions here: [3DS debugging](3ds-debugging)
