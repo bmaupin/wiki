@@ -64,7 +64,22 @@ title: 3DS debugging
 
 #### Debugging
 
-1. Install the application you wish to debug on the 3DS
+1. Compile the application you wish to debug with debug symbols enabled
+
+   You can check the file after compiling if you're not sure:
+
+   ```
+   $ file retroarch_3ds.elf
+   retroarch_3ds.elf: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, with debug_info, not stripped
+   ```
+
+1. Set up the application you wish to debug
+
+   - To debug `.cia` files, install the file on the 3DS using FBI
+     - You can also use FBI to install the `.cia` file remotely using the instructions above
+   - (Not recommended) To debug `.3dsx` files, simply open the Homebrew Launcher and then press <kbd>home</kbd> to return to the home screen
+
+     ⚠ Unfortunately this isn't recommended as the application doesn't seem to exit cleanly when done debugging
 
 1. Enable debugging on the 3DS
 
@@ -78,23 +93,28 @@ title: 3DS debugging
 
    1. Exit Rosalina menu (pres <kbd>B</kbd>)
 
-1. On the 3DS, start the application you wish to debug
+1. Start the application you wish to debug
+
+   - To debug a `.cia` file that has already been installed, simply start the application from the 3DS home screen
+   - To debug a `.3dsx` file, re-open Homebrew Launcher by pressing <kbd>home</kbd> and then use the instructions above to run the file remotely
 
 1. On your PC, start gdb and connect to the 3DS
 
    1. Start the container with the workaround for [https://github.com/devkitPro/docker/issues/24](https://github.com/devkitPro/docker/issues/24)
 
       ```
-      docker run -it --rm -v "$PWD:/build" devkitpro/devkitarm sh -c "PATH=/opt/devkitpro/devkitARM/bin:"$PATH"; apt -y install iputils-ping libpython2.7 libtinfo5; bash"
+      docker run -it --rm -v "$PWD:/build" devkitpro/devkitarm sh -c "PATH=/opt/devkitpro/devkitARM/bin:"$PATH"; apt -y install libpython2.7 libtinfo5; bash"
       ```
 
-   1. Start the debugger and connect to the 3DS
+   1. Start the debugger and connect to the 3DS, e.g.
 
       ```
       cd /build
       arm-none-eabi-gdb retroarch_3ds.elf
       (gdb) target remote 192.168.0.212:4003
       ```
+
+      (Replace IP and port with the ones you made a note of earlier)
 
    1. Start debugging
 
@@ -114,4 +134,14 @@ title: 3DS debugging
 
       - `n` - Go line-by-line without stepping into functions
       - `s` - Go line-by-line and step into functions
+      - `p` - Print the value of a variable, e.g.
+
+        ```
+        (gdb) p g_defaults.dirs[DEFAULT_DIR_ASSETS]
+        $6 = "sdmc:/retroarch/assets"
+        ```
+
       - `finish` - Go until the end of the current function
+      - `d` - Delete all breakpoints
+
+      To break while running (to insert a new breakpoint, etc), press <kbd>Ctrl</kbd>+<kbd>C</kbd>
