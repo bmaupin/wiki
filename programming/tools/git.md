@@ -71,6 +71,32 @@ git reset HEAD~1
 git revert HEAD
 ```
 
+## Rewriting history
+
+#### Deleting files/directories from Git history
+
+Use `git-filter-repo`: [https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository)
+
+1. Do a fresh clone of the repo
+
+1. Use `git-filter-repo`, e.g.
+
+   ```
+   git-filter-repo --path PATH_TO_DELETE --invert-paths
+   ```
+
+1. Add back the remote (`git-filter-repo` removes it), e.g.
+
+   ```
+   git remote add origin git@github.com:user/repo.git
+   ```
+
+1. Force push to the remote
+
+   ```
+   git push --set-upstream origin main --force
+   ```
+
 ## Other
 
 #### Interactive rebasing/squashing
