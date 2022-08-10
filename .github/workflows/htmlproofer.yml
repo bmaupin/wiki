@@ -26,4 +26,4 @@ jobs:
         uses: chabad360/htmlproofer@master
         with:
           directory: '_site'
-          arguments: --assume_extension --disable-external --empty-alt-ignore --url-ignore "_,#" --url-swap "^/wiki:"
+          arguments: --assume_extension --disable-external --ignore-empty-alt --ignore_urls "_,#" --swap-urls "^/wiki:"
