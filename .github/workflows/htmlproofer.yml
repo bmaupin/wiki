@@ -22,8 +22,8 @@ jobs:
           # Fix jekyll-github-metadata/repository_finder.rb:29:in `block in nwo': No repo name found.
           PAGES_REPO_NWO: ${{ github.repository }}
 
-      - name: Check HTML using htmlproofer
+      - name: Check internal links using htmlproofer
         uses: chabad360/htmlproofer@master
         with:
           directory: '_site'
-          arguments: --assume_extension ".html" --disable-external true --enforce-https false --ignore-empty-alt --ignore_urls "_,#" --swap-urls "^/wiki:"
+          arguments: --disable-external true --enforce-https false --ignore-empty-alt --ignore_urls "_,#" --swap-urls "^/wiki:"
