@@ -21,6 +21,7 @@ title: Emulation on 3DS
 - Uses a standard micro SD card instead of a proprietary memory stick
 - Decent battery life and official replacement batteries are still available for purchase
 - Individual games can be installed to the home screen if desired (see _New Super Ultimate Injector_ below)
+- Games can be installed by scanning a QR code with the camera
 
 #### Glossary
 
