@@ -141,6 +141,18 @@ One device that's currently popular (as of 2021) due to its low cost and capable
 
 ## NTP
 
+#### Set up NTP server
+
+This can be useful to provide time synchronization to a device on your network that you have blocked off from the internet (e.g. a NAS device)
+
+1. _System_ > _System_ > _Time Synchronization_
+
+1. Check _Provide NTP server_
+
+1. _Save & Apply_
+
+1. Point any clients to the IP of your OpenWrt device to use it as an NTP server
+
 #### Troubleshoot NTP issues
 
 1. Before doing anything else, make sure DNS is working
