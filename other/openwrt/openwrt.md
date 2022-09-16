@@ -139,6 +139,26 @@ One device that's currently popular (as of 2021) due to its low cost and capable
 
    _System_ > _Startup_ > find _cron_ and click _Restart_
 
+## Firewall
+
+#### Block a client from accessing the internet
+
+This may be useful if you have a client that you only want accessible from your local network (e.g. a NAS device)
+
+1. _Network_ > _Firewall_ > _Traffic Rules_ > _Add_
+
+   1. _Protocol_ > _any_
+   1. _Source zone_ > _lan_
+   1. _Source address_ > choose the IP address of the device if it has a static IP
+
+      Or if the device doesn't have a static IP, in _Advanced Settings_ set _Source MAC address_
+
+   1. _Destination zone_ > _wan_
+   1. _Action_ > _reject_
+   1. _Save_
+
+1. _Save & Apply_
+
 ## NTP
 
 #### Set up NTP server
