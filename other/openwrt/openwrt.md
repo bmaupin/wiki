@@ -36,13 +36,13 @@ One device that's currently popular (as of 2021) due to its low cost and capable
    [https://openwrt.org/docs/guide-quick-start/webadmingui](https://openwrt.org/docs/guide-quick-start/webadmingui)
 
    1. If your device has network ports, wireless will be disabled by default. Connect to the device with a network cable
-   1. Browse to the device url (http://192.168.1.1) and log in (root, no password)
+   1. Browse to the device url (http://192.168.1.1) and log in (`root`, no password)
 
 1. Set the root password
 
    1. _System_ > _Administration_
    1. Set _Password_
-   1. _Save & Apply_
+   1. _Save_
 
 1. Set the time zone
 
@@ -52,26 +52,30 @@ One device that's currently popular (as of 2021) due to its low cost and capable
 
 1. Set the country code
 
-   1. _Network_ > _Wireless_ > _Edit_ > _Advanced Settings_
-   1. Set _Country Code_
-   1. _Save_ > _Save & Apply_
+   1. _Network_ > _Wireless_
+   1. For each wireless radio:
+      1. _Edit_ > _Advanced Settings_
+      1. Set _Country Code_ > _Save_
+   1. _Save & Apply_
 
 1. Configure wireless
 
    [https://openwrt.org/docs/guide-quick-start/basic_wifi](https://openwrt.org/docs/guide-quick-start/basic_wifi)
 
-   1. _Network_ > _Wireless_ > _Edit_ > _Interface Configuration_
-   1. _General Setup_
-      1. Set _ESSID_
-      1. _Save & Apply_
-   1. _Wireless Security_
-      1. _Encryption_ > _WPA2-PSK_
-      1. Set _Key_
-      1. _Save & Apply_
+   1. _Network_ > _Wireless_
+   1. For each wireless radio:
+      1. _Edit_ > _Interface Configuration_
+      1. Set the _Channel_
+      1. _General Setup_
+         1. Set _ESSID_ > _Save_
+      1. _Wireless Security_
+         1. _Encryption_ > _WPA2-PSK/WPA3-SAE Mixed Mode_
+         1. Set _Key_ > _Save_
+   1. _Save & Apply_
 
 1. Enable wireless
 
-   1. _Network_ > _Wireless_ > _Enable_
+   1. _Network_ > _Wireless_ > _Enable_ (for each wireless radio)
 
 1. Reboot
 
@@ -130,6 +134,8 @@ One device that's currently popular (as of 2021) due to its low cost and capable
 1. _Submit_
 
 1. As mentioned on that page, if there were no scheduled tasks already, you need to restart the cron service:
+
+   (I didn't see this message in OpenWrt 22 so it may no longer be necessary)
 
    _System_ > _Startup_ > find _cron_ and click _Restart_
 
