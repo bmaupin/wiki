@@ -159,6 +159,10 @@ This may be useful if you have a client that you only want accessible from your 
 
 1. _Save & Apply_
 
+#### Block a client from accessing the OpenWRT device
+
+Follow the steps above under _Block a client from accessing the internet_, except set _Destination zone_ to _Device (input)_
+
 ## NTP
 
 #### Set up NTP server
