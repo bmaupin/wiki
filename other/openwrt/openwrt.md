@@ -97,11 +97,11 @@ One device that's currently popular (as of 2021) due to its low cost and capable
 1. Download a host file blacklist (e.g. [https://github.com/StevenBlack/hosts](https://github.com/StevenBlack/hosts))
 1. Copy the host file to the device
    ```
-   scp hosts root@192.168.0.100:/tmp/hosts
+   scp hosts root@192.168.0.1:/tmp/hosts
    ```
 1. SSH to the device
    ```
-   ssh root@192.168.0.100
+   ssh root@192.168.0.1
    ```
 1. Restart dnsmasq
    ```
