@@ -57,6 +57,39 @@ git stash apply
      git stash apply stash@{INDEX}
      ```
 
+## Tags
+
+#### Rename a tag
+
+1. Get the commit of the original tag, e.g.
+
+   ```
+   git show v0.1
+   ```
+
+1. Create a new tag, e.g.
+
+   ```
+   $ git tag -a v0.1.0 5632ce689d0455d539dbc3829a0ec025667b85f1 -m "v0.1.0"
+   ```
+
+1. Push the new tag
+
+   ```
+   git push --tags
+   ```
+
+1. (Optional) In GitHub, edit the existing release
+
+   1. Point it to the new tag
+   1. Rename it
+
+1. Delete the old tag
+
+   ```
+   git push origin :v0.1
+   ```
+
 ## Undo
 
 #### Undo the last local commit (will remove the last local commit, leaving your changes in place)
