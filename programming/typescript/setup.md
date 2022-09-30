@@ -55,3 +55,21 @@ title: Setting up a new TypeScript project
      ```json
      "start": "ts-node ."
      ```
+
+## Troubleshooting
+
+#### `Cannot find module '...' or its corresponding type declarations.`
+
+If you're using TypeScript with Node.js:
+
+1. Make sure you have the Node types package installed:
+
+   ```
+   npm i --save-dev @types/node
+   ```
+
+1. If you still get the error and you don't have a `tsconfig.json` file, generate one:
+
+   ```
+   npx -p typescript tsc --init
+   ```
