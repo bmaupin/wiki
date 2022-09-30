@@ -22,6 +22,12 @@ sudo apt install ruby ruby-bundler ruby-dev
 bundle exec jekyll serve --livereload
 ```
 
+See [this answer](https://stackoverflow.com/a/73909796/399105) if you get this error:
+
+```
+/var/lib/gems/3.0.0/gems/pathutil-0.16.2/lib/pathutil.rb:502:in `read': no implicit conversion of Hash into Integer (TypeError)
+```
+
 #### Updating gems
 
 This is particularly useful if Github bugs you that you have a security vulnerability in one of your dependencies (this has been remedied for this project by removing Gemfile.lock from git 🤷)
