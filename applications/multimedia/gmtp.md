@@ -20,7 +20,14 @@ sudo apt install gmtp
 
 #### Copy files to a device
 
-1. For older devices (e.g. Creative Zen Mozaic) the files need to be converted first
+1. (Optional) Open the files with [Puddletag](puddletag) and make sure these tags are set:
+
+   - Artist
+   - Title
+   - Album
+   - Track (unless the file will be part of a playlist)
+
+1. For older devices (e.g. Creative Zen Mozaic) convert the MP3 tags to the proper format, e.g.
 
    ```
    find . -iname "*.mp3" -exec eyeD3 --encoding=utf16 --to-v2.3 {} \;
