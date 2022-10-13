@@ -1,9 +1,9 @@
-name: htmlproofer
+name: CI
 
 on: [push]
 
 jobs:
-  github-pages:
+  htmlproofer:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the code
