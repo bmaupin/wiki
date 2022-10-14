@@ -1,13 +1,13 @@
-name: htmlproofer
+name: CI
 
 on: [push]
 
 jobs:
-  github-pages:
+  htmlproofer:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Build the Jekyll site
         uses: helaili/jekyll-action@v2
@@ -23,7 +23,8 @@ jobs:
           PAGES_REPO_NWO: ${{ github.repository }}
 
       - name: Check internal links using htmlproofer
-        uses: chabad360/htmlproofer@master
+        uses: anishathalye/proof-html@v1.4.0
         with:
-          directory: '_site'
-          arguments: --disable-external true --enforce-https false --ignore-empty-alt --ignore_urls "_,#" --swap-urls "^/wiki:"
+          # Override the command because the GitHub Action doesn't have all the needed parameters
+          entrypoint: htmlproofer
+          args: _site --assume_extension --disable-external --empty-alt-ignore --url-ignore "_,#" --url-swap "^/wiki:"

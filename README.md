@@ -36,3 +36,23 @@ This is particularly useful if Github bugs you that you have a security vulnerab
 rm Gemfile.lock
 bundle install
 ```
+
+## Testing
+
+#### HTMLProofer
+
+This project uses [HTMLProofer](https://github.com/gjtorikian/html-proofer) to check for broken internal links. To test locally with HTMLProofer:
+
+1. Build the site
+
+   ```
+   bundle exec jekyll build
+   ```
+
+1. Get the parameters used for HTMLProofer in GitHub Actions here: [.github/workflows/ci.yml](.github/workflows/ci.yml)
+
+1. Run HTMLProofer
+
+   ```
+   docker run --rm --entrypoint "htmlproofer" -v "$PWD:/work" -it anishathalye/proof-html:1.4.0 /work/_site --assume_extension --disable-external --empty-alt-ignore --url-ignore "_,#" --url-swap "^/wiki:"
+   ```
