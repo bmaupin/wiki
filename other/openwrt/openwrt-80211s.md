@@ -21,7 +21,7 @@ It will be much easier with a device with at least 8 MB of flash and 64 MB of RA
    You can either plug the device into another router that already has internet, or follow these steps to join an existing wireless network:
 
    1. Go to _Network_ > _Wireless_ > _Scan_
-   1. Find your existing wireless netowrk and click _Join Network_
+   1. Find your existing wireless network and click _Join Network_
    1. Type your _WPA passphrase_ and click _Submit_ > _Save_ > _Save & Apply_
    1. In the _Wireless Overview_ make sure the wireless connection is working
 
