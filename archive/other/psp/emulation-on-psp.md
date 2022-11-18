@@ -33,6 +33,12 @@ are:
 
 - Uses a proprietary memory card, but an adaptor for a micro SD card can be purchased very cheaply
 
+## Prerequisites
+
+#### Install custom firmware (CFW)
+
+See [https://pspunk.com/psp-cfw/](https://pspunk.com/psp-cfw/)
+
 ## RetroArch
 
 #### System support
