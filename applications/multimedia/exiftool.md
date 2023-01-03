@@ -1,46 +1,12 @@
 ---
-title: Organizing files
+title: ExifTool
 ---
 
-## Duplicate files
+## About
 
-#### Remove duplicates
-
-```
-rdfind -dryrun true -deleteduplicates true /path1 /path2
-```
-
-- Replace `/path1 /path2` with one or more directories to search for duplicates
-  - Put the directory containing the originals first and rdfind will delete the others
-- Remove `-dryrun true` when you're ready to delete the duplicates
-
-#### Replacing duplicates with symlinks
-
-```
-rdfind -dryrun true -makesymlinks true /path1 /path2
-```
-
-#### Removing duplicates interactively
-
-```
-fdupes -r -dP /path1 /path2
-```
-
-You may get an error if you're running an older version of fdupes; in that case, use this command:
-
-```
-fdupes -r -d /path1 /path2
-```
-
-- Replace `/path1 /path2` with one or more directories to search for duplicates
+ExifTool is a tool used to manipulate image metadata
 
 ## Organizing files
-
-#### Remove all metadata from file
-
-```
-exiftool -all= path/to/file
-```
 
 #### Organize multimedia files by date
 
@@ -51,6 +17,14 @@ exiftool '-Directory<DateTimeOriginal' -d %Y/%m /path
 ```
 
 Replace `/path` with path to a file, directory, or a wildcard pattern
+
+## Manipulating image metadata
+
+#### Remove all metadata from file
+
+```
+exiftool -all= path/to/file
+```
 
 #### Set image timestamp based on filename
 
