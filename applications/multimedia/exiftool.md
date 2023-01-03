@@ -26,6 +26,14 @@ Replace `/path` with path to a file, directory, or a wildcard pattern
 exiftool -all= path/to/file
 ```
 
+#### Rotate an image
+
+Rotate an image 90° clockwise by changing the metadata (this does not modify the original image):
+
+```
+exiftool -Orientation="Rotate 90 CW" path/to/file
+```
+
 #### Set image timestamp based on filename
 
 ```
