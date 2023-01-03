@@ -9,9 +9,7 @@ title: Handbrake
 #### Install Handbrake
 
 ```
-sudo apt-add-repository -y ppa:stebbins/handbrake-releases
-sudo apt update
-sudo apt install handbrake-gtk
+sudo apt install handbrake
 ```
 
 #### Re-encoding videos
