@@ -20,6 +20,14 @@ sudo apt install gmtp
 
 #### Copy files to a device
 
+1. For older devices (e.g. Creative Zen Mozaic) the files will need to be converted to MP3 first, e.g.
+
+   ```
+   find . -type f -exec sh -c 'ffmpeg -i "{}" -codec:a libmp3lame -b:a 64k -ac 1 "$(basename "{}" mp4)mp3"' \;
+   ```
+
+   (see [ffmpeg#audio](ffmpeg#audio) for more information)
+
 1. (Optional) Open the files with [Puddletag](puddletag) and make sure these tags are set:
 
    - Artist
