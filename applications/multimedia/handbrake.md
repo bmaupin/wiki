@@ -39,11 +39,12 @@ sudo apt install handbrake
      - Encoder: x264 (default) - this is the best default choice for most devices
        - Some older devices like Sony DVD players only support _MPEG-4_. Try that if x264 doesn't work.
        - _x265_ will give better video quality and smaller file sizes, but isn't supported by many devices yet; only use it if you know your device supports it
-     - Framerate: _Same as source_
-       - This doesn't seem to be the default and I'm not sure how much it matters; YMMV
+     - Framerate: 30 (default)
      - Container: mp4 (default)
-     - Quality RF: 20 (default) - a higher number gives lower quality (on a logarithmic scale)
-     - Size: Using x264 and RF: 20 will average about 925M per hour of video (this can vary greatly; this is only an average)
+     - Quality RF: (default is normally fine) - a higher number gives lower quality (on a logarithmic scale)
+     - Profile: (default is normally fine)
+       - Set to _baseline_ for older devices with weaker CPUs, but this will greatly increase the size of the video
+     - Size: Using x264 and RF: 20 will average about 925 MB per hour of video (this can vary greatly; this is only an average)
 
    - _Audio_
 
