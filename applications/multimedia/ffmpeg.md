@@ -202,7 +202,15 @@ Use `-sn`:
 
 #### Add (embed) subtitles to a video that has no subtitles
 
-    ffmpeg -i input.mkv -i input.srt -c:v copy -c:a copy -c:s copy -metadata:s:s:0 language=eng output.mkv
+```
+ffmpeg -i input.mp4 -i input.srt -c:v copy -c:a copy -c:s mov_text -metadata:s:s:0 language=eng output.mp4
+```
+
+Or (`.mkv` videos can support `.srt` subtitles natively):
+
+```
+ffmpeg -i input.mkv -i input.srt -c:v copy -c:a copy -c:s copy -metadata:s:s:0 language=eng output.mkv
+```
 
 #### Add (embed) multiple subtitles to a video that has no subtitles
 
