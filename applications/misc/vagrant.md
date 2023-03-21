@@ -59,6 +59,8 @@ The local folder is automatically mounted inside the running vagrant box under /
 vagrant ssh
 ```
 
+If it asks for a password, use: `vagrant`
+
 #### Shut down a vagrant box
 
 ```
