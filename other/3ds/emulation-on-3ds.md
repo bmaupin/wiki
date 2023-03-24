@@ -2,14 +2,9 @@
 title: Emulation on 3DS
 ---
 
-## Misc
+## Is the 3DS a good device for emulation?
 
-#### Important notes
-
-- This document mostly uses the term "3DS" but is also applicable to the 2DS
-- Many emulators are only capable of running on a New 3DS
-
-#### Reasons the 3DS is great for emulation
+#### Advantages
 
 - Easily hacked to install homebrew/emulators
 - Natively plays 3DS, DS, and GBA games
@@ -17,11 +12,30 @@ title: Emulation on 3DS
 - The New 3DS models are powerful enough to emulate most 16-bit consoles and some limited ability to emulate Nintendo 64 and PlayStation 1
 - Decent build quality typical of Nintendo consoles
 - Clamshell design protects the screens
+- Landscape orientation is comfortable to hold
 - Second screen is convenient for emulator menus, logs, etc
 - Uses a standard micro SD card instead of a proprietary memory stick
 - Decent battery life and official replacement batteries are still available for purchase
 - Individual games can be installed to the home screen if desired (see _New Super Ultimate Injector_ below)
 - Games can be installed by scanning a QR code with the camera
+
+#### Disadvantages
+
+- Clamshell design makes it a bit bulky
+  - Second screen is nice to have but most of the time it's unused
+- The top section can be a bit wobbly due to the hinge design
+- Buttons/d-pad are on the small side
+- Buttons/d-pad are clicky on some 3DS devices (e.g. the New 2DS XL)
+  - Just a matter of preference, but most older game consoles had rubber membranes under the buttons/d-pad
+- Proprietary charging port
+  - USB-A to 3DS charging cables can be purchased cheaply
+
+## Misc
+
+#### Important notes
+
+- This document mostly uses the term "3DS" but is also applicable to the 2DS
+- Many emulators are only capable of running on a New 3DS
 
 #### Glossary
 
