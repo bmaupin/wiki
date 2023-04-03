@@ -19,6 +19,8 @@ are:
 - Plays PSP and most PlayStation 1 games natively
 - Powerful enough to emulate most 8 and 16-bit consoles
 - Second-hand systems are fairly inexpensive to purchase
+- Buttons use rubber membranes (i.e. they're not clicky)
+- Landscape orientation is comfortable to hold
 
 #### Disadvantages
 
@@ -28,6 +30,9 @@ are:
   - Stay away from any batteries with a listed capacity higher than 1200/1800 mAh (e.g. 2400 mAh, 3600 mAh) as they are fakes with a very low capacity
 - Build quality varies between models. The PSP-1000 seems to have good build quality, while the PSP-3000 is worse: shell is painted and the paint rubs off, battery cover pops off easily, system creaks a bit, connectors near some of the screws break easily, memory card sometimes disconnects during play
 - Built-in Wifi doesn't work with newer Wifi standards
+- PSP screens have noticeable ghosting, particularly the PSP-1000
+- Due to the age of most PSP devices, many of them can be in rough shape
+  - Replacement shells are available but they're nearly all very poor quality (parts don't fit together well, etc)
 
 #### Other notes
 
