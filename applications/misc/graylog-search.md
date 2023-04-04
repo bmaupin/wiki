@@ -4,6 +4,8 @@ title: Graylog search
 
 See: [Graylog search query language](https://docs.graylog.org/docs/query-language)
 
+ⓘ Unless otherwise noted, these notes are based on Graylog 3
+
 #### Tips
 
 - Graylog searches are case-sensitive. So if you configured application name as `myApplication`, you must use the query `application_name:myApplication`
@@ -65,3 +67,8 @@ I haven't found a way to do this in the search box itself...
 1. Do a search
 
 1. Under _All Messages_ mouse over one of the columns (e.g. source) and click the dropdown arrow > _Show top values_
+
+#### Add a column to the search results
+
+1. In the _All Messages_ box, click the small dropdown arrow near the top right > _Edit_
+1. Under _Fields_, add any new fields you'd like to add > _Save_
