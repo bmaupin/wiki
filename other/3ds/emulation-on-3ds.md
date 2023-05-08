@@ -24,9 +24,9 @@ title: Emulation on 3DS
 - Clamshell design makes it a bit bulky
   - Second screen is nice to have but most of the time it's unused
 - The top section can be a bit wobbly due to the hinge design
-- Buttons/d-pad are on the small side
-- Buttons/d-pad are clicky on some 3DS devices (e.g. the New 2DS XL)
-  - Just a matter of preference, but most older game consoles had rubber membranes under the buttons/d-pad
+- Buttons/D-pad are significantly smaller than those on older game consoles that are being emulated
+- Buttons/D-pad are clicky on some 3DS devices (e.g. the New 2DS XL)
+  - Clicky buttons have less travel and a different feel because they lack the rubber membranes that most older game consoles had under the buttons/D-pad; of course this is just a matter of preference
 - Proprietary charging port
   - USB-A to 3DS charging cables can be purchased cheaply
 
