@@ -102,7 +102,7 @@ Alternatively, ROMs can be played through other software such as RetroArch or TW
 - Nintendo DS games are not in the 3DS eShop
 - The 3DS can play NDS cartridges natively
 - NDS ROMs can be played natively using TWiLight Menu++ (see below)
-- NDS ROMs can be converted to an installable CIA using a tool like [Forwarder3-DS](https://gbatemp.net/threads/nds-forwarder-cias-for-your-home-menu.426174/)
+- NDS ROMs can be converted to an installable CIA using a tool like [NDSForwarder](https://wiki.ds-homebrew.com/ds-index/forwarders)
 
 #### Game Boy Advance
 
