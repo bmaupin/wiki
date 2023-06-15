@@ -10,8 +10,7 @@ title: JavaScript async
   ([https://eslint.org/docs/rules/no-async-promise-executor](https://eslint.org/docs/rules/no-async-promise-executor))
 - Don't use `throw` inside a Promise constructor; use `reject`
   ([https://stackoverflow.com/a/33446005/399105](https://stackoverflow.com/a/33446005/399105))
-- Don't use `async`/`await` in a forEach loop. Just use a regular for loop
-  ([https://stackoverflow.com/q/37576685/399105](https://stackoverflow.com/q/37576685/399105))
+- Don't use `async`/`await` in a `forEach` loop. [`forEach` expects a synchronous function and doesn't wait for promises.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) Use a regular for loop instead.
 
 #### [async](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) (ES2017)
 
