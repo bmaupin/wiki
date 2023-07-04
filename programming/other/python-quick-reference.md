@@ -2,6 +2,16 @@
 title: Python quick reference
 ---
 
+## Misc
+
+#### Exit a program
+
+```python
+import sys
+
+sys.exit()
+```
+
 ## Strings
 
 #### String formatting
