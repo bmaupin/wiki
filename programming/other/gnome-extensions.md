@@ -41,6 +41,14 @@ title: Gnome extension development
    gnome-extensions enable spotify-ad-block@danigm.net
    ```
 
+1. (Optional) Modify the extension's version number
+
+   Gnome (or is it Gnome Extension Manager that does this?) may try to update the plugin, which will overwrite your changes. Here's a workaround to prevent it:
+
+   1. Open `metadata.json`
+
+   1. Change `version` to something big (e.g. `1000`)
+
 1. After making changes to the extension, repeat the steps above (under _Gnome needs to load the extension_) so Gnome will reload the extension with the new changes
 
 #### Debugging
