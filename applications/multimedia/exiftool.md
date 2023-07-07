@@ -16,7 +16,21 @@ Put files in a directory by year with subdirectories for each month:
 exiftool '-Directory<DateTimeOriginal' -d %Y/%m /path
 ```
 
-Replace `/path` with path to a file, directory, or a wildcard pattern
+Replace `/path` with path to a file, directory, or a wildcard pattern. **Note** that it won't read directories recursively (e.g. contents of subdirectories) so you may need to modify the path, e.g. `/directory/*`.
+
+If that doesn't work, it may be because the `DateTimeOriginal` tag isn't defined (e.g. for `.mp4` files):
+
+1. List other date/time EXIF tags, e.g.
+
+   ```
+   exiftool -s video.mp4 | egrep -i "date|time"
+   ```
+
+1. Run the command using a different tag, e.g.
+
+   ```
+   exiftool '-Directory<CreateDate' -d %Y/%m DCIM/*
+   ```
 
 ## Manipulating image metadata
 
