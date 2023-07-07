@@ -32,6 +32,26 @@ If that doesn't work, it may be because the `DateTimeOriginal` tag isn't defined
    exiftool '-Directory<CreateDate' -d %Y/%m DCIM/*
    ```
 
+## Viewing metadata
+
+#### View all metadata
+
+```
+exiftool -s path/to/file
+```
+
+(`-s` is optional but it shows the short name of each tag which is useful for other commands)
+
+#### View one tag
+
+Put a dash (`-`) in front of the tag name, e.g.
+
+```
+exiftool -s -CreateDate path/to/file
+```
+
+(`-s` is optional here as well; if left out, then the full tag name will be displayed)
+
 ## Manipulating image metadata
 
 #### Remove all metadata from file
