@@ -19,3 +19,11 @@ title: Visual Studio Code
 #### Open terminal
 
 <kbd>Ctrl</kbd>+<kbd>`</kbd>
+
+#### Find a file by name
+
+<kbd>Ctrl</kbd>+<kbd>P</kbd>
+
+#### Go back to the most recent file
+
+<kbd>Ctrl</kbd>+<kbd>P</kbd>+<kbd>P</kbd>
