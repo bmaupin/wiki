@@ -2,6 +2,14 @@
 title: Git advanced notes
 ---
 
+## Dates
+
+#### Show commit logs with author and commit date
+
+```
+git log --pretty=fuller
+```
+
 ## Tags
 
 #### Lightweight vs. annotated tags
