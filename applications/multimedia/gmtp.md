@@ -8,19 +8,11 @@ title: gMTP
 sudo apt install gmtp
 ```
 
-#### Connect to a device
+#### Prepare the audio files
 
-1. Plug the device into the computer
+Audio files may need some modifications before they'll work with older devices.
 
-1. Open the file browser and unmount the device
-
-1. Open gMTP and click _Connect_
-
-   > ⓘ Wait a bit as the connection process may be a bit slow
-
-#### Copy files to a device
-
-1. For older devices (e.g. Creative Zen Mozaic) the files will need to be converted to MP3 first, e.g.
+1. If the files aren't MP3s, you may need to convert them first
 
    ```
    find . -type f -exec sh -c 'ffmpeg -i "{}" -codec:a libmp3lame -b:a 64k -ac 1 "$(basename "{}" mp4)mp3"' \;
@@ -35,11 +27,23 @@ sudo apt install gmtp
    - Album
    - Track (unless the file will be part of a playlist)
 
-1. For older devices (e.g. Creative Zen Mozaic) convert the MP3 tags to the proper format, e.g.
+1. Convert the MP3 tags to the format supported by the device, e.g. for the Creative Zen Mozaic:
 
    ```
    find . -iname "*.mp3" -exec eyeD3 --encoding=utf16 --to-v2.3 {} \;
    ```
+
+#### Connect to a device
+
+1. Plug the device into the computer
+
+1. Open the file browser and unmount the device
+
+1. Open gMTP and click _Connect_
+
+   > ⓘ Wait a bit as the connection process may be a bit slow
+
+#### Copy files to a device
 
 1. Connect the device (see above) and browse to the folder where you wish to copy the files (e.g. /Music)
 
