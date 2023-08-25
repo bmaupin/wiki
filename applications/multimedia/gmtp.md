@@ -12,10 +12,10 @@ sudo apt install gmtp
 
 Audio files may need some modifications before they'll work with older devices.
 
-1. If the files aren't MP3s, you may need to convert them first
+1. If the files aren't MP3s, you may need to convert them first, e.g. to convert MP4 files:
 
    ```
-   find . -type f -exec sh -c 'ffmpeg -i "{}" -codec:a libmp3lame -b:a 64k -ac 1 "$(basename "{}" mp4)mp3"' \;
+   find . -iname "*.mp4" -exec sh -c 'ffmpeg -i "$0" -codec:a libmp3lame -b:a 64k -ac 1 "${0%.*}.mp3"' {} \;
    ```
 
    (see [ffmpeg#audio](ffmpeg#audio) for more information)
