@@ -107,10 +107,9 @@ Alternatively, ROMs can be played through other software such as RetroArch or TW
 #### Game Boy Advance
 
 - The 3DS can natively play GBA games
-  - Game Boy Advance games are not in the 3DS eShop, except for 10 games that were released only to early adopters of the 3DS
-  - Those 10 games and others can be found as or converted to CIA files using a tool like New Super Ultimate Injector (see below)
-- GBA ROMs can be emulated using RetroArch
-- GBA ROMs can be emulated using TWiLight Menu++
+  - Use a tool like NSUI (see below) to convert the game to a CIA file so it can be launched from the 3DS home screen. This creates a "forwarder" that opens the GBA game in the 3DS' native GBA mode.
+- Or GBA games can be emulated using RetroArch or TWiLight Menu++ (see below)
+  - This gives up perfect accuracy for more features like save states
 
 #### Nintendo 64
 
