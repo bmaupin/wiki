@@ -84,7 +84,7 @@ If you're running an old version of boot9strap (less than v1.2), you'll need to 
 
 ## Emulation
 
-**Note:** Some of these emulators may be outdated or unmaintained. Before installing
+⚠️ Some of these emulators may be outdated or unmaintained. Before installing
 any particular emulator, check these resources to see what the current recommendations
 are:
 
@@ -93,23 +93,26 @@ are:
 
 #### CIA files versus ROMs
 
-Many games can be installed as CIA files, meaning they will show up as a separate entry in the 3DS home screen and can be launched directly. As with all CIA files they need to be installed using FBI.
+Games can be installed as CIA files so they will show up as a separate entry in the 3DS home screen and can be launched directly. As with all CIA files they need to be installed using FBI.
 
-Alternatively, ROMs can be played through other software such as RetroArch or TWiLight Menu++.
+Otherwise, you can copy ROMs to the 3DS and play them through other software such as [RetroArch](#retroarch) or [TWiLight Menu++](#twilight-menu).
 
 #### Nintendo DS (NDS)
 
-- Nintendo DS games are not in the 3DS eShop
-- The 3DS can play NDS cartridges natively
-- NDS ROMs can be played natively using TWiLight Menu++ (see below)
-- NDS ROMs can be converted to an installable CIA using a tool like [NDSForwarder](https://wiki.ds-homebrew.com/ds-index/forwarders)
+ⓘ All NDS games are played natively on the 3DS; no emulation is involved
 
-#### Game Boy Advance
+- NDS cartridges are supported by all 3DS models
+- NDS ROMs
+  - Can be converted to a CIA file using a tool like [NDSForwarder](https://wiki.ds-homebrew.com/ds-index/forwarders)
+  - Or can be opened using [TWiLight Menu++](#twilight-menu)
+
+#### Game Boy Advance (GBA)
 
 - The 3DS can natively play GBA games
-  - Use a tool like NSUI (see below) to convert the game to a CIA file so it can be launched from the 3DS home screen. This creates a "forwarder" that opens the GBA game in the 3DS' native GBA mode.
-- Or GBA games can be emulated using RetroArch or TWiLight Menu++ (see below)
-  - This gives up perfect accuracy for more features like save states
+  - Use a tool like [NSUI](#new-super-ultimate-injector-nsui) or [GBARunner2](https://wiki.ds-homebrew.com/gbarunner2/) to create a CIA "forwarder" that opens the game in the 3DS' native GBA mode
+  - Or you can open the game with [TWiLight Menu++](#twilight-menu) to play it natively without a forwarder
+- Or GBA games can be emulated; this gives up perfect speed and accuracy for more features like save states
+  - [NSUI](#new-super-ultimate-injector-nsui) can create a CIA file or you can open the ROMs with [RetroArch](#retroarch)
 
 #### Nintendo 64
 
@@ -117,10 +120,9 @@ Alternatively, ROMs can be played through other software such as RetroArch or TW
 
 #### Other systems
 
-- Many Game Boy, Game Boy Color, NES, SNES (New 3DS only), Game Gear, and TurboGrafx-16 (Japan only) titles are available in the eShop
-  - These titles and others can be found as or converted to CIA files using a tool like New Super Ultimate Injector (see below)
-- RetroArch (see below) can emulate the largest number of systems, including PlayStation 1 ([https://emulation.gametechwiki.com/index.php/Emulators_on_3DS#RetroArch](https://emulation.gametechwiki.com/index.php/Emulators_on_3DS#RetroArch))
-- TWiLight Menu++ can launch Nintendo DS, SNES, NES, Game Boy, Game Boy Advance, Game Gear, Master System, and Mega Drive/Genesis ROMs
+- [NSUI](#new-super-ultimate-injector-nsui) can create CIA files for many systems
+- [RetroArch](#retroarch) can emulate the largest number of systems, including PlayStation 1 ([https://emulation.gametechwiki.com/index.php/Emulators_on_3DS#RetroArch](https://emulation.gametechwiki.com/index.php/Emulators_on_3DS#RetroArch))
+- [TWiLight Menu++](#twilight-menu) can launch Nintendo DS, SNES, NES, Game Boy, Game Boy Advance, Game Gear, Master System, and Mega Drive/Genesis ROMs
 
 ## Software
 
