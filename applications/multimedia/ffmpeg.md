@@ -126,7 +126,15 @@ To fix using [fix-srt-subtitle.py](https://github.com/bmaupin/junkpile/blob/mast
 
 #### Extract one frame from a video as an image
 
-    ffmpeg -ss 00:00:51 -i video.mp4 -frames:v 1 image.jpg
+```
+ffmpeg -ss 00:00:51 -i video.mp4 -frames:v 1 image.jpg
+```
+
+For multiple files, e.g.:
+
+```
+find . -iname "*.mp4" -exec sh -c 'ffmpeg -ss 00:01:02 -i "$0" -frames:v 1 "${0%.*}.jpg"' {} \;
+```
 
 #### Extract audio from a video
 
