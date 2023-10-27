@@ -83,3 +83,10 @@ sudo apt install puddletag
 #### List all tags and versions
 
 _Windows_ > make sure _Stored Tags_ is checked
+
+#### Helpful tags
+
+- Filename without extension: `__filename_no_ext`
+  - This can be used, for example, to append a tag to the existing filename, e.g. `%__filename_no_ext% - %title%`
+
+For more tags, see [https://docs.puddletag.net/source/tags.html](https://docs.puddletag.net/source/tags.html)
