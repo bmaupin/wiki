@@ -119,9 +119,17 @@ title: RG35XX
 
    1. Set _Output folder_ to `%ROMROOTFOLDER%/Imgs`
 
+   1. (Optional) Uncheck _Cleanup output folder before generating new medias_
+
 1. (Optional) Go to _Miscellaneous_, uncheck _Use rom region first (when available)_ and set ROM region as desired (e.g. `us`)
 
 1. When you're ready, click Play to begin scraping
+
+1. Delete any gamelist.xml files created by Skraper, e.g.
+
+   ```
+   find /media/user/3834-6161/Roms/ -name gamelist.xml -delete
+   ```
 
 1. On the SD card, realign the text as needed to match the box art format
 
