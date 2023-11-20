@@ -30,7 +30,7 @@ sudo apt install simple-scan
 
      **Note:** Tweak the DPI as needed for better image quality
 
-     1. Menu > _Preferences_ > _Quality_ > _Image Resolution_ > _600 dpi_
+     1. Menu > _Preferences_ > _Quality_ > _Image Resolution_ > _1200 dpi_
      1. Click the button to the right of _Scan_ > _Image_
 
 1. For each page, insert it into the scanner and click _Scan_
