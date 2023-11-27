@@ -2,6 +2,8 @@
 title: RG35XX
 ---
 
+## Initial setup
+
 #### Resources
 
 [Retro Game Corps' RG35XX Starter Guide](https://retrogamecorps.com/2023/01/03/anbernic-rg35xx-starter-guide/)
@@ -159,3 +161,72 @@ More information:
 
 - [https://retrogamecorps.com/2023/01/03/anbernic-rg35xx-starter-guide/#Boxart](https://retrogamecorps.com/2023/01/03/anbernic-rg35xx-starter-guide/#Boxart)
 - [https://www.reddit.com/r/RG35XX/comments/120p5k7/comment/jdib20w/](https://www.reddit.com/r/RG35XX/comments/120p5k7/comment/jdib20w/)
+
+## Emulator settings
+
+#### Aspect ratio
+
+By default, most games will fill the whole screen instead of using the proper aspect ratio. To use the proper aspect ratio:
+
+1. Start playing a game from the system for which you wish to change the aspect ratio
+1. Go to the RetroArch settings (Menu + X)
+1. Press B to go to the Main Menu
+1. Go to _Settings_ > _Video_ > _Scaling_
+1. Enable _Keep Aspect Ratio_
+1. Optionally, also enable _Integer Scale_
+
+   ⓘ Normally setting the aspect ratio is enough; setting integer scale may be needed when using overlays (see below)
+
+1. Save overrides as desired (see below)
+
+#### Overlays
+
+The following overlays are included in GarlicOS:
+
+- Famicom (_fc.cfg_)
+- Game Boy (_gb.cfg_)
+- Game Boy Advance (_gba.cfg_)
+- Game Boy Color (_gbc.cfg_)
+- Super Famicom (_sfc.cfg_)
+
+To enable an overlay:
+
+1. (Recommended) Enable _Keep Aspect Radio_ and _Integer Scale_; see above
+1. Start playing a game from the system for which you wish to enable the overlay
+1. Go to the RetroArch settings (Menu + X)
+1. Go to _On-Screen Overlay_ > _Overlay Preset_ and select the appropriate overlay
+1. Press B to go back to the Quick Menu
+1. Save overrides as desired (see below)
+
+#### Save overrides
+
+Overrides allow you to customise the configuration of the emulators and save them for every time you play
+
+1. Start playing a game from the system for which you wish to set overrides
+1. Go to the RetroArch settings (Menu + X)
+1. Make any changes you'd like to save as overrides
+1. Go back to the Quick Menu > _Overrides_
+1. Choose the appropriate option
+
+   - _Save Core Overrides_ will save the overrides for any game using that core
+
+     ⚠️ Note that this will also affect other systems using that core; for example, Game Boy and Game Boy Color use the same core
+
+   - _Save Content Directory Overrides_ will save the overrides for any game in that directory
+   - _Save Game Overrides_ will save the overrides for just that game
+
+## Notes for specific systems
+
+#### Commodore 64
+
+- Commodore 64 games are very slow to load but it's best just to wait
+
+#### Game Boy
+
+- No BIOS is required but if the Nintendo logo will show if one is present
+- To use the pale pea green colour of the original Game Boy
+
+#### Sega CD
+
+- Sega CD requires 3 BIOS files to work
+- Use ROM files that end with .chd for best results
