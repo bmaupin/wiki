@@ -2,6 +2,10 @@
 title: RG35XX
 ---
 
+#### Resources
+
+[Retro Game Corps' RG35XX Starter Guide](https://retrogamecorps.com/2023/01/03/anbernic-rg35xx-starter-guide/)
+
 #### Install GarlicOS
 
 1. Go here: [https://www.patreon.com/posts/garlicos-for-76561333](https://www.patreon.com/posts/garlicos-for-76561333)
@@ -48,7 +52,7 @@ title: RG35XX
 
 1. Use a tool to expand the ROMS partition on the SD card, e.g. using GParted
 
-   ⓘ Because the GarlicOS image is 4 GB, it will only create a 3 GB ROMs parition on the SD card. You'll want to expand it to use the entire space of your SD card.
+   ⓘ Because the GarlicOS image is 4 GB, it will only create a 3 GB ROMS parition on the SD card. You'll want to expand it to use the entire space of your SD card.
 
    1. Open GParted
 
@@ -59,6 +63,15 @@ title: RG35XX
    1. Drag the right side of the partition box all the way to the right > _Resize/Move_
 
    1. Click _Apply All Operations_ near the top
+
+#### ROM folder names
+
+See [https://onionui.github.io/docs/emulators](https://onionui.github.io/docs/emulators)
+
+For example:
+
+- Commodore 64: `COMMODORE`
+- Game Boy: `GB`
 
 #### Download box art
 
@@ -101,11 +114,17 @@ title: RG35XX
 
    1. Browse to the directory of your ROMs
 
+      ⚠️ When pointing Skraper directly to my SD card in Linux, it seems to consistently create nested `Imgs` directories. It might be better to run Skraper on a local directory and copy the generated box art over to the SD card manually.
+
    1. Check _Include non-Recalbox rom folders_
 
 1. Go to _Game list_
 
    1. Under _Gamelist type_ select _No backup, create new or overwrite existing_
+
+   1. Change _Game list fullpath_ to create the game list in the Skraper program directory to avoid writing it to the SD card
+
+   1. Change _Sub-folders_ to _Ignore them, generate no image_
 
 1. Go to _Media_
 
@@ -124,12 +143,6 @@ title: RG35XX
 1. (Optional) Go to _Miscellaneous_, uncheck _Use rom region first (when available)_ and set ROM region as desired (e.g. `us`)
 
 1. When you're ready, click Play to begin scraping
-
-1. Delete any gamelist.xml files created by Skraper, e.g.
-
-   ```
-   find /media/user/3834-6161/Roms/ -name gamelist.xml -delete
-   ```
 
 1. On the SD card, realign the text as needed to match the box art format
 
