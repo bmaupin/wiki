@@ -231,6 +231,22 @@ Overrides allow you to customise the configuration of the emulators and save the
    - _Save Content Directory Overrides_ will save the overrides for any game in that directory
    - _Save Game Overrides_ will save the overrides for just that game
 
+#### Cheats
+
+Cheats can be useful for experiencing older games that have not aged well in terms of difficulty or gameplay
+
+1. Download the `.cht cheats file for the corresponding game from here: [https://github.com/libretro/libretro-database/tree/master/cht](https://github.com/libretro/libretro-database/tree/master/cht)
+1. Copy the file to `CFW/retroarch/.retroarch/cheats/`
+
+   ⓘ If you only have a small number of cheat files, they can be put directly into the `cheats` directory. If you have a lot of cheat files you may wish to organize them into subdirectories, e.g. `CFW/retroarch/.retroarch/cheats/Nintendo - Nintendo Entertainment System/`
+
+1. Start the game for which you wish to use cheats
+1. Go to the RetroArch settings (Menu + X) > _Cheats_ > _Load Cheat File (Replace)_
+1. Browse to the cheat file and press A to apply it
+1. Back at the _Cheats_ menu, scroll down to the list of cheats
+1. Use left/right on the D-pad to enable or disable cheats
+1. When you're done, select _Apply Changes_ (or enable one of the other _Apply ..._ options)
+
 ## Notes for specific systems
 
 #### Commodore 64
