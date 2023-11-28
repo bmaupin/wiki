@@ -66,7 +66,7 @@ title: RG35XX
 
    1. Click _Apply All Operations_ near the top
 
-#### ROM folder names
+#### ROM directory names
 
 See [https://onionui.github.io/docs/emulators](https://onionui.github.io/docs/emulators)
 
@@ -164,6 +164,17 @@ More information:
 
 ## Emulator settings
 
+#### Button combinations
+
+- Press _Settings_ at the main GarlicOS menu to set the time and language
+- Press _Menu_ at any of the GarlicOS menus to switch between in-progress games
+- Press _Menu_ while playing a game to save the state and stop the game
+- Double-press _Menu_ while playing a game to switch between in-progress games
+- Hold _Menu_ while playing a game to show the _Menu_ button combinations
+- To go to the RetroArch menu while in-game, press _Menu_ and then after a short delay press _X_
+
+  ⓘ This is tricky to get right; don't press them at the same time, but don't wait too long before pressing _X_
+
 #### Aspect ratio
 
 By default, most games will fill the whole screen instead of using the proper aspect ratio. To use the proper aspect ratio:
@@ -198,6 +209,11 @@ To enable an overlay:
 1. Press B to go back to the Quick Menu
 1. Save overrides as desired (see below)
 
+To install new overlays:
+
+1. Download additional overlays, e.g. from [https://www.rg35xx.com/en/apps/mods-for-garlicos/](https://www.rg35xx.com/en/apps/mods-for-garlicos/)
+1. Copy overlays to `CFW/retroarch/.retroarch/overlay/`
+
 #### Save overrides
 
 Overrides allow you to customise the configuration of the emulators and save them for every time you play
@@ -220,11 +236,21 @@ Overrides allow you to customise the configuration of the emulators and save the
 #### Commodore 64
 
 - Commodore 64 games are very slow to load but it's best just to wait
+- Press _Select_ in game to bring up the keyboard
+  - This may be needed as some games may need other keys to start the game, such as _Run/Start_, Spacebar, or _F1_
 
 #### Game Boy
 
 - No BIOS is required but if the Nintendo logo will show if one is present
-- To use the pale pea green colour of the original Game Boy
+- You can put Game Boy and Game Boy Color ROMs in the same directory (`GB`) to simplify the list of systems shown in GarlicOS. However, if you want to use different emulator settings between Game Boy and Game Boy Color, you'll need to put Game Boy Color ROMs in their own directory (`GBC`).
+- To use the pale pea green colour of the original Game Boy:
+
+  1.  Start playing a Game Boy game
+  1.  Go to the RetroArch settings (Menu + X)
+  1.  Go to _Core Options_
+  1.  Set _GB Colorization_ to _Internal_
+  1.  Set _Internal Palette_ to _Special 1_
+  1.  Save overrides as desired (see above)
 
 #### Sega CD
 
