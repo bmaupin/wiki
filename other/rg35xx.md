@@ -162,11 +162,23 @@ Skraper is used to download box art or other game media
 
    1. Check _Include non-Recalbox rom folders_
 
+1. If any systems are missing
+
+   ⓘ This seems to happen if Skraper expects a different directory name than the one used by GarlicOS; for example, GarlicOS uses `FC` for NES, which Skraper doesn't seem to recognize automatically
+
+   1. Click the add button near the lower left to add it
+
+   1. In the _Games & Front-end_ tab set _Games/Roms folder_ as appropriate
+
+1. For each of the systems on the left, uncheck _Use specific configuration for ..._
+
+1. Select _All Systems_
+
 1. Go to _Game list_
 
    1. Under _Gamelist type_ select _No backup, create new or overwrite existing_
 
-   1. Change _Game list fullpath_ to create the game list in the Skraper program directory to avoid writing it to the SD card
+   1. Change _Game list fullpath_ to create the game list in the Skraper program directory to avoid writing it to the SD card, e.g. `C:\Program Files\Skraper\gamelist.xml`
 
    1. Change _Sub-folders_ to _Ignore them, generate no image_
 
@@ -271,13 +283,20 @@ Overrides allow you to customise the configuration of the emulators and save the
      ⚠️ Note that this will also affect other systems using that core; for example, Game Boy and Game Boy Color use the same core
 
    - _Save Content Directory Overrides_ will save the overrides for any game in that directory
+
+     ⓘ This option is recommended if you want to save overrides for an entire system
+
    - _Save Game Overrides_ will save the overrides for just that game
+
+     ⓘ This option is recommended if you want to save overrides for a specific game
+
+     ⚠️ If you save game overrides and later change core or content directory overrides, those will not be updated in the game overrides; the game overrides will have to be updated manually
 
 #### Cheats
 
 Cheats can be useful for experiencing older games that have not aged well in terms of difficulty or gameplay
 
-1. Download the `.cht cheats file for the corresponding game from here: [https://github.com/libretro/libretro-database/tree/master/cht](https://github.com/libretro/libretro-database/tree/master/cht)
+1. Download the `.cht` cheats file for the corresponding game from here: [https://github.com/libretro/libretro-database/tree/master/cht](https://github.com/libretro/libretro-database/tree/master/cht)
 1. Copy the file to `CFW/retroarch/.retroarch/cheats/`
 
    ⓘ If you only have a small number of cheat files, they can be put directly into the `cheats` directory. If you have a lot of cheat files you may wish to organize them into subdirectories, e.g. `CFW/retroarch/.retroarch/cheats/Nintendo - Nintendo Entertainment System/`
@@ -299,7 +318,7 @@ Cheats can be useful for experiencing older games that have not aged well in ter
 
 #### Game Boy
 
-- No BIOS is required but if the Nintendo logo will show if one is present
+- No BIOS is required but the Nintendo logo will show if one is present
 - You can put Game Boy and Game Boy Color ROMs in the same directory (`GB`) to simplify the list of systems shown in GarlicOS. However, if you want to use different emulator settings between Game Boy and Game Boy Color, you'll need to put Game Boy Color ROMs in their own directory (`GBC`).
 - To use the pale pea green colour of the original Game Boy:
 
