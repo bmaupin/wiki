@@ -75,6 +75,52 @@ For example:
 - Commodore 64: `COMMODORE`
 - Game Boy: `GB`
 
+## Skraper
+
+Skraper is used to download box art or other game media
+
+#### Install Skraper
+
+ⓘ These instructions are specific to installing Skraper on Linux. Adjust them as needed.
+
+1. Download Skraper from [http://skraper.net/](http://skraper.net/)
+
+   ⚠️ For Linux, if you wish to use a custom mix to format the box art, download the Windows version and run it in Wine; custom mixes don't work in the Linux version
+
+   ⚠️ The download button seems to be broken in Firefox; use another browser
+
+1. Create a new Wine prefix
+
+   ```
+   export WINEPREFIX=~/.local/share/wineprefixes/skraper
+   wineboot
+   ```
+
+1. Extract Skraper to the Wine prefix, e.g.
+
+   ```
+   7z x -o"$WINEPREFIX/drive_c/Program Files/Skraper" Skraper-1.1.1.7z
+   ```
+
+1. (Optional) Extract application icon
+
+   ```
+   cd "$WINEPREFIX/drive_c/Program Files/Skraper"
+   7z x SkraperUI.exe .rsrc/ICON -aoa
+   cd -
+   ```
+
+1. Create a desktop entry
+
+   ```
+   echo "[Desktop Entry]
+   Type=Application
+   Name=Skraper
+   Exec=env WINEPREFIX=/home/$USER/.local/share/wineprefixes/skraper wine \"/home/$USER/.local/share/wineprefixes/skraper/drive_c/Program Files/Skraper/SkraperUI.exe\"
+   Icon=/home/$USER/.local/share/wineprefixes/skraper/drive_c/Program Files/Skraper/.rsrc/ICON/1.ico
+   Terminal=false" > ~/.local/share/applications/skraper.desktop
+   ```
+
 #### Download box art
 
 1. (Optional) Download a custom mix
@@ -97,10 +143,6 @@ For example:
 
    - [https://github.com/ebzero/garlic-onion-skraper-mix](https://github.com/ebzero/garlic-onion-skraper-mix)
    - [https://www.reddit.com/r/RG35XX/comments/120p5k7/comment/jdib20w/](https://www.reddit.com/r/RG35XX/comments/120p5k7/comment/jdib20w/)
-
-1. Download Skraper from [http://skraper.net/](http://skraper.net/)
-
-   ⚠️ For Linux, if you wish to use a custom mix to format the box art, download the Windows version and run it in Wine; custom mixes don't work in the Linux version
 
 1. Open Skraper
 
