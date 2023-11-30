@@ -333,16 +333,23 @@ Overrides allow you to customise the configuration of the emulators and save the
 Cheats can be useful for experiencing older games that have not aged well in terms of difficulty or gameplay
 
 1. Download the `.cht` cheats file for the corresponding game from here: [https://github.com/libretro/libretro-database/tree/master/cht](https://github.com/libretro/libretro-database/tree/master/cht)
+
+   💡 Use the search box on the left under _Files_, but this will search cheats across all systems so make sure you select the correct game.
+
 1. Copy the file to `CFW/retroarch/.retroarch/cheats/`
 
-   ⓘ If you only have a small number of cheat files, they can be put directly into the `cheats` directory. If you have a lot of cheat files you may wish to organize them into subdirectories, e.g. `CFW/retroarch/.retroarch/cheats/Nintendo - Nintendo Entertainment System/`
+   💡 You can copy the cheats file directly into `cheats` and then load them manually (instructions below). But if you copy the cheats file into a subdirectory for the emulator (e.g. `cheats/FCEUmm` for NES) and the cheat file has the exact same name as the ROM (except for the extension), the cheats will be automatically loaded. The ROM directory should exist already if you've played at least one game for that system.
 
 1. Start the game for which you wish to use cheats
-1. Go to the RetroArch settings (Menu + X) > _Cheats_ > _Load Cheat File (Replace)_
-1. Browse to the cheat file and press A to apply it
-1. Back at the _Cheats_ menu, scroll down to the list of cheats
-1. Use left/right on the D-pad to enable or disable cheats
-1. When you're done, select _Apply Changes_ (or enable one of the other _Apply ..._ options)
+1. Go to the RetroArch settings (Menu + X) > _Cheats_
+1. If you copied the cheats file into the emulator directory with the same file name, the cheats should be listed. Otherwise:
+
+   1. Go to _Load Cheat File (Replace)_
+   1. Browse to the cheat file and press A to apply it
+
+1. In the _Cheats_ menu, scroll down to the list of cheats
+1. Enable _Apply After Toggle_ to automatically enable cheats when you toggle them. Otherwise you'll have to select _Apply Changes_ after enabling or disabling cheats.
+1. Use left/right on the D-pad to enable or disable individual cheats
 
 ## Notes for specific systems
 
