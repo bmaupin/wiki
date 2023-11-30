@@ -66,6 +66,42 @@ title: RG35XX
 
    1. Click _Apply All Operations_ near the top
 
+#### Set partition labels
+
+By default, the partitions on the SD card after writing the GarlicOS image will have names but not labels. In some environments (such as in Gnome on Linux), this will cause the SD card partitions to show up by size, and not by name.
+
+To label the partitions:
+
+1. Open GParted
+
+1. For each partition you wish to label:
+
+   1. Right-click > _Unmount_
+
+   1. Right-click > _Label File System_
+
+   1. Give the file system a label and click _OK_
+
+      Recommended: Use the same label as the partition name that you see in the _Name_ column. You can use lower-case letters (e.g. `System`) and if necessary, GParted will capitalise it (e.g. for FAT16 file systems).
+
+1. Click _Apply All Operations_ at the top
+
+If the label isn't applied for FAT32 file systems (e.g. the _Roms_ partition):
+
+1. Get the device of the filesystem from GParted
+
+1. Unmount the filesystem, e.g.
+
+   ```
+   sudo umount /dev/mmcblk0p4
+   ```
+
+1. Label the filesystem using `fatlabel`, e.g.
+
+   ```
+   sudo fatlabel /dev/mmcblk0p4 Roms
+   ```
+
 #### ROM directory names
 
 See [https://onionui.github.io/docs/emulators](https://onionui.github.io/docs/emulators)
