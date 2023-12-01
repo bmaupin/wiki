@@ -252,7 +252,13 @@ More information:
 - [https://retrogamecorps.com/2023/01/03/anbernic-rg35xx-starter-guide/#Boxart](https://retrogamecorps.com/2023/01/03/anbernic-rg35xx-starter-guide/#Boxart)
 - [https://www.reddit.com/r/RG35XX/comments/120p5k7/comment/jdib20w/](https://www.reddit.com/r/RG35XX/comments/120p5k7/comment/jdib20w/)
 
-## Emulator settings
+## GarlicOS
+
+#### Power button
+
+- Hold the power button for about 3 seconds to turn on the device
+- Press the power button to turn off the device
+  - GarlicOS will power on to where you left off, whether in-game or in the GarlicOS menu
 
 #### Button combinations
 
@@ -261,24 +267,22 @@ More information:
 - Press _Menu_ while playing a game to save the state and stop the game
 - Double-press _Menu_ while playing a game to switch between in-progress games
 - Hold _Menu_ while playing a game to show the _Menu_ button combinations
-- To go to the RetroArch menu while in-game, press _Menu_ and then after a short delay press _X_
-
-  ⓘ This is tricky to get right; don't press them at the same time, but don't wait too long before pressing _X_
+- To go to the RetroArch menu while in-game, press _Menu_ and then after about a second press _X_
 
 #### Aspect ratio
 
 By default, most games will fill the whole screen instead of using the proper aspect ratio. To use the proper aspect ratio:
 
 1. Start playing a game from the system for which you wish to change the aspect ratio
-1. Go to the RetroArch settings (Menu + X)
+1. Go to the RetroArch settings (_Menu_ + _X_)
 1. Press B to go to the Main Menu
 1. Go to _Settings_ > _Video_ > _Scaling_
 1. Enable _Keep Aspect Ratio_
 1. Optionally, also enable _Integer Scale_
 
-   ⓘ Normally setting the aspect ratio is enough; setting integer scale may be needed when using overlays (see below)
+   ⓘ Normally setting the aspect ratio is enough; setting integer scale may be needed when using overlays (see [Overlays](#overlays))
 
-1. Save overrides as desired (see below)
+1. Save overrides as desired (see [Overrides](#overrides))
 
 #### Overlays
 
@@ -292,24 +296,58 @@ The following overlays are included in GarlicOS:
 
 To enable an overlay:
 
-1. (Recommended) Enable _Keep Aspect Radio_ and _Integer Scale_; see above
+1. (Recommended) Enable _Keep Aspect Radio_ and _Integer Scale_ (see [Aspect ratio](#aspect-ratio))
 1. Start playing a game from the system for which you wish to enable the overlay
-1. Go to the RetroArch settings (Menu + X)
+1. Go to the RetroArch settings (_Menu_ + _X_)
 1. Go to _On-Screen Overlay_ > _Overlay Preset_ and select the appropriate overlay
 1. Press B to go back to the Quick Menu
-1. Save overrides as desired (see below)
+1. Save overrides as desired (see [Overrides](#overrides))
 
 To install new overlays:
 
 1. Download additional overlays, e.g. from [https://www.rg35xx.com/en/apps/mods-for-garlicos/](https://www.rg35xx.com/en/apps/mods-for-garlicos/)
 1. Copy overlays to `CFW/retroarch/.retroarch/overlay/`
 
-#### Save overrides
+#### Saving
+
+- GarlicOS will save the state any time you leave a game and reload it any time you start the game
+- Use _Menu_ + _R2_ to save the state while playing (and _Menu_ + _L2_ to load)
+  - The state slot will automatically increment, which is desirable
+  - To limit the number of save states:
+    1. While in game go to the RetroArch settings (_Menu_ + _X_)
+    1. Go back one menu (_B_) > _Settings_ > _Saving_
+    1. Set _Maxiumum Auto-Increment Save States To Keep_ to the desired value (e.g. `10`)
+    1. Save overrides as desired (see [Overrides](#overrides))
+
+#### Cheats
+
+Cheats can be useful for experiencing older games that have not aged well in terms of difficulty or gameplay
+
+1. Download the `.cht` cheats file for the corresponding game from here: [https://github.com/libretro/libretro-database/tree/master/cht](https://github.com/libretro/libretro-database/tree/master/cht)
+
+   💡 Use the search box on the left under _Files_, but this will search cheats across all systems so make sure you select the correct game.
+
+1. Copy the file to `CFW/retroarch/.retroarch/cheats/`
+
+   💡 You can copy the cheats file directly into `cheats` and then load them manually (instructions below). But if you copy the cheats file into a subdirectory for the emulator (e.g. `cheats/FCEUmm` for NES) and the cheat file has the exact same name as the ROM (except for the extension), the cheats will be automatically loaded. The ROM directory should exist already if you've played at least one game for that system.
+
+1. Start the game for which you wish to use cheats
+1. Go to the RetroArch settings (_Menu_ + _X_) > _Cheats_
+1. (Recommended) enable _Auto-Apply Cheats During Game Load_ and _Apply After Toggle_, then save overrides (see [Overrides](#overrides)). Otherwise you'll have to select _Apply Cheats_ every time you load the game and after enabling or disabling cheats.
+1. If you copied the cheats file into the emulator directory with the same file name, the cheats should be listed. Otherwise:
+
+   1. Go to _Load Cheat File (Replace)_
+   1. Browse to the cheat file and press A to apply it
+
+1. In the _Cheats_ menu, scroll down to the list of cheats
+1. Use left/right on the D-pad to enable or disable individual cheats
+
+#### Overrides
 
 Overrides allow you to customise the configuration of the emulators and save them for every time you play
 
 1. Start playing a game from the system for which you wish to set overrides
-1. Go to the RetroArch settings (Menu + X)
+1. Go to the RetroArch settings (_Menu_ + _X_)
 1. Make any changes you'd like to save as overrides
 1. Go back to the Quick Menu > _Overrides_
 1. Choose the appropriate option
@@ -328,29 +366,6 @@ Overrides allow you to customise the configuration of the emulators and save the
 
      ⚠️ If you save game overrides and later change core or content directory overrides, those will not be updated in the game overrides; the game overrides will have to be updated manually
 
-#### Cheats
-
-Cheats can be useful for experiencing older games that have not aged well in terms of difficulty or gameplay
-
-1. Download the `.cht` cheats file for the corresponding game from here: [https://github.com/libretro/libretro-database/tree/master/cht](https://github.com/libretro/libretro-database/tree/master/cht)
-
-   💡 Use the search box on the left under _Files_, but this will search cheats across all systems so make sure you select the correct game.
-
-1. Copy the file to `CFW/retroarch/.retroarch/cheats/`
-
-   💡 You can copy the cheats file directly into `cheats` and then load them manually (instructions below). But if you copy the cheats file into a subdirectory for the emulator (e.g. `cheats/FCEUmm` for NES) and the cheat file has the exact same name as the ROM (except for the extension), the cheats will be automatically loaded. The ROM directory should exist already if you've played at least one game for that system.
-
-1. Start the game for which you wish to use cheats
-1. Go to the RetroArch settings (Menu + X) > _Cheats_
-1. If you copied the cheats file into the emulator directory with the same file name, the cheats should be listed. Otherwise:
-
-   1. Go to _Load Cheat File (Replace)_
-   1. Browse to the cheat file and press A to apply it
-
-1. In the _Cheats_ menu, scroll down to the list of cheats
-1. Enable _Apply After Toggle_ to automatically enable cheats when you toggle them. Otherwise you'll have to select _Apply Changes_ after enabling or disabling cheats.
-1. Use left/right on the D-pad to enable or disable individual cheats
-
 ## Notes for specific systems
 
 #### Commodore 64
@@ -365,12 +380,20 @@ Cheats can be useful for experiencing older games that have not aged well in ter
 - You can put Game Boy and Game Boy Color ROMs in the same directory (`GB`) to simplify the list of systems shown in GarlicOS. However, if you want to use different emulator settings between Game Boy and Game Boy Color, you'll need to put Game Boy Color ROMs in their own directory (`GBC`).
 - To use the pale pea green colour of the original Game Boy:
 
-  1.  Start playing a Game Boy game
-  1.  Go to the RetroArch settings (Menu + X)
-  1.  Go to _Core Options_
-  1.  Set _GB Colorization_ to _Internal_
-  1.  Set _Internal Palette_ to _Special 1_
-  1.  Save overrides as desired (see above)
+  1. Start playing a Game Boy game
+  1. Go to the RetroArch settings (_Menu_ + _X_)
+  1. Go to _Core Options_
+  1. Set _GB Colorization_ to _Internal_
+  1. Set _Internal Palette_ to _Special 1_
+  1. Save overrides as desired (see [Overrides](#overrides))
+
+- To disable L1/R1 buttons changing the colour scheme:
+
+  1. Start playing a Game Boy game
+  1. Go to the RetroArch settings (_Menu_ + _X_)
+  1. Go to _Controls_ > _Port 1 Controls_
+  1. Set _L Button_ and _R Button_ to `---`
+  1. Save overrides as desired (see [Overrides](#overrides))
 
 #### Sega CD
 
