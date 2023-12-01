@@ -256,7 +256,8 @@ More information:
 
 #### Power button
 
-- Hold the power button for about 3 seconds to turn on the device
+- Hold the power button until you see the boot logo to turn on the device
+  - This normally takes about three seconds. See [Troubleshooting](#troubleshooting) if not.
 - Press the power button to turn off the device
   - GarlicOS will power on to where you left off, whether in-game or in the GarlicOS menu
 
@@ -399,3 +400,35 @@ Overrides allow you to customise the configuration of the emulators and save the
 
 - Sega CD requires 3 BIOS files to work
 - Use ROM files that end with .chd for best results
+
+## Troubleshooting
+
+#### RG35XX won't charge
+
+1. Make sure the SD card is in the first slot
+
+   ⚠️ The RG35XX won't charge without the SD card, and if you plug it in without the SD card, you'll have to hold the power button for longer to turn it on
+
+1. Plug in the charging cable
+
+   - You should see a battery icon when you first plug it in to let you know it's charging
+   - The small light on the left of the top of the device should also be lit while it's charging
+   - You can also tap the power button while it's charging to see the battery icon and get an approximation of how much it's charged
+
+1. If it's still not charging, try a different cable
+
+   - USB-A to USB-C cables such as the one the device came with seem to be recommended
+
+1. If it's still not charging, try a different charger
+
+   - In particular, a charger with a lower amperage (e.g. 500mA) may have more success and is probably better for overall battery life
+
+1. If a different charger doesn't work, try charging it from a PC USB port, preferably a USB-A port
+
+#### RG35XX won't power on
+
+1. Make sure the SD card is in the first slot
+1. Make sure the battery is charged
+1. Press and hold the power button until you see the boot logo
+
+   ⓘ Normally this should take about three seconds but it can take ten seconds or more; in particular, this seems to happen if you try charging the device without the SD card
