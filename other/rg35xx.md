@@ -347,9 +347,11 @@ Cheats can be useful for experiencing older games that have not aged well in ter
 1. In the _Cheats_ menu, scroll down to the list of cheats
 1. Use left/right on the D-pad to enable or disable individual cheats
 
-#### Overrides
+## Overrides
 
 Overrides allow you to customise the configuration of the emulators and save them for every time you play
+
+#### Saving overrides for a particular system or game
 
 1. Start playing a game from the system for which you wish to set overrides
 1. Go to the RetroArch settings (_Menu_ + _X_)
@@ -370,6 +372,14 @@ Overrides allow you to customise the configuration of the emulators and save the
      ⓘ This option is recommended if you want to save overrides for a specific game
 
      ⚠️ If you save game overrides and later change core or content directory overrides, those will not be updated in the game overrides; the game overrides will have to be updated manually
+
+#### Make changes across all systems or games
+
+If you wish to make a change that will apply across all systems or games, this is done differently in GarlicOS:
+
+1. If you're playing a game, quit the game
+1. Go to the main GarlicOS menu > _RetroArch_
+1. Make any changes as needed, then go back to the _Main Menu_ (press _B_ as many times as needed) > _Quit RetroArch_
 
 ## Notes for specific systems
 
