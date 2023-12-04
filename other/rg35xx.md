@@ -266,8 +266,9 @@ More information:
 
 #### Button combinations
 
-- Press _Settings_ at the main GarlicOS menu to set the time and language
-- Press _Menu_ at any of the GarlicOS menus to switch between in-progress games
+- Press _Start_ at the main GarlicOS menu to set the time and language
+- Press _Select_ in any of the GarlicOS menus to set overclocking/underclocking
+- Press _Menu_ in any of the GarlicOS menus to switch between in-progress games
 - Press _Menu_ while playing a game to save the state and stop the game
 - Double-press _Menu_ while playing a game to switch between in-progress games
 - Hold _Menu_ while playing a game to show the _Menu_ button combinations
@@ -397,7 +398,11 @@ Overrides allow you to customise the configuration of the emulators and save the
   1. Go to the RetroArch settings (_Menu_ + _X_)
   1. Go to _Controls_ > _Port 1 Controls_
   1. Set _L Button_ and _R Button_ to `---`
-  1. Save overrides as desired (see [Overrides](#overrides))
+  1. Go back one menu (_B_) > _Manage Remap Files_
+
+     ⓘ Unlike other settings which are saved in override files, changes to controls are saved in separate remap files
+
+  1. Choose _Update Input Remap File_
 
 #### Sega CD
 
