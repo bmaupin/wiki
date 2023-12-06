@@ -10,6 +10,20 @@ title: Git advanced notes
 git log --pretty=fuller
 ```
 
+#### Keep original commit dates when rebasing
+
+1. Use
+
+   ```
+   git rebase --committer-date-is-author-date
+   ```
+
+1. Check that the commit date matches the author date:
+
+   ```
+   git log --pretty=fuller
+   ```
+
 ## Tags
 
 #### Lightweight vs. annotated tags
@@ -25,6 +39,8 @@ GitHub typically creates lightweight tags.
 [Can an annotated tag be replaced with a lightweight tag?](https://stackoverflow.com/a/75725806/399105)
 
 #### Update tags after a rebase
+
+ⓘ If you find that many of the tag timestamps are the same after running this command, see [Keep original commit dates when rebasing](#keep-original-commit-dates-when-rebasing)
 
 This script will attempt to update the references for tags after a rebase has changed the hashes of the commits the tags are referencing:
 
@@ -65,4 +81,11 @@ for tag in $(git for-each-ref --format="%(refname:short)" "refs/tags/*"); do
     fi
   fi
 done
+```
+
+If you wish, you can use this to see the tags and the commit hashes they point to with this command:
+
+```
+git for-each-ref --sort -v:refname --format '%(objectname) %(objecttype) %(refname)
+%(*objectname) %(*objecttype) %(*refname)' refs/tags
 ```
