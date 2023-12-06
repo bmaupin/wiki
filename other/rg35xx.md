@@ -328,9 +328,15 @@ To install new overlays:
 
 Cheats can be useful for experiencing older games that have not aged well in terms of difficulty or gameplay
 
+💡 Cheats such as unlimited lives or not losing items when dying can be more convenient compared to save states
+
 1. Download the `.cht` cheats file for the corresponding game from here: [https://github.com/libretro/libretro-database/tree/master/cht](https://github.com/libretro/libretro-database/tree/master/cht)
 
-   💡 Use the search box on the left under _Files_, but this will search cheats across all systems so make sure you select the correct game.
+   1. Search for cheats using the file search box (not the search box at the very top of the page); it will be near the top on the left or the right depending on your device
+
+      ⚠️ This will search cheats across all systems so make sure you select the correct game
+
+   1. Click the _Download Raw File_ button near the top right of the file to download the cheat file
 
 1. Copy the file to `CFW/retroarch/.retroarch/cheats/`
 
