@@ -257,7 +257,7 @@ More information:
 #### Power button
 
 - Hold the power button until you see the boot logo to turn on the device
-  - This normally takes about three seconds. See [Troubleshooting](#troubleshooting) if not.
+  - See [Troubleshooting](#troubleshooting) for more information
 - Press the power button to turn off the device
 
   - GarlicOS will power on to where you left off, whether in-game or in the GarlicOS menu
@@ -455,4 +455,4 @@ If you wish to make a change that will apply across all systems or games, this i
 1. Make sure the battery is charged
 1. Press and hold the power button until you see the boot logo
 
-   ⓘ Normally this should take about three seconds but it can take ten seconds or more; in particular, this seems to happen if you try charging the device without the SD card
+   ⓘ Normally this should take about five seconds but it can take ten seconds or more; in particular, this seems to happen if you try charging the device without the SD card
