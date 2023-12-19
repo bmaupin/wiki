@@ -449,6 +449,8 @@ If you wish to make a change that will apply across all systems or games, this i
 
 1. If a different charger doesn't work, try charging it from a PC USB port, preferably a USB-A port
 
+1. If it's still not charging, press and hold the power button for at least ten seconds and try again
+
 #### RG35XX won't power on
 
 1. Make sure the SD card is in the first slot
