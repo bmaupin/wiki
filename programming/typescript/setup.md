@@ -23,7 +23,7 @@ title: Setting up a new TypeScript project
 1. Create `tsconfig.json`
 
    ```
-   npx tsc --init
+   npx --package=typescript tsc --init
    ```
 
    - If you forget this step, you may get weird TypeScript errors, such as
