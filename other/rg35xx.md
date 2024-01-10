@@ -429,7 +429,7 @@ If you wish to make a change that will apply across all systems or games, this i
 
 #### RG35XX won't charge
 
-1. Make sure the SD card is in the first slot
+1. 👉 Make sure the SD card is in the first slot
 
    ⚠️ The RG35XX won't charge without the SD card, and if you plug it in without the SD card, you'll have to hold the power button for longer to turn it on
 
@@ -453,7 +453,7 @@ If you wish to make a change that will apply across all systems or games, this i
 
 #### RG35XX won't power on
 
-1. Make sure the SD card is in the first slot
+1. 👉 Make sure the SD card is in the first slot
 1. Make sure the battery is charged
 1. Press and hold the power button until you see the boot logo
 
