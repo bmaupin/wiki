@@ -252,6 +252,47 @@ More information:
 - [https://retrogamecorps.com/2023/01/03/anbernic-rg35xx-starter-guide/#Boxart](https://retrogamecorps.com/2023/01/03/anbernic-rg35xx-starter-guide/#Boxart)
 - [https://www.reddit.com/r/RG35XX/comments/120p5k7/comment/jdib20w/](https://www.reddit.com/r/RG35XX/comments/120p5k7/comment/jdib20w/)
 
+## Misc
+
+#### Convert .bin/.cue to .chd
+
+ⓘ `.chd` files are much smaller than `.bin`/`.cue` and they will also load and run faster
+
+1. First, check online to see if someone hasn't already converted the file
+1. Next, install chdman
+1. CD to the directory containing the `.bin` and `.cue` files
+1. `.cue` file contents are upper-case but chdman doesn't appear to properly handle this. As a workaround, rename the files to be upper-case
+
+   ⚠️ Make sure the directory only contains the `.bin` and `.cue` files as this will rename all of the files in the directory
+
+   ```
+   for f in * ; do mv -- "$f" "$(tr [:lower:] [:upper:] <<< "$f")" ; done
+   ```
+
+1. Convert all files in the directory to `.chd` files
+
+   ```
+   for file in *.CUE; do chdman createcd -i "${file%.*}.CUE" -o "${file%.*}.CHD"; done
+   ```
+
+1. Optionally, rename the new `.chd` files as desired
+
+#### Creating box art manually
+
+If Skraper doesn't find the box art for a particular game, you can create it manually:
+
+1. Download the image to use
+
+1. Run this command to convert the image:
+
+   ```
+   mogrify -resize 340x480 -extent 640x480 -gravity West -background none /path/to/image
+   ```
+
+1. Rename the image file to match the exact file name of the ROM (except for the extension)
+
+1. Copy the image file to the appropriate `Imgs` directory in the _Roms_ partition
+
 ## GarlicOS
 
 #### Power button
@@ -420,10 +461,26 @@ If you wish to make a change that will apply across all systems or games, this i
 
   1. Choose _Update Input Remap File_
 
+#### Playstation
+
+- Use ROM files that end with .chd for best results
+  - They are much smaller and they will also load and run faster
+- If you have a game that requires multiple discs:
+
+  1. Inside the _Roms/PS_ directory, create a subdirectory with the name of the game
+  1. Put all the ROM files for each disc in that subdirectory
+  1. In the _Roms/PS_ directory, create a text file with the same name as the game and an `.m3u` extension
+  1. Add the relative path to the ROM files to the `.m3u` file, e.g.
+
+     ```
+     ls -1 "Game name/"*.chd > "Game name.m3u"
+     ```
+
 #### Sega CD
 
 - Sega CD requires 3 BIOS files to work
 - Use ROM files that end with .chd for best results
+  - They are much smaller and they will also load and run faster
 
 ## Troubleshooting
 
