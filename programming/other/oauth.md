@@ -58,7 +58,7 @@ Used for machine-to-machine auth where a user is not involved, e.g. for one API 
 1. Client system sends access token to resource server for access
 1. Resource server validates the access token and grants access if the token is valid
 
-ⓘ Client credentials flow does not use refresh tokens
+ⓘ Client credentials flow does not need refresh tokens. Some OAuth servers may send a refresh token with the access token, but it's just as easy to get a new access token using the client ID/secret.
 
 #### Device code
 
