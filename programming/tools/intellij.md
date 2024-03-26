@@ -75,6 +75,14 @@ _Tools_ > _Create Desktop Entry_
 
 - Android Studio: [Auto format code in Android Studio/Intellij IDEA](https://medium.com/nerd-for-tech/auto-format-code-in-android-studio-intellij-idea-1f0450ee44a3)
 
+#### Enable automatic update when Gradle config is changed
+
+1. _File_ > _Settings_ > _Build, Execution, Deployment_ > _Build Tools_
+
+1. Make sure _Reload project after changes in the build scripts_ is checked
+
+1. Select _Any changes_ > _OK_
+
 #### Disable spell checking
 
 _File_ > _Settings_ > _Editor_ > _Inspections_
