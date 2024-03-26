@@ -77,7 +77,12 @@ _Tools_ > _Create Desktop Entry_
 
 #### Disable spell checking
 
-_File_ > _Settings_ > _Editor_ > _Inspections_ > _Proofreading_ > under _Proofreading_ uncheck _Typo_
+_File_ > _Settings_ > _Editor_ > _Inspections_
+
+- (Recommended) Uncheck _Proofreading_ to turn off all proofreading
+- Or to disable spell checking:
+
+  _Proofreading_ > under _Proofreading_ uncheck _Typo_
 
 #### Lombok support
 
