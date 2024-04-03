@@ -29,6 +29,12 @@ Then to apply the changes immediately without logging out:
 
 ## Use Wireshark
 
+#### Clear the list of captured packets
+
+1. Stop the packet capture
+
+1. Start a new capture and select _Continue without Saving_
+
 #### Capturing packets using tcpdump for viewing using Wireshark
 
 [https://www.wireshark.org/docs/wsug_html_chunked/AppToolstcpdump.html](https://www.wireshark.org/docs/wsug_html_chunked/AppToolstcpdump.html)
