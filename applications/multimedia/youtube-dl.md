@@ -4,7 +4,7 @@ title: youtube-dl
 
 #### Install youtube-dl
 
-1. Download the latest _youtube-dl_ file from here: https://github.com/ytdl-org/ytdl-nightly/releases
+1. Download the latest _youtube-dl_ file from here: [https://github.com/ytdl-org/ytdl-nightly/releases](https://github.com/ytdl-org/ytdl-nightly/releases)
 
 1. Move it to `~/bin` and make it executable
 
@@ -21,8 +21,16 @@ youtube-dl -F URL
 
 #### Download video
 
+If there's a format that includes audio and video, you can just use that format code, e.g.
+
 ```
-youtube-dl -f 1914+AACHEv1-2_0-English URL
+youtube-dl -f 22 https://example.com/video
+```
+
+Otherwise, you can give the video and audio format codes and youtube-dl will combine them, e.g.
+
+```
+youtube-dl -f 135+140 https://example.com/video
 ```
 
 #### Save a download archive file
@@ -33,6 +41,8 @@ This is useful when downloading many videos to make sure you don't accidentally 
 youtube-dl --download-archive archive.txt ...
 ```
 
+TODO: Is this still needed? youtube-dl seems to be smart enough to tell if a video's already been downloaded
+
 #### Auto selecting video stream and changing output filename
 
 ```
@@ -41,9 +51,13 @@ youtube-dl -f 'worstvideo[height=540]+AACHEv1-2_0-English' -o '%(series)s - S%(s
 
 #### Download playlist
 
+Just use the URL of the playlist and youtube-dl will download it:
+
 ```
-youtube-dl --playlist-start 4 -f 'worstvideo[height=540]+AACHEv1-2_0-English' -o '%(series)s - S%(season_number)02dE%(episode_number)02d - %(title)s.%(ext)s' --download-archive archive.txt URL
+youtube-dl --playlist-start 4 -i -f 'worstvideo[height=540]+AACHEv1-2_0-English' -o '%(series)s - S%(season_number)02dE%(episode_number)02d - %(title)s.%(ext)s' --download-archive archive.txt URL
 ```
+
+- (Recommended) `-i`: "Continue on download errors, for example to skip unavailable videos in a playlist"
 
 #### Download multiple files without a playlist
 
