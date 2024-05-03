@@ -90,3 +90,33 @@ _Windows_ > make sure _Stored Tags_ is checked
   - This can be used, for example, to append a tag to the existing filename, e.g. `%__filename_no_ext% - %title%`
 
 For more tags, see [https://docs.puddletag.net/source/tags.html](https://docs.puddletag.net/source/tags.html)
+
+## Album art
+
+#### See if a track has album art
+
+1. Open the folder containing the tracks you want to update
+1. If you don't see the _Artwork_ pane on the right, go to _Windows_ and check _Artwork_
+1. Look at the _Artwork_ pane on the right to see if the album art is there
+
+#### Add album art
+
+1. If you don't see the _Artwork_ pane on the right, go to _Windows_ and check _Artwork_
+1. Select all the tracks you wish to update
+1. In the _Artwork_ pane on the right, right-click > _Add cover_
+1. Browse to the cover you wish to add
+1. Click the _Save_ button near the top left
+
+#### Remove album art
+
+1. If you don't see the _Artwork_ pane on the right, go to _Windows_ and check _Artwork_
+1. Select all the tracks you wish to update
+1. In the _Artwork_ pane on the right, click the arrows until you see _<blank>_
+1. Click the _Save_ button near the top left
+
+#### Change album art
+
+ⓘ There's a _Change cover_ option in the _Artwork_ window but I couldn't get it to work to apply changes to all tracks. But this works:
+
+1. Follow the steps above to remove album art
+1. Follow the steps above to add album art
