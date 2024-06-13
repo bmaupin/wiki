@@ -7,20 +7,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Build the Jekyll site
-        uses: helaili/jekyll-action@v2
+      - name: Install Ruby and dependencies
+        uses: ruby/setup-ruby@v1
         with:
-          # Only build, don't publish
-          build_only: true
-          # Set _site as the destination directory
-          jekyll_build_options: -d _site
+          # https://pages.github.com/versions/
+          ruby-version: '2.7'
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+
+      # Converts the markdown into HTML files so htmlproofer can work
+      - name: Build the Jekyll site
+        run: bundle exec jekyll build
         env:
           # Fix GitHub Metadata: No GitHub API authentication could be found. Some fields may be missing or have incorrect data.
           JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Fix jekyll-github-metadata/repository_finder.rb:29:in `block in nwo': No repo name found.
-          PAGES_REPO_NWO: ${{ github.repository }}
 
       - name: Check internal links using htmlproofer
         uses: anishathalye/proof-html@v1.4.0
