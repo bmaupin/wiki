@@ -9,14 +9,19 @@ jobs:
       - name: Check out the code
         uses: actions/checkout@v3
 
-      # Converts the markdown into HTML files so htmlproofer can work
-      - name: Build the Jekyll site
+      - name: Install Ruby and dependencies
         uses: ruby/setup-ruby@v1
         with:
           # https://pages.github.com/versions/
           ruby-version: '2.7'
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-      - run: bundle exec jekyll build
+
+      # Converts the markdown into HTML files so htmlproofer can work
+      - name: Build the Jekyll site
+        run: bundle exec jekyll build
+        env:
+          # Fix GitHub Metadata: No GitHub API authentication could be found. Some fields may be missing or have incorrect data.
+          JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Check internal links using htmlproofer
         uses: anishathalye/proof-html@v1.4.0
