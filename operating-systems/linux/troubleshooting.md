@@ -17,6 +17,18 @@ nc -kl 8000
 - `-k`: Keep running even after a successful connection
 - `-l`: Listen (by default it will connect to a remote port)
 
+To return a response ([Minimal web server using netcat](https://stackoverflow.com/a/16640233/399105)):
+
+```
+while true; do echo -e "HTTP/1.1 200 OK\n\n $(date)" | nc -l -p 1234 -q 1; done
+```
+
+Or to return JSON:
+
+```
+while true; do echo -e "HTTP/1.1 200 OK\n\n{}" | nc -l -p 1234 -q 1; done
+```
+
 #### Test connection to a web server
 
 Use curl, e.g.
