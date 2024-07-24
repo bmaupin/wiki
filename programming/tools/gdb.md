@@ -42,6 +42,14 @@ title: GDB (GNU Debugger)
    bt
    ```
 
+## Variables
+
+#### Built-in variables
+
+- Stack: `$sp` or `$esp`
+- Program counter: `$pc`
+  - This points to the memory address of the current instruction
+
 ## Registers
 
 #### Show all the registers
