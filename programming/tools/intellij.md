@@ -92,6 +92,14 @@ _File_ > _Settings_ > _Editor_ > _Inspections_
 
   _Proofreading_ > under _Proofreading_ uncheck _Typo_
 
+#### Disable auto saving
+
+ⓘ IntelliJ will auto save when you switch to another application, but this may trigger a lengthy rebuild in some projects and may be undesirable
+
+1. _File_ > _Settings_ > _Appearance & Behavior_ > _System Settings_
+
+1. Uncheck _Save files when switching to a different application or a built-in terminal_
+
 #### Lombok support
 
 (Doesn't apply to Android Studio) Follow the steps here: [https://stackoverflow.com/questions/14866765/building-with-lomboks-slf4j-and-intellij-cannot-find-symbol-log](https://stackoverflow.com/a/63926345/399105)
