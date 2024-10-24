@@ -23,8 +23,16 @@ title: Nexus Player notes
 1. Boot the custom recovery image
 
    ```
-   sudo fastboot boot twrp-X.X.X-X-fugu.img
+   fastboot boot twrp-X.X.X-X-fugu.img
    ```
+
+1. Mount /system
+
+   ```
+   adb shell mount -t ext4 /dev/block/mmcblk0p10 /system
+   ```
+
+   Alternatively, you can use a USB OTG cable to plug in a USB mouse and use the UI
 
 #### Set up Amazon Fire TV remote
 
