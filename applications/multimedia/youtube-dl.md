@@ -72,3 +72,21 @@ youtube-dl --playlist-start 4 -i -f 'worstvideo[height=540]+AACHEv1-2_0-English'
    ```
 
    - Replace `starting_episode`, `playlist.txt`, `worstvideo[height=540]+audio-English`, and `S01E0${episode}.mp4` as appropriate
+
+#### Working with local .m3u8 files
+
+Sometimes .m3u8 (HLS playlist) URLs are too long to paste into a terminal, so you can work with them locally instead.
+
+1. Download the .m3u8 file in the browser
+
+1. Start a local HTTP server to serve the file, e.g.
+
+   ```
+   python3 -m http.server 8000
+   ```
+
+1. Download the video using the local .m3u8 file URL, e.g.
+
+   ```
+   youtube-dl http://localhost:8000/file.m3u8
+   ```
