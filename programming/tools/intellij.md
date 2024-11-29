@@ -2,9 +2,37 @@
 title: IntelliJ IDEA
 ---
 
-#### Create desktop entry
+#### Install or upgrade IntelliJ IDEA
 
-_Tools_ > _Create Desktop Entry_
+1. Download IntelliJ from [https://www.jetbrains.com/idea/download/](https://www.jetbrains.com/idea/download/)
+
+1. Extract the downloaded file, e.g.
+
+   ```
+   tar -xvf ideaIU-2024.3.tar.gz
+   ```
+
+1. Move the directory somewhere, e.g.
+
+   ```
+   sudo mv idea-IU-243.21565.193/ /opt
+   ```
+
+1. Launch IntelliJ, e.g.
+
+   ```
+   /opt/idea-IU-243.21565.193/bin/idea.sh
+   ```
+
+1. Create or update desktop entry
+
+   Menu > _Tools_ > _Create Desktop Entry_
+
+1. If upgrading, remove old installation, e.g.
+
+   ```
+   sudo rm -rf /opt/idea-IU-221.5080.210/
+   ```
 
 #### Keyboard shortcuts
 
