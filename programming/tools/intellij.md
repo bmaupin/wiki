@@ -21,7 +21,7 @@ title: IntelliJ IDEA
 1. Launch IntelliJ, e.g.
 
    ```
-   /opt/idea-IU-243.21565.193/bin/idea.sh
+   /opt/idea-IU-243.21565.193/bin/idea
    ```
 
 1. Create or update desktop entry
