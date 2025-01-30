@@ -2,6 +2,26 @@
 title: Ghidra
 ---
 
+## Basic usage
+
+1. If there are no projects, create one
+
+   _File_ > _New Project_
+
+1. Select a project
+
+1. Import file
+
+   _File_ > _Import File_
+
+1. Double-click the file to open it
+
+1. If prompted to analyse, click _Yes_
+
+   Defaults should be fine in most cases
+
+   1. Wait for the analysis to finish; see the status bar in the lower right
+
 ## Functions
 
 #### List functions
