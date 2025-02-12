@@ -3,6 +3,10 @@ name: CI
 on: [push]
 
 jobs:
+  # ⚠️ NOTE: If any tasks that use Ruby fail, do this first:
+  #          1. Go to https://pages.github.com/versions/
+  #          2. Find the version of ruby
+  #          3. Update ruby-version below
   htmlproofer:
     runs-on: ubuntu-latest
     steps:
@@ -12,8 +16,7 @@ jobs:
       - name: Install Ruby and dependencies
         uses: ruby/setup-ruby@v1
         with:
-          # https://pages.github.com/versions/
-          ruby-version: '2.7'
+          ruby-version: '3.3'
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
       # Converts the markdown into HTML files so htmlproofer can work
