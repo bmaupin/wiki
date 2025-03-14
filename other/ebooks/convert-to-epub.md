@@ -2,11 +2,55 @@
 title: Convert to EPUB
 ---
 
-#### Convert a webpage to EPUB
+## Convert a webpage to EPUB
 
 Use [dotEPUB](http://dotepub.com/)
 
-#### Convert MOBI to EPUB
+## Convert multiple web pages to EPUB
+
+ⓘ Percollate is used instead of pandoc because pandoc always combines all input files before converting. In particular, it seems incapable of generating a proper EPUB table of contents from multiple files.
+
+1. Save each web page
+
+   👉 Don't bother formatting the web page before saving it; when you save it, it will always be saved with the original format
+
+1. Combine the pages using [percollate](https://github.com/danburzo/percollate), e.g.
+
+   ```
+   percollate -o book.epub --title Title *.html
+   ```
+
+#### Encoding is wrong
+
+If the final EPUB has encoding errors:
+
+1. Edit the source HTML file
+
+1. Add this line under the `html` `head` element:
+
+   ```html
+   <meta charset="UTF-8" />
+   ```
+
+#### Page content is missing
+
+1. Open the page in the browser
+
+1. Open the dev tools and find the div with the page content
+
+1. Right-click the div and copy the HTML
+
+1. Paste it into a new HTML file and use that instead
+
+#### Update source reference in EPUB
+
+Use `--url`, e.g.
+
+```
+percollate epub -o book.epub page1.html --url http://example.org/page1.html page2.html --url http://example.org/page2.html
+```
+
+## Convert MOBI to EPUB
 
 1. Install and open [Calibre](http://calibre-ebook.com/)
 
@@ -24,7 +68,7 @@ Use [dotEPUB](http://dotepub.com/)
 
 1. The generated EPUB will be located in your home folder/Calibre Library/_author_/_title_
 
-#### Convert document (.doc, .docx, .odt, .rtf) to EPUB
+## Convert document (.doc, .docx, .odt, .rtf) to EPUB
 
 - Using Calibre
 
@@ -72,7 +116,7 @@ Use [dotEPUB](http://dotepub.com/)
   pandoc -o output.epub input.docx -M author="Fartrell Cluggins" -M title="The Greatest Book Ever Written"
   ```
 
-#### Convert PDF to EPUB
+## Convert PDF to EPUB
 
 - Using Calibre
 
