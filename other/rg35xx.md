@@ -111,6 +111,18 @@ For example:
 - Commodore 64: `COMMODORE`
 - Game Boy: `GB`
 
+#### Install DraStic (for Nintendo DS emulation)
+
+1. Download DraStic for Garlic OS here: [https://boosty.to/xquader/posts/47360a44-633c-4cbe-892f-46930c9f7b9f](https://boosty.to/xquader/posts/47360a44-633c-4cbe-892f-46930c9f7b9f)
+
+1. Extract `APPS` to the root of the ROMS partition on the SD card
+
+1. Add this line to `CFW/config/coremapping.json`:
+
+   ```json
+   "NDS": "/mnt/mmc/APPS/Drastic.sh"
+   ```
+
 ## Skraper
 
 Skraper is used to download box art or other game media
