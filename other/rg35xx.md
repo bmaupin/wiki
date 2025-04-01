@@ -117,6 +117,12 @@ For example:
 
 1. Extract `APPS` to the root of the ROMS partition on the SD card
 
+   ⓘ This will also add an APPS entry to the RG35XX with an entry for Drastic. If you don't want this, you can rename `APPS` to `APPS_hide` and make sure you also rename it in coremapping.json (below)
+
+1. Download https://i.imgur.com/eHJVADf.png and copy to CFW/skin/system/NDS.png in the ROMS partition on the SD card
+
+   ⓘ The Drastic zip file contains an image at CFW/skin/system/NDS.png but it doesn't match the default GarlicOS theme
+
 1. Add this line to `CFW/config/coremapping.json`:
 
    ```json
@@ -472,6 +478,17 @@ If you wish to make a change that will apply across all systems or games, this i
      ⓘ Unlike other settings which are saved in override files, changes to controls are saved in separate remap files
 
   1. Choose _Update Input Remap File_
+
+#### Nintendo DS (DraStic)
+
+DraStic has its own button combinations:
+
+- R2: switch between top/bottom screen
+  - The screen may also switch automatically during the game
+- L2: switch screen layout
+- Menu: Press once (no need to hold it) to go to the DraStic menu
+
+To exit the game, press _Menu_ and go to _Exit DraStic_
 
 #### Playstation
 
