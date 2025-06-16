@@ -10,22 +10,15 @@ title: Puddletag
 sudo apt install puddletag
 ```
 
-Ubuntu 20.04:
-
-```
-sudo add-apt-repository ppa:ubuntuhandbook1/apps
-sudo apt install puddletag
-```
-
 #### Making changes
 
-- Changes made in the right side of the screen **are automatically saved**
-- Or select one or more tracks, make changes in the left box, click _Save_
+- Changes made in the main track listing pane **are automatically saved**
+- Or select one or more tracks, make changes in the _Tag Panel_ pane, click _Save_
 - You can also select a tag for multiple tracks using shift-click and paste the same value into all selected tracks
 
 #### Renaming files
 
-1. Put this in the text box near the upper left:
+1. Put this in the text box on the left side of the top toolbar:
    - For Track number - Title:
      ```
      $num(%track%,2) - %title%
