@@ -51,18 +51,6 @@ sudo apt install puddletag
 1. Select all the tracks to autonumber
 1. _Tools_ > _Autonumbering Wizard_ > _OK_
 
-#### Look up tags using online sources
-
-1. _Windows_ > _Tag Sources_
-1. _Source_ > _MusicBrainz_
-1. In the search box you can type _artist; album_, e.g:
-   pimsleur; french plus
-1. Click _Search_
-1. Select all of the tracks you want to update
-1. Select an album to preview the changes
-1. If you want to apply the updates, click _Write_
-1. Close the _Tag Sources_ window if desired
-
 #### Replacing text
 
 1. Select the tracks you want to update
@@ -91,6 +79,38 @@ _Windows_ > make sure _Stored Tags_ is checked
 
 For more tags, see [https://docs.puddletag.net/source/tags.html](https://docs.puddletag.net/source/tags.html)
 
+#### Look up tags using online sources
+
+See also: [Using Tag Sources](https://docs.puddletag.net/source/tagsources.html)
+
+1. _Windows_ > _Tag Sources_
+1. (Optional) If other windows are open (e.g. _Artwork_), close them to have more space to work
+1. _Source_
+   1. Try _AcoustID_ first, which will search by audio fingerprint
+   1. If that doesn't work, try _MusicBrainz_ or another source
+1. (Skip this step for AcoustID) In the search box you can type _artist; album_, e.g:
+   pimsleur; french plus
+1. Click _Search_
+1. Select all of the tracks you want to update
+1. Select an album to preview the changes
+1. If you want to apply the updates, click the _Write_ button inside the _Tag Sources_ pane
+1. Close the _Tag Sources_ window if desired
+
+If MusicBrainz is giving 404 errors:
+
+1. Go to https://musicbrainz.org and find the album using search (or use a web browser)
+   👉 Make sure to select the appropriate search field as it defaults to _Artist_
+1. Copy the UUID from the URL (e.g. _cf81efdc-4b9d-4f84-a742-9a8f42da8014_)
+   👉 Confusingly, this is the MBID, which is different from the album ID that will show in Puddletag
+1. In Puddletag, search with this syntax:
+   ```
+   :b UUID
+   ```
+   e.g.
+   ```
+   :b cf81efdc-4b9d-4f84-a742-9a8f42da8014
+   ```
+
 ## Album art
 
 #### See if a track has album art
@@ -103,7 +123,7 @@ For more tags, see [https://docs.puddletag.net/source/tags.html](https://docs.pu
 
 1. If you don't see the _Artwork_ pane on the right, go to _Windows_ and check _Artwork_
 1. Select all the tracks you wish to update
-1. In the _Artwork_ pane on the right, right-click > _Add cover_
+1. In the _Artwork_ pane on the right, right-click the image preview > _Add cover_
 1. Browse to the cover you wish to add
 1. Click the _Save_ button near the top left
 
