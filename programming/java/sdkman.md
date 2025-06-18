@@ -2,7 +2,7 @@
 title: SDKMAN
 ---
 
-SDKMAN is a tool for managing Java installations and related tools, like [`nvm`](https://github.com/nvm-sh/nvm) for Java.
+SDKMAN is a tool for managing Java installations and related tools, like [NVM](../javascript/nvm) for Java.
 
 ## Setup
 
