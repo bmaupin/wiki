@@ -16,7 +16,7 @@ docker build -t IMAGE_NAME .
 
 ## Run
 
-#### Run a container image
+#### Run a container from an image
 
 [https://docs.docker.com/engine/reference/commandline/run/](https://docs.docker.com/engine/reference/commandline/run/)
 
@@ -36,6 +36,19 @@ Some helpful flags:
 - `-e`: Set an environment variable, e.g. `-e grails.env=dev`
   - Or use `--env-file` to read in a `.env` file
 - `--name`: When not using `--rm`, give the container a name which can be used to re-run it using `docker start`, e.g. `docker start -a NAME`
+
+#### Restrict a container's resources
+
+These parameters can be useful in specific situations such as trying to replicate issues in environments with constrained resources:
+
+- `--cpus`
+- `--memory`
+
+e.g.
+
+```
+docker run -it --cpus="0.5" --memory="1g"
+```
 
 ## Containers
 
