@@ -2,7 +2,25 @@
 title: Ghidra
 ---
 
-## Basic usage
+## General
+
+#### Installation
+
+1. Download the latest release from https://github.com/NationalSecurityAgency/ghidra/releases
+
+1. Extract the release
+
+1. Change to the extracted directory and run
+
+   ```
+   ./ghidraRun
+   ```
+
+#### Upgrade Ghidra
+
+Simply follow the instructions above under _Installation_ to download and run the latest release. The previous release directory can be deleted. You will be prompted as needed to upgrade Ghidra projects.
+
+#### Basic usage
 
 1. If there are no projects, create one
 
@@ -21,6 +39,20 @@ title: Ghidra
    Defaults should be fine in most cases
 
    1. Wait for the analysis to finish; see the status bar in the lower right
+
+#### Go to a specific address
+
+1. _Navigation_ > _Go To_
+
+   - To go to a memory address (e.g. what you'll get from a backtrace in gdb), just type in the address
+   - To go to a file address (i.e. a binary offset in a file), use this syntax:
+     ```
+     file(offset)
+     ```
+     e.g.
+     ```
+     file(0x20e3a79)
+     ```
 
 ## Functions
 
