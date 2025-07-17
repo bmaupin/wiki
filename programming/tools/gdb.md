@@ -42,6 +42,10 @@ title: GDB (GNU Debugger)
    bt
    ```
 
+#### Restart a running program from the beginning
+
+Just type `run` again
+
 ## Variables
 
 #### Built-in variables
@@ -92,6 +96,8 @@ If you don't have debugging symbols
 
 ## Breakpoints
 
+ⓘ If you use `start` instead of `run`, gdb may automatically break if it finds a `main` function, even if no break point was created
+
 #### Create a breakpoint
 
 ```
@@ -104,7 +110,21 @@ Or to break on a memory address:
 break *0x09319b91
 ```
 
-#### Delete breakpoints
+#### List breakpoints
+
+```
+info break
+```
+
+#### Delete breakpoint
+
+Use the breakpoint number (see _List breakpoints_) to delete a specific breakpoint, e.g.
+
+```
+delete 2
+```
+
+#### Delete all breakpoints
 
 ```
 delete
