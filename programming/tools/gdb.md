@@ -4,6 +4,10 @@ title: GDB (GNU Debugger)
 
 ## Getting started
 
+#### 👉 Gotchas
+
+- If you have a multi-line command to run in gdb, you'll need to paste the first line separately and press Enter before pasting the rest
+
 #### Basic usage
 
 1. Start a binary with gdb
@@ -29,6 +33,18 @@ title: GDB (GNU Debugger)
    ```
    run
    ```
+
+#### Step through the code
+
+⚠️ `next` and `step` may perform erratically when debugging a stripped binary; use `nexti` and `stepi` instead
+
+- Use `next`/`n` to run the next line of code and stop at the next line in the current function
+- Use `nexti`/`ni` to run the current instruction and stop at the next instruction in the current function
+- Use `step`/`s` to run the next line of code, entering into any functions
+- Use `stepi`/`si` to run the current instruction, entering into any functions
+- Use `finish`/`fin` to run through the end of the current function
+
+💡 Pressing Enter runs the last command again
 
 #### Troubleshoot a crash
 
