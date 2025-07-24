@@ -111,3 +111,37 @@ Right-click > _Secondary Highlight_ > _Set Highlight_
 ⓘ If you can figure out what a variable does, renaming it will make it much easier to understand the function
 
 Right-click > _Rename Variable_
+
+## Debugging with Ghidra and gdb
+
+Source: [Decompiling and Debugging with Ghidra](https://dev.to/glsolaria/decompiling-and-debugging-with-ghidra-15k3)
+
+ⓘ Debugging with Ghidra is pretty CPU and memory intensive. For larger binaries it might be best to start with gdb first to narrow down the issue.
+
+#### Prerequisites
+
+- Python 3.7+
+- python3-psutil
+- python3-protobuf
+
+#### Start debugger
+
+1. Import the file into Ghidra, analyse it, and wait for the analysis to complete
+
+1. In the Ghidra project window (the main window where the files are listed), right-click the file to debug > _Open With_ > _Debugger_
+
+1. _Debugger_ > _Configure and Launch using ..._ > _gdb_
+
+1. Interact with gdb as usual in the terminal (set breakpoints, etc.) then type `run` to start
+
+   ⓘ For more info, see [gdb](./gdb)
+
+#### Troubleshooting
+
+If the path to the file you're debugging has quotes and you see `No such file or directory`:
+
+1. Change to the directory using `cd`
+
+   - Don't put quotes around the path
+
+1. Load the file using `file`
