@@ -45,6 +45,9 @@ Simply follow the instructions above under _Installation_ to download and run th
 1. _Navigation_ > _Go To_
 
    - To go to a memory address (e.g. what you'll get from a backtrace in gdb), just type in the address
+
+     💡 It's recommended to prefix the offset with `0x`, otherwise Ghidra may interpret it as decimal if it doesn't contain letters
+
    - To go to a file address (i.e. a binary offset in a file), use this syntax:
      ```
      file(offset)
@@ -145,3 +148,23 @@ If the path to the file you're debugging has quotes and you see `No such file or
    - Don't put quotes around the path
 
 1. Load the file using `file`
+
+## Troubleshooting
+
+#### `Failed to exec spawn helper`
+
+If you see a message containing `Failed to exec spawn helper`, e.g.
+
+> Decompiler: Unable to initialize the DecompilerInterface: Cannot run program
+> Failed to exec spawn helper
+
+This could be due to the JDK being upgraded while Ghidra is running. This can happen, for example, on Ubuntu which will automatically upgrade certain packages for security. Check the logs to confirm, e.g.
+
+```
+$ tail /var/log/apt/history.log
+
+Start-Date: 2025-07-25  09:46:43
+Commandline: /usr/bin/unattended-upgrade
+Upgrade: openjdk-21-jdk-headless:amd64 (21.0.7+6~us1-0ubuntu1~24.04, 21.0.8+9~us1-0ubuntu1~24.04.1), openjdk-21-jdk:amd64 (21.0.7+6~us1-0ubuntu1~24.04, 21.0.8+9~us1-0ubuntu1~24.04.1), openjdk-21-jre:amd64 (21.0.7+6~us1-0ubuntu1~24.04, 21.0.8+9~us1-0ubuntu1~24.04.1), openjdk-21-jre-headless:amd64 (21.0.7+6~us1-0ubuntu1~24.04, 21.0.8+9~us1-0ubuntu1~24.04.1)
+End-Date: 2025-07-25  09:46:46
+```
