@@ -39,7 +39,9 @@ title: Gnome extension development
 
 #### Running and debugging in Wayland
 
-1. Run a nested instance of Gnome shell
+⚠️ Unfortunately this method uses a separate DBUS session and many apps will not work inside the nested Gnome Shell, so you may need to use X server for developing some extensions if you want changes to the extension to refresh without having to log out of Gnome
+
+1. Run a nested instance of Gnome Shell
 
    ```
    dbus-run-session -- gnome-shell --nested --wayland
@@ -53,7 +55,7 @@ title: Gnome extension development
 
    👉 When the shell first opens, it may open to the activities overview, capturing the mouse. If this happens, press Esc
 
-1. Open a terminal inside the nested Gnome shell and enable the extension, e.g.
+1. Open a terminal inside the nested Gnome Shell and enable the extension, e.g.
 
    ```
    gnome-extensions enable spotify-ad-block@danigm.net
@@ -62,8 +64,6 @@ title: Gnome extension development
 1. If you make changes to the extension, simply close the nested Gnome shell and repeat the above instructions to get the latest changes
 
 #### Running and debugging in X server
-
-⚠️ Not recommended; as X server does not support running nested Gnome shell, the only way to pick up changes to extensions is to restart Gnome shell, but [in newer versions of Gnome this requires enabling a special unsafe mode and running very specific commands](https://askubuntu.com/questions/100226/how-to-restart-gnome-shell-from-command-line/1364254#comment2533234_1364254).
 
 1. Enable the extension, e.g.
 
@@ -79,7 +79,9 @@ title: Gnome extension development
 
 1. If you make changes to the extension, restart Gnome Shell to pick up the changes
 
-   This will depend on what version of Gnome Shell you are running. See here for more information: [How to restart GNOME Shell from command line?](https://askubuntu.com/questions/100226/how-to-restart-gnome-shell-from-command-line)
+   1. Press Alt+F2
+
+   1. Type `r` and press Enter
 
 ## API documentation
 
