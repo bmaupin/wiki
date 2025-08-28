@@ -2,13 +2,25 @@
 title: Gnome extension development
 ---
 
-## Development documentation
+## Documentation
 
 #### Official documentation
 
 [GNOME Shell Extensions](https://gjs.guide/extensions/)
 
-#### Development process
+#### Overview
+
+[Anatomy of an Extension](https://gjs.guide/extensions/overview/anatomy.html#extension-zip)
+
+#### Preferences and schema
+
+[Preferences](https://gjs.guide/extensions/development/preferences.html#preferences-window)
+
+## Development process
+
+([https://gjs.guide/extensions/development/debugging.html](https://gjs.guide/extensions/development/debugging.html))
+
+#### Setup
 
 1. Modify the extension's version number
 
@@ -25,23 +37,33 @@ title: Gnome extension development
    ln -s $(pwd) ~/.local/share/gnome-shell/extensions/spotify-ad-block@danigm.net
    ```
 
-1. Next, Gnome needs to load the extension
+#### Running and debugging in Wayland
 
-   ([https://gjs.guide/extensions/development/creating.html#enabling-the-extension](https://gjs.guide/extensions/development/creating.html#enabling-the-extension))
+1. Run a nested instance of Gnome shell
 
-   The extension can't be loaded or updated at runtime, so you have two choices:
+   ```
+   dbus-run-session -- gnome-shell --nested --wayland
+   ```
 
-   - If you're using Wayland, run a nested instance of Gnome Shell
+   ⓘ The Gnome logs will appear in this terminal, so you may find it useful to grep for the specific logs you want:
 
-     ```
-     dbus-run-session -- gnome-shell --nested --wayland
-     ```
+   ```
+   dbus-run-session -- gnome-shell --nested --wayland 2>&1 | grep spotify-ad-blocker
+   ```
 
-   - If you're using X server, restart Gnome Shell
+   👉 When the shell first opens, it may open to the activities overview, capturing the mouse. If this happens, press Esc
 
-     ```
-     killall -3 gnome-shell
-     ```
+1. Open a terminal inside the nested Gnome shell and enable the extension, e.g.
+
+   ```
+   gnome-extensions enable spotify-ad-block@danigm.net
+   ```
+
+1. If you make changes to the extension, simply close the nested Gnome shell and repeat the above instructions to get the latest changes
+
+#### Running and debugging in X server
+
+⚠️ Not recommended; as X server does not support running nested Gnome shell, the only way to pick up changes to extensions is to restart Gnome shell, but [in newer versions of Gnome this requires enabling a special unsafe mode and running very specific commands](https://askubuntu.com/questions/100226/how-to-restart-gnome-shell-from-command-line/1364254#comment2533234_1364254).
 
 1. Enable the extension, e.g.
 
@@ -49,26 +71,15 @@ title: Gnome extension development
    gnome-extensions enable spotify-ad-block@danigm.net
    ```
 
-1. After making changes to the extension, repeat the steps above (under _Gnome needs to load the extension_) so Gnome will reload the extension with the new changes
+1. Use `journalctl` to see messages
 
-#### Debugging
+   ```
+   journalctl /usr/bin/gnome-shell -f
+   ```
 
-([https://gjs.guide/extensions/development/debugging.html](https://gjs.guide/extensions/development/debugging.html))
+1. If you make changes to the extension, restart Gnome Shell to pick up the changes
 
-- Use `console.log` to log messages
-- To see messages
-
-  ```
-  journalctl /usr/bin/gnome-shell -f
-  ```
-
-#### Overview
-
-[Anatomy of an Extension](https://gjs.guide/extensions/overview/anatomy.html#extension-zip)
-
-#### Preferences and schema
-
-[Preferences](https://gjs.guide/extensions/development/preferences.html#preferences-window)
+   This will depend on what version of Gnome Shell you are running. See here for more information: [How to restart GNOME Shell from command line?](https://askubuntu.com/questions/100226/how-to-restart-gnome-shell-from-command-line)
 
 ## API documentation
 
