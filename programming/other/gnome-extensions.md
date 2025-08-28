@@ -10,6 +10,14 @@ title: Gnome extension development
 
 #### Development process
 
+1. Modify the extension's version number
+
+   ⚠️ If you don't do this first and you create a symlink (the next step), Gnome may automatically update the plugin, which will overwrite the entire directory. Here's a workaround to prevent it:
+
+   1. Open `metadata.json`
+
+   1. Change `version` to something big (e.g. `1000`)
+
 1. Symlink directory of extension to the Gnome Shell extensions directory, e.g.
 
    ```
@@ -25,29 +33,21 @@ title: Gnome extension development
 
    - If you're using Wayland, run a nested instance of Gnome Shell
 
-   ```
-   dbus-run-session -- gnome-shell --nested --wayland
-   ```
+     ```
+     dbus-run-session -- gnome-shell --nested --wayland
+     ```
 
    - If you're using X server, restart Gnome Shell
 
-   ```
-   killall -3 gnome-shell
-   ```
+     ```
+     killall -3 gnome-shell
+     ```
 
 1. Enable the extension, e.g.
 
    ```
    gnome-extensions enable spotify-ad-block@danigm.net
    ```
-
-1. (Optional) Modify the extension's version number
-
-   Gnome (or is it Gnome Extension Manager that does this?) may try to update the plugin, which will overwrite your changes. Here's a workaround to prevent it:
-
-   1. Open `metadata.json`
-
-   1. Change `version` to something big (e.g. `1000`)
 
 1. After making changes to the extension, repeat the steps above (under _Gnome needs to load the extension_) so Gnome will reload the extension with the new changes
 
