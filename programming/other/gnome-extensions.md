@@ -16,6 +16,10 @@ title: Gnome extension development
 
 [Preferences](https://gjs.guide/extensions/development/preferences.html#preferences-window)
 
+#### GObject (signals, etc)
+
+[The Basics of GObject](https://gjs.guide/guides/gobject/basics.html)
+
 ## Development process
 
 ([https://gjs.guide/extensions/development/debugging.html](https://gjs.guide/extensions/development/debugging.html))
