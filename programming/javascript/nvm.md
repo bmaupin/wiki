@@ -26,9 +26,15 @@ nvm alias default lts/*
 nvm list
 ```
 
-#### Install a version of Node.js
+ⓘ This will also list which version is the default, e.g.
 
-e.g. install the latest version of Node 24:
+```
+default -> lts/* (-> v24.11.1)
+```
+
+#### Install or update a version of Node.js
+
+e.g. install or update Node 24 to the latest version:
 
 ```
 nvm install 24
