@@ -8,6 +8,8 @@ jobs:
   #          2. Find the version of ruby
   #          3. Update ruby-version below
   htmlproofer:
+    # TODO: Disable for now during migration to Docusaurus
+    if: false
     runs-on: ubuntu-latest
     steps:
       - name: Check out the code
