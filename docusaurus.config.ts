@@ -45,6 +45,13 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/bmaupin/wiki/',
+          async sidebarItemsGenerator({
+            defaultSidebarItemsGenerator,
+            ...args
+          }) {
+            const sidebarItems = await defaultSidebarItemsGenerator(args);
+            return formatSidebarItems(sidebarItems);
+          },
         },
         blog: false,
         theme: {
@@ -95,6 +102,26 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+};
+
+// https://stackoverflow.com/a/1026087/399105
+const capitaliseFirstLetter = (val: string): string => {
+  return String(val).charAt(0).toUpperCase() + String(val).slice(1);
+};
+
+const formatSidebarItems = (items) => {
+  for (const item of items) {
+    if (item.type === 'category') {
+      item.label = capitaliseFirstLetter(item.label);
+      item.label = item.label.replaceAll('-', ' ');
+
+      if (item.items) {
+        item.items = formatSidebarItems(item.items);
+      }
+    }
+  }
+
+  return items;
 };
 
 export default config;
