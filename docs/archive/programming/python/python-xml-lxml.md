@@ -14,10 +14,11 @@ title: Python XML (lxml)
 - Elements can have text between opening and closing tags
 
 <pre>
-<<em>element-tag</em>>
-    <<em>subElement-tag attribute="value"</em> />
-    <<em>subElement-tag</em>>><em>element text</em></<em>subElement-tag</em>>
-</<em>element-tag</em>></pre>
+\<<em>element-tag</em>\>
+    \<<em>subElement-tag attribute="value"</em> /\>
+    \<<em>subElement-tag</em>\><em>element text</em>\</<em>subElement-tag</em>\>
+\</<em>element-tag</em>\>
+</pre>
 
 ## Parsing
 

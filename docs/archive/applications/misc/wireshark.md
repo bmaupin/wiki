@@ -14,7 +14,7 @@ sudo apt install wireshark
 
 1. In a terminal, run `sudo dpkg-reconfigure wireshark-common`
 
-   1. _Should non-superusers be able to capture packets?_ > _<Yes>_
+   1. _Should non-superusers be able to capture packets?_ > _\<Yes\>_
 
 1. Run `sudo usermod -a -G wireshark $USER`
 

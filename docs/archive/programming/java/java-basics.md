@@ -160,7 +160,7 @@ Map map = new HashMap();
 
 #### Sort a Map by value
 
-[Sort a Map<Key, Value> by values](https://stackoverflow.com/q/109383/399105)
+[Sort a Map\<Key, Value\> by values](https://stackoverflow.com/q/109383/399105)
 
 ## Loops
 

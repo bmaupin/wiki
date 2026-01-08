@@ -124,7 +124,7 @@ If MusicBrainz is giving 404 errors:
 
 1. If you don't see the _Artwork_ pane on the right, go to _Windows_ and check _Artwork_
 1. Select all the tracks you wish to update
-1. In the _Artwork_ pane on the right, click the arrows until you see _<blank>_
+1. In the _Artwork_ pane on the right, click the arrows until you see _\<blank\>_
 1. Click the _Save_ button near the top left
 
 #### Change album art

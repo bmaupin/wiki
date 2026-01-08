@@ -4,9 +4,9 @@ title: Android activities
 
 #### adding a new activity (screen):
 
-1. add the necessary layout in res/layout/<activity>.xml
+1. add the necessary layout in res/layout/\<activity\>.xml
 1. add the necessary strings in res/values/strings.xml
-1. add the activity as a new class in src/<activity>.jar
+1. add the activity as a new class in src/\<activity\>.jar
    1. override onCreate
       1. point to your activity's layout:
          ```

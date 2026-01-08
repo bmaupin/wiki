@@ -42,10 +42,10 @@ title: Regular expressions
 #### other matches
 
 | `|` | or |
-| `?` | makes the preceding token in the regular expression optional<br>E.g.: colou?r matches colour or color. |
+| `?` | makes the preceding token in the regular expression optional<br/>E.g.: colou?r matches colour or color. |
 | `*` | attempt to match the preceding token zero or more times |
-| `+` | attempt to match the preceding token once or more<br>E.g.: `<[A-Za-z][A-Za-z0-9]*>` matches an HTML tag without any attributes. `<[A-Za-z0-9]+>` is easier to write but matches invalid tEleven characters with special meanings: the opening square bracket `[`, the backslash `\`, the caret `^`, the dollar sign `$`, the period or dot `.`, the vertical bar or pipe symbol `|`, the question mark `?`, the asterisk or star `*`, the plus sign `+`, the opening round bracket `(` and the closing round bracket `)`. These special characters are often called "metacharacters".ags such as `<1>`. |
-| `{}` | specify amount of repetition<br>E.g.: Use `\b[1-9][0-9]{3}\b` to match a number between 1000 and 9999. `\b[1-9][0-9]{2,4}\b` matches a number between 100 and 99999.<br>Use `{3,}` to match 3 or more repetitions |
+| `+` | attempt to match the preceding token once or more<br/>E.g.: `<[A-Za-z][A-Za-z0-9]*>` matches an HTML tag without any attributes. `<[A-Za-z0-9]+>` is easier to write but matches invalid tEleven characters with special meanings: the opening square bracket `[`, the backslash `\`, the caret `^`, the dollar sign `$`, the period or dot `.`, the vertical bar or pipe symbol `|`, the question mark `?`, the asterisk or star `*`, the plus sign `+`, the opening round bracket `(` and the closing round bracket `)`. These special characters are often called "metacharacters".ags such as `<1>`. |
+| `{}` | specify amount of repetition<br/>E.g.: Use `\b[1-9][0-9]{3}\b` to match a number between 1000 and 9999. `\b[1-9][0-9]{2,4}\b` matches a number between 100 and 99999.<br/>Use `{3,}` to match 3 or more repetitions |
 | `()` | create a group |
 | `\#` | match a group (use slash plus a number, starting at 1, to indicate which group, i.e. `\1` for the first group |
 | `(?i)` | case insensitive regex |
