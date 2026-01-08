@@ -109,9 +109,32 @@ const capitaliseFirstLetter = (val: string): string => {
   return String(val).charAt(0).toUpperCase() + String(val).slice(1);
 };
 
+const getCategoryPath = (category): string => {
+  if (category.items && category.items.length > 0) {
+    // Categories (directories) don't have an ID from which we can generate the path,
+    // so get the ID from the documents under the directory
+    if (category.items[0].id) {
+      let path = category.items[0].id.split('/');
+      path.pop();
+      return path.join('/');
+    }
+    // TODO: This isn't quite right; see operating-systems/android
+    // // If a directory only contains directories, we need to go deeper until we get to a doc
+    // else if (category.items[0].items.length > 0) {
+    //   return getCategoryPath(category.items[0]);
+    // }
+  }
+  // Fallback; this is the default directory path
+  return `category/${category.label}`;
+};
+
 const formatSidebarItems = (items) => {
   for (const item of items) {
     if (item.type === 'category') {
+      item.link = {
+        type: 'generated-index',
+        slug: getCategoryPath(item),
+      };
       item.label = capitaliseFirstLetter(item.label);
       item.label = item.label.replaceAll('-', ' ');
 
