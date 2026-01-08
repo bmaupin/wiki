@@ -60,6 +60,12 @@ const config: Config = {
     colorMode: {
       respectPrefersColorScheme: true,
     },
+    docs: {
+      sidebar: {
+        autoCollapseCategories: true,
+        hideable: true,
+      },
+    },
     navbar: {
       title: 'My Site',
       logo: {
