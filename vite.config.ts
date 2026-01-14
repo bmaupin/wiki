@@ -14,4 +14,8 @@ export default defineConfig({
       root: __dirname,
     }),
   ],
+  // Automatically open /wiki once the dev server is started
+  server: {
+    open: '/wiki/',
+  },
 });
