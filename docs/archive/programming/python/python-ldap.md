@@ -19,4 +19,4 @@ search_results[entry_index][0][DN]
 search_results[entry_index][1][attribute][value_index][value]
 ```
 
-![](https://sites.google.com/site/bmaupinwiki/home/programming/python/python-ldap/python-ldap-67.png)
+![](python-ldap-67.png)
