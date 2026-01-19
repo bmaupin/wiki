@@ -1,0 +1,9 @@
+{
+  "pages": [
+    "!index",
+    "---Current docs---",
+    "...",
+    "---Archived docs---",
+    "archive"
+  ]
+}
