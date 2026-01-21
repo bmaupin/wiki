@@ -1,5 +1,6 @@
 ---
 title: C
+slug: c
 ---
 
 See:

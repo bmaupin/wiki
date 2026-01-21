@@ -1,5 +1,6 @@
 ---
 title: OpenWrt
+slug: openwrt
 ---
 
 ## Basics
@@ -19,14 +20,12 @@ One device that's currently popular (as of 2021) due to its low cost and capable
    [https://openwrt.org/toh/start](https://openwrt.org/toh/start)
 
 1. Download the latest firmware for your device
-
    1. Still in the Supported Devices page, click on the link in the Device Page column
    1. Download the latest release for your model and hardware number
       - Download the `factory` image if you're flashing over stock firmware
       - Download the `sysupgrade` image if you're flashing over an existing OpenWrt installation
 
 1. Flash OpenWrt
-
    1. Follow the instructions on the device page
 
       **Note:** If you're flashing a different version of OpenWrt, make sure you don't keep the existing configuration as this will likely cause problems
@@ -34,24 +33,20 @@ One device that's currently popular (as of 2021) due to its low cost and capable
 1. Connect to the device
 
    [https://openwrt.org/docs/guide-quick-start/webadmingui](https://openwrt.org/docs/guide-quick-start/webadmingui)
-
    1. If your device has network ports, wireless will be disabled by default. Connect to the device with a network cable
    1. Browse to the device url (http://192.168.1.1) and log in (`root`, no password)
 
 1. Set the root password
-
    1. _System_ > _Administration_
    1. Set _Password_
    1. _Save_
 
 1. Set the time zone
-
    1. _System_ > _System_
    1. Set _Timezone_
    1. _Save & Apply_
 
 1. Set the country code
-
    1. _Network_ > _Wireless_
    1. For each wireless radio:
       1. _Edit_ > _Advanced Settings_
@@ -61,7 +56,6 @@ One device that's currently popular (as of 2021) due to its low cost and capable
 1. Configure wireless
 
    [https://openwrt.org/docs/guide-quick-start/basic_wifi](https://openwrt.org/docs/guide-quick-start/basic_wifi)
-
    1. _Network_ > _Wireless_
    1. For each wireless radio:
       1. _Edit_ > _Interface Configuration_
@@ -74,13 +68,11 @@ One device that's currently popular (as of 2021) due to its low cost and capable
    1. _Save & Apply_
 
 1. Enable wireless
-
    1. _Network_ > _Wireless_ > _Enable_ (for each wireless radio)
 
 1. Reboot
 
    This makes sure the time zone takes effect if you're using it in your firewall rules (iptables' `timestart`)
-
    1. _System_ > _Reboot_ > _Perform reboot_
 
 #### Change the IP address
@@ -111,7 +103,6 @@ One device that's currently popular (as of 2021) due to its low cost and capable
 #### Create a scheduled task
 
 1. First, make sure the system time is correct
-
    1. _System_ > _System_
 
    1. Make sure the _Timezone_ is properly set
@@ -146,7 +137,6 @@ One device that's currently popular (as of 2021) due to its low cost and capable
 This may be useful if you have a client that you only want accessible from your local network (e.g. a NAS device)
 
 1. _Network_ > _Firewall_ > _Traffic Rules_ > _Add_
-
    1. _Protocol_ > _any_
    1. _Source zone_ > _lan_
    1. _Source address_ > choose the IP address of the device if it has a static IP
@@ -180,7 +170,6 @@ This can be useful to provide time synchronization to a device on your network t
 #### Troubleshoot NTP issues
 
 1. Before doing anything else, make sure DNS is working
-
    1. _Network_ > _Diagnostics_ > _Nslookup_
 
       If DNS isn't working, you'll need to get that fixed before NTP will work

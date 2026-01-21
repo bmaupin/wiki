@@ -1,5 +1,6 @@
 ---
 title: PHP
+slug: php
 ---
 
 ## Misc

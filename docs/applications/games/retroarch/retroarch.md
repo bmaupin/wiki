@@ -1,5 +1,6 @@
 ---
 title: RetroArch
+slug: retroarch
 ---
 
 ## General
@@ -39,7 +40,6 @@ If you still don't see thumbnails, you can create them manually:
    ⚠️ The name of the system must exactly match the names of the systems in this repository: [https://github.com/libretro-thumbnails/libretro-thumbnails](https://github.com/libretro-thumbnails/libretro-thumbnails)
 
 1. Within that directory, create these directories:
-
    - `Named_Boxarts`
    - `Named_Snaps`
    - `Named_Titles`

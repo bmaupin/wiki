@@ -1,5 +1,6 @@
 ---
 title: JavaScript
+slug: javascript
 ---
 
 ## General
@@ -21,12 +22,10 @@ title: JavaScript
 #### Notes
 
 - Interactive shells:
-
   - Use Chrome's built-in console (just create a blank page by going to about:blank and then press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>J</kbd>)
   - Mozilla provides an interactive javascript shell:
 
     [https://developer.mozilla.org/en/Introduction_to_the_JavaScript_shell](https://developer.mozilla.org/en/Introduction_to_the_JavaScript_shell)
-
     - To install in ubuntu/elementary:
 
       ```
