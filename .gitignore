@@ -1,7 +1,20 @@
-.DS_Store
-/node_modules/
+# Dependencies
+/node_modules
 
-# React Router
-/.react-router/
-/build/
-.source
+# Production
+/build
+
+# Generated files
+.docusaurus
+.cache-loader
+
+# Misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

@@ -2,37 +2,42 @@ This is my wiki. There are many like it, but this one is mine.
 
 ## Framework
 
-This is a React Router application generated with
-[Create Fumadocs](https://github.com/fuma-nama/fumadocs).
+This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
-## Development
-
-Run development server:
+## Installation
 
 ```bash
-npm run dev
+yarn
 ```
 
-## Troubleshooting
+## Local Development
 
-#### `Error: A document with id ... already exists.`
-
-If you see such an error as this:
-
-```
-file:///.../wiki/node_modules/@orama/orama/dist/esm/errors.js:48
-    const error = new Error(sprintf(errors[code] ?? `Unsupported Orama Error code: ${code}`, ...args));
-                  ^
-
-Error: A document with id "/docs/archive/programming/python/python-3" already exists.
+```bash
+yarn start
 ```
 
-This is an error from Orama. You can query `/api/search` to see a list of all of the search documents and IDs. In this example:
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-- There was a page named `python.md`
-  - This page gets an ID ending with `/python`
-  - All of the headings in the page get converted to IDs numerically, e.g. `/python-0`, `/python-1`, etc.
-- There was another page named `python-3.md` in the same directory
-  - Orama tries to create an ID for it ending with `/python-3` which conflicts with the fourth heading in `python.md`, which has an ID ending with `/python-3`
+## Build
 
-The easiest solution would be to rename `python-3.md`, e.g. to `python3.md` or `python-three.md`
+```bash
+yarn build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+## Deployment
+
+Using SSH:
+
+```bash
+USE_SSH=true yarn deploy
+```
+
+Not using SSH:
+
+```bash
+GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
