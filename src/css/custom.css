@@ -35,3 +35,11 @@
 .hiddenFromSidebar {
   display: none !important;
 }
+
+/* Hide the parent as well; this hides items when using DocCardList
+   (https://docusaurus.io/docs/sidebar/items#embedding-generated-index-in-doc-page)
+   Otherwise, there will be a gap for each hidden item
+ */
+article:has(> .hiddenFromSidebar) {
+  display: none !important;
+}
