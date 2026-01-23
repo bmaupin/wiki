@@ -1,6 +1,7 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import { NormalizedSidebar } from '@docusaurus/plugin-content-docs/src/sidebars/types.js';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -134,7 +135,21 @@ const getCategoryPath = (category): string => {
   return `category/${category.label}`;
 };
 
-const formatSidebarItems = (items) => {
+/**
+ *
+ * @param items A nested list of pages and documents in each directory
+ * @returns
+ */
+const formatSidebarItems = (items: NormalizedSidebar) => {
+  items = items.filter((item) => {
+    // Hide Archive from the sidebar and category listings
+    if (item.type === 'category' && item.label === 'archive') {
+      return false;
+    } else {
+      return true;
+    }
+  });
+
   for (const item of items) {
     if (item.type === 'category') {
       // TODO: this is quite broken
