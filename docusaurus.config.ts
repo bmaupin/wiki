@@ -141,15 +141,6 @@ const getCategoryPath = (category): string => {
  * @returns
  */
 const formatSidebarItems = (items: NormalizedSidebar) => {
-  items = items.filter((item) => {
-    // Hide Archive from the sidebar and category listings
-    if (item.type === 'category' && item.label === 'archive') {
-      return false;
-    } else {
-      return true;
-    }
-  });
-
   for (const item of items) {
     if (item.type === 'category') {
       // TODO: this is quite broken
