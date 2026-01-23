@@ -131,10 +131,11 @@ const getCategoryPath = (category): string => {
 const formatSidebarItems = (items) => {
   for (const item of items) {
     if (item.type === 'category') {
-      item.link = {
-        type: 'generated-index',
-        slug: getCategoryPath(item),
-      };
+      // TODO: this is quite broken
+      // item.link = {
+      //   type: 'generated-index',
+      //   slug: getCategoryPath(item),
+      // };
       item.label = capitaliseFirstLetter(item.label);
       item.label = item.label.replaceAll('-', ' ');
 
