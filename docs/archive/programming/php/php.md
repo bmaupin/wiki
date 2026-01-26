@@ -206,7 +206,7 @@ echo "First line<br />\n" .
 if ($string1 === 'test') {
 ```
 
-<span style="color:red">**Warning:**</span> don't use `==` !!!
+<span style={{color: 'red'}}>**Warning:**</span> don't use `==` !!!
 
 ## Loops
 

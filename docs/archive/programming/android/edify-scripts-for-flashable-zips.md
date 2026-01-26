@@ -69,7 +69,7 @@ file_getprop("/system/build.prop", "ro.product.device");
 
 #### Move a file
 
-<span style="color:red">**Warning:**</span> this will overwrite the destination file
+<span style={{color: 'red'}}>**Warning:**</span> this will overwrite the destination file
 
 ```
 rename("/system/bin/bootanimation", "/system/bin/bootanimation.bak");
