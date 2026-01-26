@@ -40,6 +40,7 @@ const config: Config = {
     [
       'classic',
       {
+        blog: false,
         docs: {
           routeBasePath: '/', // Serve the docs at the site's root
           sidebarPath: './sidebars.ts',
@@ -54,7 +55,10 @@ const config: Config = {
             return formatSidebarItems(sidebarItems);
           },
         },
-        blog: false,
+        // https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-google-gtag
+        gtag: {
+          trackingID: 'G-WB6S4X45JN',
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
