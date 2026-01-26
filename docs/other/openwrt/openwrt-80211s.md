@@ -12,14 +12,13 @@ To use 802.11s mesh, you'll need OpenWrt 19.07+ with the `wpad-mesh-openssl` or 
 
 For secondary mesh devices (that will just act as access points), at a bare minimum you will need a device with 4 MB of flash and 32 MB of RAM. However, this will require building a custom OpenWrt package for your device and/or doing all of the configuration over SSH.
 
-It will be much easier with a device with at least 8 MB of flash and 64 MB of RAM, which are also the minimum requirements for a primary mesh device. For more information, see [Buying a device for use with OpenWrt](openwrt.html#buying-a-device-for-use-with-openwrt)
+It will be much easier with a device with at least 8 MB of flash and 64 MB of RAM, which are also the minimum requirements for a primary mesh device. For more information, see [Buying a device for use with OpenWrt](openwrt#buying-a-device-for-use-with-openwrt)
 
 #### Adding mesh support to a device already running OpenWrt
 
 1. Set up internet access on the device
 
    You can either plug the device into another router that already has internet, or follow these steps to join an existing wireless network:
-
    1. Go to _Network_ > _Wireless_ > _Scan_
    1. Find your existing wireless network and click _Join Network_
    1. Type your _WPA passphrase_ and click _Submit_ > _Save_ > _Save & Apply_
@@ -82,17 +81,14 @@ Devices:
 1. If you're just setting up the router after flashing it, see _Installation and initial configuration_ here to do the initial setup: [OpenWrt](https://bmaupin.github.io/wiki/other/openwrt/openwrt.html#installation-and-initial-configuration)
 
 1. Configure the LAN interface
-
    1. Set the IP
 
       On the primary mesh device you'll want to set a static IP (e.g. 192.168.0.1). On the secondary mesh devices you can also set a static IP on the same subnet (e.g. 192.168.0.2) or you can use DHCP instead.
-
       - Set a static IP: see _Change the IP address_ here: [OpenWrt](https://bmaupin.github.io/wiki/other/openwrt/openwrt.html#change-the-ip-address)
 
       - Use DHCP: _Network_ > _Interfaces_ > _LAN_ > _Edit_ > _Protocol_ > _DHCP client_ > _Save_ > _Apply unchecked_
 
    1. For all secondary mesh devices with a static IP:
-
       1. _Network_ > _Interfaces_ > _LAN_ > _Edit_
 
       1. _IPv4 gateway_ > Set to the IP of the primary mesh device (e.g. 192.168.0.1)
@@ -104,10 +100,8 @@ Devices:
 1. (Optional) Disable unnecessary services
 
    For secondary mesh devices, you can optionally disable some services that will be provided by the primary mesh device
-
    1. _System_ > _Startup_
    1. Click _Enabled_ for each of these services (if you see _Disabled_, it means they're already disabled):
-
       - dnsmasq
       - firewall
       - odhcpd
@@ -115,22 +109,18 @@ Devices:
       (If you built your own OpenWrt package without these services (`-dnsmasq`, `-firewall`, `-odhcpd`), they will not be displayed on the _Startup_ screen)
 
 1. Configure the mesh wireless network
-
    1. _Network_ > _Wireless_
    1. Either _Add_ a new network or _Edit_ an existing network
 
       It shouldn't matter whether the mesh network is the primary or secondary network
 
    1. Under _Device Configuration_ > _General Setup_
-
       1. Set _Channel_ to a specific channel (this must be the same on all mesh devices)
 
    1. Under _Device Configuration_ > _Advanced Settings_
-
       1. Set _Country Code_
 
    1. Under _Interface Configuration_ > _General Setup_
-
       1. Set _Mode_ to _802.11s_
       1. Set the _Mesh Id_
 
@@ -152,14 +142,12 @@ Devices:
 1. Configure the wireless network for clients
 
    Skip this step if you already have a wireless network for clients
-
    1. _Network_ > _Wireless_
    1. Either _Add_ a new network or _Edit_ an existing network
 
       Make sure you don't edit the mesh network you just created 😄
 
    1. Under _Interface Configuration_ > _General Setup_
-
       1. Set _Mode_ to _Access Point_
       1. Set _ESSID_ to the same value on all routers
 
@@ -168,7 +156,6 @@ Devices:
       1. Set _Network_ to _lan_
 
    1. Under _Wireless Security_
-
       1. Set _Encryption_ to _WPA2-PSK_
       1. Set _Key_ to the same values on all routers
 
@@ -191,7 +178,6 @@ Devices:
 1. (As needed) Change the IP address
 
    Make sure each router on the mesh network has a different IP on the same subnet (e.g. 192.168.0.2)
-
    1. Edit `/etc/config/network`
 
       ```
@@ -216,7 +202,6 @@ Devices:
    (Replace the IP address with the IP of the mesh device that is connected to the internet)
 
 1. Configure the mesh wireless network
-
    1. Edit `/etc/config/network`
 
       ```
@@ -224,7 +209,6 @@ Devices:
       ```
 
    1. Under `config wifi-device 'radio0'`:
-
       1. Remove this line to enable the wireless radio:
 
          ```

@@ -6,7 +6,7 @@ title: OpenWrt WDS
 
 WDS is one way to extend a wireless network by adding an additional wireless router.
 
-⚠️ WDS seems to suffer from frequent loss of network connectivity between the routers and as such cannot be recommended. A superior option would be a wireless mesh such as the [802.11s mesh in OpenWrt](../../../other/openwrt/openwrt-80211s.html) or mesh functionality of vendor-provided firmware.
+⚠️ WDS seems to suffer from frequent loss of network connectivity between the routers and as such cannot be recommended. A superior option would be a wireless mesh such as the [802.11s mesh in OpenWrt](../../../other/openwrt/openwrt-80211s) or mesh functionality of vendor-provided firmware.
 
 Prerequisites:
 
@@ -24,7 +24,6 @@ References:
 On the secondary router:
 
 1. Disable DHCP server
-
    1. _Network_ > _Interfaces_ > _LAN_ > _Edit_
    1. Under _DHCP Server_ > _General Setup_ check _Ignore interface_
    1. Under _DHCP Server_ > _IPv6 Settings_
@@ -35,7 +34,6 @@ On the secondary router:
 1. Set a static IP on the same network as the primary router
 
    Make sure you use a different IP as the primary router (e.g. 192.168.0.2)
-
    1. _Network_ > _Interfaces_ > _LAN_ > _Edit_
    1. Change _IPv4 address_
    1. _Save & Apply_
@@ -45,10 +43,8 @@ On the secondary router:
 1. Configure the primary wireless network on the secondary router for WDS
 
    While it's possible to use one wireless network in OpenWrt that serves as both a WDS client/AP and an AP for wireless clients, this seems to exacerbate WDS connection issues between the routers. Here we will create one wireless network for WDS and another for clients.
-
    1. _Network_ > _Wireless_ > _Edit_ (at this point there should only be one network on the wireless interface)
    1. Under _Interface Configuration_ > _General Setup_
-
       1. Set _Mode_ to _Access Point (WDS)_
       1. Set _ESSID_ to a **different** value than the SSID used by the primary router
 
@@ -59,7 +55,6 @@ On the secondary router:
          This will make sure the firewall doesn't block the WDS connection between the secondary and primary routers
 
    1. Under _Wireless Security_
-
       1. Set _Encryption_ to a security mechanism supported by the primary router
 
       1. Set _Key_ to a different value from the key used by the primary network
@@ -72,10 +67,8 @@ On the secondary router:
 1. Add a secondary wireless network for clients
 
    In OpenWrt when you disable the primary network, the secondary network BSSID changes to the previous BSSID of the primary network. This will break WDS, but clients typically won't care. By having the clients connect to the secondary network, the client network can be disabled without breaking the WDS connection between the two routers.
-
    1. _Network_ > _Wireless_ > _Add_
    1. Under _Interface Configuration_ > _General Setup_
-
       1. Set _Mode_ to _Access Point_
       1. (Recommended) Set _ESSID_ to the same SSID as the primary router
 
@@ -86,7 +79,6 @@ On the secondary router:
          This should ensure that devices that connect to the secondary router won't get blocked by the firewall from seeing devices on the primary router
 
    1. Under _Wireless Security_
-
       1. Set _Encryption_ and _Key_ to the same values as the primary wireless network
 
          This is required if you use the same SSID
@@ -94,19 +86,16 @@ On the secondary router:
    1. _Save & Apply_
 
 1. Configure DNS forwarding
-
    1. _Network_ > _DHCP and DNS_
    1. Set _DNS forwardings_ to the IP address of the primary router
    1. _Save & Apply_
 
 1. Configure IPv4 gateway
-
    1. _Network_ > _Interfaces_ > _LAN_ > _Edit_
    1. Set _IPv4 gateway_ to the IP address of the primary router
    1. _Save & Apply_
 
 1. Enable Spanning Tree Protocol
-
    1. _Network_ > _Interfaces_ > _LAN_ > _Edit_
    1. Go to the _Physical Settings_ tab
    1. Check _Enable STP_
@@ -115,7 +104,6 @@ On the secondary router:
 1. (Recommended) Schedule a periodic wireless restart
 
    WDS seems to frequently lose connectivity between the two routers and the only way to resolve this seems to be by restarting the wireless network on the WDS AP
-
    1. _System_ > _Scheduled Tasks_
    1. Create a scheduled task to periodically restart the wireless
 
@@ -150,7 +138,6 @@ On the secondary router:
 1. (Recommended) Hide the SSID
 
    This is another safeguard to prevent clients to connecting to this network
-
    1. _Network_ > _Wireless_
    1. Click _Edit_ by the WDS network
    1. Under _Interface Configuration_ > _General Setup_ check _Hide ESSID_
@@ -169,7 +156,6 @@ On the primary router:
 On the secondary router:
 
 1. Follow all of these steps using the instructions in the previous section:
-
    1. Disable DHCP server
    1. Set a static IP on the same network as the primary router
    1. Configure DNS forwarding
@@ -179,7 +165,6 @@ On the secondary router:
 1. Join the network of the primary router
 
    This creates a new wireless network on the secondary router that acts as a client of the network on the primary router
-
    1. _Network_ > _Wireless_ > _Scan_
    1. Find the network of the primary router and click _Join Network_
    1. Enter the _WPA passphrase_ of the existing network
@@ -193,14 +178,12 @@ On the secondary router:
 1. (Recommended) Remove the wwan interface
 
    This gets automatically created when you join the network of the primary router and can be safely removed
-
    1. _Network_ > _Interfaces_
    1. By _WWAN_ click _Delete_ > _OK_
 
 1. (Recommended) Rename the secondary router SSID
 
    If you wish for the secondary router to use the same SSID so it looks like part of the same network for clients:
-
    1. _Network_ > _Wireless_
    1. By the network for the secondary router (the one with _Mode: Master_) click _Edit_
    1. Under _Interface Configuration_ set _ESSID_ to the same SSID as the primary router

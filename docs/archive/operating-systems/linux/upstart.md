@@ -2,7 +2,7 @@
 title: Upstart
 ---
 
-**Deprecated: see [systemd](systemd)**
+**Deprecated: see [systemd](../../../operating-systems/linux/systemd)**
 
 <hr/>
 

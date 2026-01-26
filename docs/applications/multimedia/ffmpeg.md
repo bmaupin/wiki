@@ -314,4 +314,4 @@ ffmpeg -i input.mkv -i input.srt -map 0:v -c:v copy -map 0:a -c:a copy -map 0:2 
 1. First, embed the subtitles into a MKV file (see previous section)
 
 1. Then, re-encode the video using Handbrake, burning the subtitles in
-   - See: [Handbrake](handbrake.html)
+   - See: [Handbrake](handbrake)
