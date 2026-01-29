@@ -28,6 +28,12 @@ const config: Config = {
 
   onBrokenLinks: 'throw',
 
+  // Causes the build to create pages like directory/page.html instead of directory/page/index.html
+  // See
+  // - https://docusaurus.io/docs/advanced/routing#routes-become-html-files
+  // - https://docusaurus.io/docs/deployment#trailing-slashes
+  trailingSlash: false,
+
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
