@@ -1,5 +1,6 @@
 ---
 title: Python
+slug: python
 ---
 
 ## misc modules

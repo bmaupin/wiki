@@ -1,5 +1,6 @@
 ---
 title: Groovy
+slug: groovy
 ---
 
 ## Misc
