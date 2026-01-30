@@ -6,23 +6,25 @@ title: RHEL/CentOS quick reference
 
 #### Get the IP address (RHEL 7+)
 
-    ip addr show
-
+```
+ip addr show
+```
 
 #### Open a port (RHEL 7+)
 
-    sudo firewall-cmd --get-active-zones
-    sudo firewall-cmd --zone=public --add-port=8000/tcp --permanent
-    sudo firewall-cmd --reload
-
+```
+sudo firewall-cmd --get-active-zones
+sudo firewall-cmd --zone=public --add-port=8000/tcp --permanent
+sudo firewall-cmd --reload
+```
 
 #### Close a port (RHEL 7+)
 
-    sudo firewall-cmd --get-active-zones
-    sudo firewall-cmd --zone=public --remove-port=8000/tcp --permanent
-    sudo firewall-cmd --reload
-
-
+```
+sudo firewall-cmd --get-active-zones
+sudo firewall-cmd --zone=public --remove-port=8000/tcp --permanent
+sudo firewall-cmd --reload
+```
 
 ## SSH X11 Forwarding
 
@@ -30,82 +32,106 @@ title: RHEL/CentOS quick reference
 
 1. Install prerequisite packages:
 
-        sudo yum -y xorg-x11-xauth
+   ```
+   sudo yum -y xorg-x11-xauth
+   ```
 
 2. Edit /etc/ssh/sshd_config and add this line:
 
-        X11UseLocalhost no
-
+   ```
+   X11UseLocalhost no
+   ```
 
 #### Test SSH X11 forwarding
 
 1. SSH to the server with the -X flag:
 
-        ssh -X myserver
+   ```
+   ssh -X myserver
+   ```
 
 2. Install xclock
 
-        sudo yum -y install xorg-x11-apps
+   ```
+   sudo yum -y install xorg-x11-apps
+   ```
 
 3. Run xclock
 
-        xclock
-
+   ```
+   xclock
+   ```
 
 #### Use SSH X11 forwarding as another user
 
 1. SSH to the server with the -X flag
 
-        ssh -X myserver
+   ```
+   ssh -X myserver
+   ```
 
 2. Configure xauth
+   - RHEL 7:
 
-    - RHEL 7:
+     ```
+     xauth extract - $DISPLAY > /tmp/.Xauthority
+     chmod 666 /tmp/.Xauthority
+     sudo -iu someuser
+     xauth merge /tmp/.Xauthority
+     ```
 
-            xauth extract - $DISPLAY > /tmp/.Xauthority
-            chmod 666 /tmp/.Xauthority
-            sudo -iu someuser
-            xauth merge /tmp/.Xauthority
+   - RHEL 6:
 
-    - RHEL 6:
+     ```
+     xauth extract -  :`echo $DISPLAY | cut -d : -f 2` > /tmp/.Xauthority
+     chmod 666 /tmp/.Xauthority
+     sudo -iu someuser
+     xauth merge /tmp/.Xauthority
+     ```
 
-            xauth extract -  :`echo $DISPLAY | cut -d : -f 2` > /tmp/.Xauthority
-            chmod 666 /tmp/.Xauthority
-            sudo -iu someuser
-            xauth merge /tmp/.Xauthority
+   - Alternatively (not recommended):
+     1. Copy your .Xauthority file to that user's home folder
 
-    - Alternatively (not recommended):
+        ```
+        sudo cp ~/.Xauthority ~someuser
+        ```
 
-        1. Copy your .Xauthority file to that user's home folder
+     2. Change the ownership of the file to that user
 
-                sudo cp ~/.Xauthority ~someuser
+        ```
+        sudo chown someuser: ~someuser/.Xauthority
+        ```
 
-        2. Change the ownership of the file to that user
+     3. Become that user
 
-                sudo chown someuser: ~someuser/.Xauthority
-
-        3. Become that user
-
-                sudo -iu someuser
+        ```
+        sudo -iu someuser
+        ```
 
 3. Test X forwarding
 
-        xclock
+   ```
+   xclock
+   ```
 
 4. Cleanup (optional, recommended)
+   - RHEL 7:
 
-    - RHEL 7:
+     ```
+     xauth remove $DISPLAY
+     rm /tmp/.Xauthority
+     ```
 
-            xauth remove $DISPLAY
-            rm /tmp/.Xauthority
+   - RHEL 6:
 
-    - RHEL 6:
+     ```
+     xauth remove  :`echo $DISPLAY | cut -d : -f 2`
+     rm /tmp/.Xauthority
+     ```
 
-            xauth remove  :`echo $DISPLAY | cut -d : -f 2`
-            rm /tmp/.Xauthority
+   - Alternatively (not recommended):
+     1. Remove the .Xauthority file
 
-    - Alternatively (not recommended):
-
-        1. Remove the .Xauthority file
-
-                rm ~someuser/.Xauthority
+        ```
+        rm ~someuser/.Xauthority
+        ```

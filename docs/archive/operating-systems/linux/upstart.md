@@ -8,8 +8,10 @@ title: Upstart
 
 #### Starting/stopping services
 
-    sudo service ufw start
-    sudo service ufw stop
+```
+sudo service ufw start
+sudo service ufw stop
+```
 
 #### Disabling an upstart service
 
@@ -18,7 +20,9 @@ title: Upstart
 3.  (Optional) Stop the service
     Ex:
 
-        sudo service ufw stop
+    ```
+    sudo service ufw stop
+    ```
 
 #### Misc
 
