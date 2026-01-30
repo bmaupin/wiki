@@ -54,13 +54,10 @@ systemctl is-enabled sshd.service
 #### Change default runlevel
 
 - No GUI, multiple users (RHEL old runlevel 3)
-
   ```
   systemctl set-default multi-user.target
   ```
-
 - GUI (RHEL old runlevel 5, Debian/Ubuntu old runlevel 2-5)
-
   ```
   systemctl set-default graphical.target
   ```

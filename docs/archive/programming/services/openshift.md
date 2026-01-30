@@ -99,9 +99,9 @@ oc get all
 
 1. Delete everything except secrets and persistent volume claims
 
-```
-oc delete all --all
-```
+   ```
+   oc delete all --all
+   ```
 
 2. Delete any secrets
 
