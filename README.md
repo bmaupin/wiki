@@ -6,6 +6,8 @@
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
+Client-side search is provided by [docusaurus-search-local](https://github.com/cmfcmf/docusaurus-search-local)
+
 ## Usage
 
 #### Override directory label
