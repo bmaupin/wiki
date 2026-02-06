@@ -43,3 +43,30 @@
 article:has(> .hiddenFromSidebar) {
   display: none !important;
 }
+
+/* Use the same search box colours as the Docusaurus website; the default colours don't
+   seem to match the Docusaurus themes at all and they really stand out */
+[data-theme='dark'] .aa-DetachedSearchButton,
+[data-theme='dark'] .aa-DetachedSearchButtonIcon {
+  color: var(--ifm-color-secondary-darkest) !important;
+}
+
+[data-theme='dark'] .aa-DetachedSearchButton {
+  background-color: var(--ifm-background-color) !important;
+  border: 1px solid #212139 !important;
+}
+
+[data-theme='light'] .aa-DetachedSearchButton,
+[data-theme='light'] .aa-DetachedSearchButtonIcon {
+  color: var(--ifm-color-emphasis-700) !important;
+}
+
+[data-theme='light'] .aa-DetachedSearchButton {
+  background-color: var(--ifm-color-secondary) !important;
+  border: 1px solid #d6d6e7 !important;
+}
+
+/* Use the same margin on the right as the left; default is a very small margin on the right */
+.aa-DetachedSearchButtonQuery {
+  margin-right: var(--aa-spacing);
+}
