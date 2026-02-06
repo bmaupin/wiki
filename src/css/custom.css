@@ -70,3 +70,10 @@ article:has(> .hiddenFromSidebar) {
 .aa-DetachedSearchButtonQuery {
   margin-right: var(--aa-spacing);
 }
+
+/* Disable highlight when searching; it doesn't go away unless the page is reloaded
+   (https://github.com/cmfcmf/docusaurus-search-local/issues/223) */
+mark {
+  background-color: unset;
+  color: unset;
+}
