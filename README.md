@@ -39,19 +39,25 @@ The page title is used in the sidebar and breadcrumbs
   ---
   ```
 
-## Installation
+## Development
 
-```
-npm install
-```
+1. Install dependencies
 
-## Local Development
+   ```
+   npm install
+   ```
 
-```
-npm start
-```
+1. Start the local dev server
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+   ```
+   npm run dev
+   ```
+
+   or
+
+   ```
+   npm start
+   ```
 
 ## Build
 
