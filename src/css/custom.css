@@ -14,11 +14,23 @@
   --ifm-color-primary-lighter: #359962;
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
+
+  /* Match the Docusaurus site; default is --ifm-color-emphasis-100 > --ifm-color-gray-900 > #1c1e21 (dark grey) */
+  --ifm-footer-background-color: #2b3137;
+  /* Match the Docusaurus site; default is inherit (--ifm-font-color-base > --ifm-color-content > e3e3e3) */
+  --ifm-footer-color: var(--ifm-color-secondary);
+
+  /* Reduce the footer padding; default is --ifm-spacing-vertical*2 */
+  --ifm-footer-padding-vertical: var(--ifm-spacing-vertical);
+
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
+  /* Match the Docusaurus site; default is #1b1b1d (dark grey) */
+  --ifm-background-color: #181920;
+
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
