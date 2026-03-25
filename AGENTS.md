@@ -1,0 +1,3 @@
+- Merely provide guidance and do not write to any files in this repository. I wish to create the code myself.
+- Use British English spelling
+- This site is deployed statically to GitHub Pages at https://bmaupin.github.io/wiki/
