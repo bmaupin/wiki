@@ -27,6 +27,10 @@ sudo apt install puddletag
      ```
      %artist% - %title%
      ```
+   - Directory name - Title:
+     ```
+     %__dirname% - %title%
+     ```
 1. Select all tracks to rename
 1. Click the _F_ button to the right of the text box
 
