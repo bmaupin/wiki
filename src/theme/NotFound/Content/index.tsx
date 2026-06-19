@@ -89,6 +89,7 @@ export default function NotFoundContent({ className }: Props): ReactNode {
                 <a href={page.sectionRoute}>{page.pageTitle}</a>
               </strong>
             </p>
+            <p>You can use the search at the top right for more results.</p>
           </>
         );
 
@@ -118,10 +119,19 @@ export default function NotFoundContent({ className }: Props): ReactNode {
               possible matches:
             </p>
             <p>{formattedMatchingPages}</p>
+            <p>You can use the search at the top right for more results.</p>
           </>
         );
       } else {
-        setNotFoundMessage(<p style={{ fontSize: '3rem' }}>☹️</p>);
+        setNotFoundMessage(
+          <>
+            <p>
+              The page you're looking for may have been moved, but no matching
+              pages were found ☹️
+            </p>
+            <p>You can use the search at the top right for more results.</p>
+          </>
+        );
       }
     });
   }, []);
