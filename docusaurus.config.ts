@@ -120,8 +120,7 @@ const config: Config = {
       ],
     },
     footer: {
-      style: 'dark',
-      copyright: `Copyright © ${new Date().getFullYear()} bmaupin Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} bmaupin. Built with <a href="https://docusaurus.io/">Docusaurus</a>.`,
     },
     prism: {
       theme: prismThemes.github,
