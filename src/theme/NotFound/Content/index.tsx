@@ -26,17 +26,23 @@ type SearchIndex = {
 
 type Props = WrapperProps<typeof ContentType>;
 
-// Get last part of URL similar to linux "basename" command
+// Get last part of URL similar to linux "basename" command and strip the extension
 const getBasename = (url: string) => {
+  let basename = '';
+
   url = String(url);
-  // http://example.com/some/path/ would return "path"
+  // http://example.com/some/path/ would become "path"
   if (url.endsWith('/')) {
-    return url.split('/')[url.split('/').length - 2];
+    basename = url.split('/')[url.split('/').length - 2];
   }
-  // http://example.com/some/page.html would return "page.html"
+  // http://example.com/some/page.html would become "page.html"
   else {
-    return url.split('/').pop();
+    basename = url.split('/').pop() ?? '';
   }
+
+  // Drop the final '.html' (or any other extension just in case); the search index does
+  // not have an extension and Docusaurus doesn't use one for the authoritative URL
+  return basename.split('.')[0];
 };
 
 // Get a list of pages whose basename matches the current page
