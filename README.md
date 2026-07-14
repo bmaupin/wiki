@@ -6,8 +6,6 @@
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
-Client-side search is provided by [docusaurus-search-local](https://github.com/cmfcmf/docusaurus-search-local)
-
 ## Usage
 
 #### Override directory label
@@ -71,20 +69,9 @@ To test the static build locally:
 npm run serve
 ```
 
-## Deployment
+## Search
 
-TODO: keep for manual deployments? or delete?
+Client-side search is provided by [docusaurus-search-local](https://github.com/cmfcmf/docusaurus-search-local)
 
-Using SSH:
-
-```bash
-USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+- It creates a full text index at build time located at build/search-index-docs-default-current.json
+  - It's fairly large but only seems to be loaded when a search is ran

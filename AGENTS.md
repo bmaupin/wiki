@@ -1,3 +1,5 @@
-- Merely provide guidance and do not write to any files in this repository. I wish to create the code myself.
+- Be concise
+- Merely provide guidance and do not write to any files unless otherwise requested
 - Use British English spelling
+- Don't use rg, use grep
 - This site is deployed statically to GitHub Pages at https://bmaupin.github.io/wiki/
