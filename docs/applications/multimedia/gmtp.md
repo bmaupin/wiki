@@ -21,7 +21,6 @@ Audio files may need some modifications before they'll work with older devices.
    (see [ffmpeg#audio](ffmpeg#audio) for more information)
 
 1. (Optional) Open the files with [Puddletag](puddletag) and make sure these tags are set:
-
    - Artist
    - Title
    - Album
@@ -41,7 +40,11 @@ Audio files may need some modifications before they'll work with older devices.
 
 1. Open gMTP and click _Connect_
 
-   > ⓘ Wait a bit as the connection process may be a bit slow
+   :::info
+
+   Wait a bit as the connection process may be a bit slow
+
+   :::
 
 #### Copy files to a device
 
@@ -85,7 +88,11 @@ Audio files may need some modifications before they'll work with older devices.
 
 1. Click _Upload_
 
-   > ⓘ On the Creative Zen Mozaic this seems to frequently fail with the error "Couldn't send album art". This needs some testing but at the moment it seems to only work with very small image sizes (~10 kb). It may also only work with resolutions lower than the device resolution (128 x 160).
+   :::info
+
+   On the Creative Zen Mozaic this seems to frequently fail with the error "Couldn't send album art". This needs some testing but at the moment it seems to only work with very small image sizes (~10 kb). It may also only work with resolutions lower than the device resolution (128 x 160).
+
+   :::
 
 #### Albums
 
