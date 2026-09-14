@@ -37,13 +37,11 @@ Simply follow the instructions above under _Installation_ to download and run th
 1. If prompted to analyse, click _Yes_
 
    Defaults should be fine in most cases
-
    1. Wait for the analysis to finish; see the status bar in the lower right
 
 #### Go to a specific address
 
 1. _Navigation_ > _Go To_
-
    - To go to a memory address (e.g. what you'll get from a backtrace in gdb), just type in the address
 
      💡 It's recommended to prefix the offset with `0x`, otherwise Ghidra may interpret it as decimal if it doesn't contain letters
@@ -56,6 +54,12 @@ Simply follow the instructions above under _Installation_ to download and run th
      ```
      file(0x20e3a79)
      ```
+
+#### Get the file offset of a particular instruction
+
+1. Mouse over the address of the instruction in the _Listing_ view in Ghidra
+
+1. In the popover, the file offset is listed after _Byte Source Offset_ after the name of the file (e.g. `+bb5ef2h`)
 
 ## Functions
 
@@ -144,7 +148,6 @@ Source: [Decompiling and Debugging with Ghidra](https://dev.to/glsolaria/decompi
 If the path to the file you're debugging has quotes and you see `No such file or directory`:
 
 1. Change to the directory using `cd`
-
    - Don't put quotes around the path
 
 1. Load the file using `file`
