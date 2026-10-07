@@ -19,26 +19,22 @@ title: Android SDK setup
 1. Move it
 
    ```
-   sudo mv android-studio /opt/google/
+   sudo mv android-studio /opt/
+   ```
+
+1. Launch it
+
+   ```
+   /opt/android-studio/bin/studio
    ```
 
 1. Create an application launcher icon
-   ```
-   echo "[Desktop Entry]
-   Type=Application
-   Name=Android Studio
-   Icon=/opt/google/android-studio/bin/studio.png
-   Exec=/opt/google/android-studio/bin/studio.sh
-   Terminal=false" >> ~/.local/share/applications/android-studio.desktop
-   chmod +x ~/.local/share/applications/android-studio.desktop
-   ```
+   1. Menu > _Tools_ > _Create Desktop Entry_
 
 #### Configuring Android Studio
 
 1. Go to _File_ > _Settings_ > _Appearance & Behavior_
-
    1. _System Settings_ > _Updates_
-
       1. _Automatically check updates for_ > _Stable Channel_
       1. Make sure _Automatically check updates_ for is checked
 
@@ -56,11 +52,9 @@ title: Android SDK setup
 1. Make sure update location is configured (see _Configuring Android Studio_ above)
 
 1. _Help_ > _Check for Updates_
-
    1. If it says _Update and Restart_, click that
 
    1. If it says _Download_, you must update manually:
-
       1. Exit Android Studio
 
       1. Go here:
@@ -71,7 +65,7 @@ title: Android SDK setup
       1. Remove the old version of Android Studio (settings won't be lost, they're saved in ~/.AndroidStudioX.X)
 
          ```
-         sudo rm -rf /opt/google/android-studio
+         sudo rm -rf /opt/android-studio
          ```
 
       1. Use the same instructions above to unzip and move Android Studio
@@ -83,7 +77,6 @@ title: Android SDK setup
       1. After upgrading, remove the old ~/.AndroidStudioX.X folder to free up space
 
 1. Install Android SDK updates
-
    1. _Help_ > _Check for Updates_
 
    1. Click _Update Now_ or _Update_ for any updates
@@ -93,7 +86,6 @@ title: Android SDK setup
 #### Common issues
 
 - Aidl is missing
-
   - [http://stackoverflow.com/a/30520628/399105](http://stackoverflow.com/a/30520628/399105)
 
 - Failed to import new Gradle project: failed to find Build Tools revision
